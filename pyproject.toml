@@ -4,24 +4,40 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mcpscan"
-version = "0.1.0"
-description = "Local-first MCP server configuration security scanner"
+version = "0.2.0"
+description = "Local-first MCP server configuration security scanner — 10 check modules, 40+ rules, 100% offline"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
-authors = [{name = "MCPScan Contributors"}]
-keywords = ["mcp", "security", "scanner", "ai-safety"]
+authors = [{name = "Fyzi Security", email = "hello@fyzi.co.uk"}]
+keywords = ["mcp", "security", "scanner", "ai-safety", "model-context-protocol", "llm", "agent-security"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
     "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Topic :: Security",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Testing",
+    "Typing :: Typed",
 ]
 dependencies = [
     "click>=8.1",
     "rich>=13.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/kryptonomeai-cloud/mcpscan"
+Documentation = "https://github.com/kryptonomeai-cloud/mcpscan#readme"
+Repository = "https://github.com/kryptonomeai-cloud/mcpscan"
+Issues = "https://github.com/kryptonomeai-cloud/mcpscan/issues"
+Changelog = "https://github.com/kryptonomeai-cloud/mcpscan/blob/main/CHANGELOG.md"
 
 [project.scripts]
 mcpscan = "mcpscan.cli:main"
