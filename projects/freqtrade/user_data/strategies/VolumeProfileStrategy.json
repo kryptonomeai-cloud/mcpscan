@@ -1,0 +1,34 @@
+{
+  "strategy_name": "VolumeProfileStrategy",
+  "params": {
+    "trailing": {
+      "trailing_stop": true,
+      "trailing_stop_positive": 0.02,
+      "trailing_stop_positive_offset": 0.05,
+      "trailing_only_offset_is_reached": true
+    },
+    "max_open_trades": {
+      "max_open_trades": 5
+    },
+    "buy": {
+      "buy_obv_lookback": 10,
+      "buy_rsi": 34,
+      "buy_vol_mult": 0.5
+    },
+    "sell": {
+      "sell_obv_lookback": 5,
+      "sell_rsi": 62
+    },
+    "roi": {
+      "0": 0.587,
+      "276": 0.184,
+      "818": 0.087,
+      "1845": 0
+    },
+    "stoploss": {
+      "stoploss": -0.234
+    }
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2026-03-15 01:30:29.720013+00:00"
+}

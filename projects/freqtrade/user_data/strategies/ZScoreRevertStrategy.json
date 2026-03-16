@@ -1,0 +1,35 @@
+{
+  "strategy_name": "ZScoreRevertStrategy",
+  "params": {
+    "trailing": {
+      "trailing_stop": false,
+      "trailing_stop_positive": null,
+      "trailing_stop_positive_offset": 0.0,
+      "trailing_only_offset_is_reached": false
+    },
+    "max_open_trades": {
+      "max_open_trades": 5
+    },
+    "buy": {
+      "atr_sl_multiplier": 3.1,
+      "volume_multiplier": 1.4,
+      "zscore_entry": -2.7,
+      "zscore_lookback": 43
+    },
+    "sell": {
+      "zscore_exit_mean": 0.9,
+      "zscore_exit_overbought": 1.6
+    },
+    "roi": {
+      "0": 0.613,
+      "1071": 0.286,
+      "3429": 0.116,
+      "5662": 0
+    },
+    "stoploss": {
+      "stoploss": -0.166
+    }
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2026-03-15 01:34:38.331280+00:00"
+}

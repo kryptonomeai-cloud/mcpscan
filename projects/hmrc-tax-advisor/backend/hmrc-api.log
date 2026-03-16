@@ -1,0 +1,11 @@
+✓ bge-m3 warmed up
+INFO:     127.0.0.1:53403 - "GET /api/health HTTP/1.1" 200 OK
+✓ bge-m3 unloaded from VRAM
+INFO:     127.0.0.1:53410 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54508 - "GET /api/health HTTP/1.1" 200 OK
+✓ bge-m3 unloaded from VRAM
+INFO:     127.0.0.1:54527 - "POST /api/ask HTTP/1.1" 200 OK
+✓ bge-m3 unloaded from VRAM
+INFO:     127.0.0.1:54570 - "POST /api/ask HTTP/1.1" 200 OK
+✓ bge-m3 unloaded from VRAM
+INFO:     127.0.0.1:54708 - "POST /api/ask HTTP/1.1" 200 OK

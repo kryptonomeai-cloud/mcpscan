@@ -1,0 +1,72 @@
+{
+  "created": "2026-03-14T09:00:00Z",
+  "launchAgents": {
+    "user": [
+      "ai.openclaw.gateway.plist",
+      "ai.openclaw.gateway.plist.pre-env-migration",
+      "com.beszel.agent.plist",
+      "com.caddy.reverse-proxy.plist",
+      "com.clawmetry.dashboard.plist",
+      "com.crowdsec.sshlog.plist",
+      "com.google.GoogleUpdater.wake.plist",
+      "com.google.keystone.agent.plist",
+      "com.google.keystone.xpcservice.plist",
+      "com.jarvis.tts-server.plist",
+      "com.miniclaw.gateway-watchdog.plist",
+      "com.miniclaw.restart-web.plist",
+      "com.miniclaw.restic-backup.plist",
+      "com.miniclaw.self-healer.plist",
+      "com.openclaw-dashboard.plist",
+      "com.openclaw.mission-control.plist",
+      "com.paperless.ftp-server.plist",
+      "com.paperless.inbox-watcher.plist",
+      "com.trycua.lume_daemon.plist",
+      "homebrew.mxcl.caddy.plist",
+      "homebrew.mxcl.ollama.plist"
+    ],
+    "system": [
+      "com.google.keystone.agent.plist",
+      "com.google.keystone.xpcservice.plist"
+    ]
+  },
+  "launchDaemons": [
+    "ai.openclaw.fail2ban.plist",
+    "ai.openclaw.honeypot.plist",
+    "com.crowdsec.caddy-log-relay.plist",
+    "com.docker.socket.plist",
+    "com.docker.vmnetd.plist",
+    "com.google.GoogleUpdater.wake.system.plist",
+    "com.google.keystone.daemon.plist",
+    "com.objective-see.blockblock.plist"
+  ],
+  "dockerContainers": [
+    "crowdsec",
+    "freqtrade",
+    "termix",
+    "shell-executor",
+    "searxng",
+    "beszel",
+    "vaultwarden",
+    "n8n-n8n-1"
+  ],
+  "knownProcesses": [
+    "ollama",
+    "openclaw-gateway",
+    "Claude",
+    "Telegram",
+    "qemu-system-aarch64",
+    "BlockBlock",
+    "tailscale",
+    "Google",
+    "docker",
+    "docker-compose",
+    "cloudphotod",
+    "node",
+    "beszel-agent",
+    "Python",
+    "socat",
+    "lume",
+    "freqtrade"
+  ],
+  "notes": "Baseline updated 2026-03-15. Removed dashchat stack (no longer running). Added freqtrade and termix as permanent containers."
+}

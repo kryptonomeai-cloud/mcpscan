@@ -1,0 +1,32 @@
+{
+  "strategy_name": "MomentumTrendStrategy",
+  "params": {
+    "max_open_trades": {
+      "max_open_trades": 5
+    },
+    "buy": {
+      "buy_rsi_high": 59,
+      "buy_rsi_low": 40
+    },
+    "sell": {
+      "sell_rsi_threshold": 80
+    },
+    "roi": {
+      "0": 0.246,
+      "240": 0.211,
+      "690": 0.051,
+      "2003": 0
+    },
+    "stoploss": {
+      "stoploss": -0.111
+    },
+    "trailing": {
+      "trailing_stop": true,
+      "trailing_stop_positive": 0.279,
+      "trailing_stop_positive_offset": 0.311,
+      "trailing_only_offset_is_reached": true
+    }
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2026-03-14 09:17:33.583882+00:00"
+}

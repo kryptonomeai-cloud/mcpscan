@@ -1,0 +1,37 @@
+{
+  "mcpServers": {
+    "zapier": {
+      "url": "https://actions.zapier.com/mcp/sk-ak-JeJpDJxxW7p4irHv9LZZIFxFZw/sse"
+    },
+    "semgrep": {
+      "command": "semgrep mcp"
+    },
+    "xero": {
+      "command": "npx -y @xeroapi/xero-mcp-server@latest"
+    },
+    "paperless": {
+      "command": "paperless-mcp",
+      "env": {
+        "PAPERLESS_URL": "http://192.168.0.18:8022/api",
+        "PAPERLESS_API_KEY": "27949364d3d5c9d66e8be4e6fe33be1136b45292"
+      }
+    },
+    "docker": {
+      "command": "uvx docker-mcp"
+    },
+    "neural-memory": {
+      "command": "nmem-mcp",
+      "env": {
+        "NEURALMEMORY_BRAIN": "default"
+      }
+    },
+    "propertydata": {
+      "command": "npx",
+      "args": ["-y", "@biznezstack/propertydata-mcp@1.0.0"],
+      "env": {
+        "PROPERTYDATA_API_KEY": "NEEDS_API_KEY"
+      }
+    }
+  },
+  "imports": []
+}

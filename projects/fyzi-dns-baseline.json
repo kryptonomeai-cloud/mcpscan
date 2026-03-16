@@ -1,0 +1,24 @@
+{
+  "domain": "fyzi.co.uk",
+  "lastUpdated": "2026-03-15T07:00:00Z",
+  "records": {
+    "A": ["104.21.12.236", "172.67.153.235"],
+    "AAAA": ["2606:4700:3032::ac43:99eb", "2606:4700:3037::6815:cec"],
+    "MX": ["0 mx1-usg1.ppe-hosted.com.", "0 mx2-usg1.ppe-hosted.com.", "0 mx3-usg1.ppe-hosted.com."],
+    "TXT": [
+      "MS=ms56395807",
+      "v=spf1 include:_spf-usg1.ppe-hosted.com include:secureserver.net ~all"
+    ],
+    "NS": ["finley.ns.cloudflare.com.", "nataly.ns.cloudflare.com."],
+    "CNAME_www": [],
+    "CNAME_mta-sts": ["cname.vercel-dns.com."],
+    "DMARC": "v=DMARC1; p=quarantine; adkim=r; aspf=r; rua=mailto:tariq.akram@fyzi.co.uk,mailto:495e7ea7a9714c2f86c6a5a763b2ab3d@dmarc-reports.cloudflare.net;",
+    "MTA-STS": "v=STSv1; id=20260308;",
+    "TLSRPT": "v=TLSRPTv1; rua=mailto:tariq.akram@fyzi.co.uk;"
+  },
+  "ssl": {
+    "notBefore": "2026-03-08",
+    "notAfter": "2026-06-06",
+    "subject": "CN=fyzi.co.uk"
+  }
+}

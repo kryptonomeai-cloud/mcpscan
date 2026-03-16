@@ -1,0 +1,34 @@
+{
+  "strategy_name": "MultiBBStrategy",
+  "params": {
+    "trailing": {
+      "trailing_stop": true,
+      "trailing_stop_positive": 0.02,
+      "trailing_stop_positive_offset": 0.04,
+      "trailing_only_offset_is_reached": true
+    },
+    "max_open_trades": {
+      "max_open_trades": 5
+    },
+    "buy": {
+      "buy_bb_level": 2,
+      "buy_mfi": 60,
+      "buy_rsi": 48
+    },
+    "sell": {
+      "sell_bb_level": 1,
+      "sell_mfi": 77
+    },
+    "roi": {
+      "0": 0.49,
+      "390": 0.12,
+      "993": 0.082,
+      "2175": 0
+    },
+    "stoploss": {
+      "stoploss": -0.243
+    }
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2026-03-15 01:32:29.777525+00:00"
+}

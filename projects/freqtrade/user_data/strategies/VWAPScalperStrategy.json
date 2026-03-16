@@ -1,0 +1,33 @@
+{
+  "strategy_name": "VWAPScalperStrategy",
+  "params": {
+    "trailing": {
+      "trailing_stop": true,
+      "trailing_stop_positive": 0.005,
+      "trailing_stop_positive_offset": 0.01,
+      "trailing_only_offset_is_reached": true
+    },
+    "max_open_trades": {
+      "max_open_trades": 5
+    },
+    "buy": {
+      "buy_rsi": 15,
+      "buy_vwap_std": 2.7
+    },
+    "sell": {
+      "sell_rsi": 69,
+      "sell_vwap_std": 1.8
+    },
+    "roi": {
+      "0": 0.565,
+      "133": 0.126,
+      "380": 0.09,
+      "1366": 0
+    },
+    "stoploss": {
+      "stoploss": -0.096
+    }
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2026-03-15 01:35:46.523591+00:00"
+}

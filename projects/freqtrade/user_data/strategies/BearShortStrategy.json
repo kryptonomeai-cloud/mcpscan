@@ -1,0 +1,32 @@
+{
+  "strategy_name": "BearShortStrategy",
+  "params": {
+    "max_open_trades": {
+      "max_open_trades": 5
+    },
+    "buy": {
+      "buy_ema_period": 35,
+      "buy_rsi_low": 48
+    },
+    "sell": {
+      "sell_rsi_threshold": 28
+    },
+    "roi": {
+      "0": 0.66,
+      "333": 0.231,
+      "893": 0.084,
+      "1719": 0
+    },
+    "stoploss": {
+      "stoploss": -0.136
+    },
+    "trailing": {
+      "trailing_stop": true,
+      "trailing_stop_positive": 0.143,
+      "trailing_stop_positive_offset": 0.204,
+      "trailing_only_offset_is_reached": false
+    }
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2026-03-14 09:10:18.113970+00:00"
+}

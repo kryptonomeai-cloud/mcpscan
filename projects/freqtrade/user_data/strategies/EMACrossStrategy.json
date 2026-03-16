@@ -1,0 +1,35 @@
+{
+  "strategy_name": "EMACrossStrategy",
+  "params": {
+    "max_open_trades": {
+      "max_open_trades": 5
+    },
+    "buy": {
+      "buy_ema_fast": 7,
+      "buy_ema_slow": 44,
+      "buy_ema_trend": 151,
+      "buy_rsi_threshold": 22,
+      "buy_volume_factor": 1.4634838569785
+    },
+    "sell": {
+      "sell_rsi_threshold": 62
+    },
+    "roi": {
+      "0": 0.491,
+      "330": 0.093,
+      "1037": 0.06,
+      "2271": 0
+    },
+    "stoploss": {
+      "stoploss": -0.252
+    },
+    "trailing": {
+      "trailing_stop": true,
+      "trailing_stop_positive": 0.054,
+      "trailing_stop_positive_offset": 0.13,
+      "trailing_only_offset_is_reached": true
+    }
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2026-03-14 09:14:06.234567+00:00"
+}

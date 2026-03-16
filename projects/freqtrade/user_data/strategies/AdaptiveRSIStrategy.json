@@ -1,0 +1,37 @@
+{
+  "strategy_name": "AdaptiveRSIStrategy",
+  "params": {
+    "trailing": {
+      "trailing_stop": false,
+      "trailing_stop_positive": null,
+      "trailing_stop_positive_offset": 0.0,
+      "trailing_only_offset_is_reached": false
+    },
+    "max_open_trades": {
+      "max_open_trades": 5
+    },
+    "buy": {
+      "atr_pct_high": 4.5,
+      "atr_pct_low": 1.4,
+      "atr_sl_multiplier": 2.8,
+      "cmf_threshold": -0.16,
+      "rsi_entry_threshold": 24,
+      "rsi_long_period": 25,
+      "rsi_short_period": 14
+    },
+    "sell": {
+      "rsi_exit_threshold": 72
+    },
+    "roi": {
+      "0": 0.207,
+      "104": 0.156,
+      "180": 0.062,
+      "315": 0
+    },
+    "stoploss": {
+      "stoploss": -0.265
+    }
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2026-03-15 01:36:55.054952+00:00"
+}
