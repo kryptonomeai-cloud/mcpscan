@@ -1,0 +1,15 @@
+{
+  "name": "secrets-proxy",
+  "version": "1.0.0",
+  "description": "WebAuthn-based secrets proxy with biometric approval",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "cli": "node cli.js"
+  },
+  "dependencies": {
+    "@simplewebauthn/server": "^13.1.1",
+    "express": "^5.1.0"
+  }
+}

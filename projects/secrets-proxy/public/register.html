@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Register — Secrets Proxy</title>
+<style>
+  :root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #e6edf3; --muted: #8b949e; --green: #3fb950; --blue: #58a6ff; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); min-height: 100dvh; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; max-width: 400px; width: 100%; text-align: center; }
+  .icon { font-size: 3rem; margin-bottom: 1rem; }
+  h1 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+  p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+  button { padding: 0.875rem 1.5rem; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; background: var(--blue); color: #fff; width: 100%; transition: opacity 0.15s; }
+  button:active { opacity: 0.8; }
+  button:disabled { opacity: 0.5; cursor: not-allowed; }
+  .status { margin-top: 1rem; padding: 0.75rem; border-radius: 8px; font-weight: 600; }
+  .status-ok { background: #3fb95022; color: var(--green); }
+  .status-err { background: #f8514922; color: #f85149; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="icon">🔑</div>
+  <h1>Register Authenticator</h1>
+  <p>Register your biometric credential (Face ID, fingerprint, or security key) to approve secret requests.</p>
+  <button id="btnRegister" onclick="doRegister()">Register Biometric</button>
+  <div id="statusMsg" class="status hidden"></div>
+</div>
+
+<script type="module">
+import { startRegistration } from 'https://cdn.jsdelivr.net/npm/@simplewebauthn/browser@13/dist/bundle/index.js';
+
+window.doRegister = async function () {
+  const btn = document.getElementById('btnRegister');
+  const status = document.getElementById('statusMsg');
+  btn.disabled = true;
+  btn.textContent = 'Starting registration...';
+
+  try {
+    const optRes = await fetch('/api/webauthn/register-options');
+    if (!optRes.ok) throw new Error('Failed to get registration options');
+    const options = await optRes.json();
+
+    const regResponse = await startRegistration({ optionsJSON: options });
+
+    const verifyRes = await fetch('/api/webauthn/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(regResponse),
+    });
+
+    if (!verifyRes.ok) {
+      const err = await verifyRes.json();
+      throw new Error(err.error || 'Registration failed');
+    }
+
+    status.textContent = '✅ Registered successfully! You can now approve secret requests.';
+    status.classList.remove('hidden', 'status-err');
+    status.classList.add('status-ok');
+    btn.textContent = 'Register Another';
+    btn.disabled = false;
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = 'Register Biometric';
+    status.textContent = '⚠️ ' + (err.name === 'NotAllowedError' ? 'Registration was cancelled' : err.message);
+    status.classList.remove('hidden', 'status-ok');
+    status.classList.add('status-err');
+  }
+};
+</script>
+</body>
+</html>

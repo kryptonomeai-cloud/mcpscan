@@ -1,5 +1,74 @@
 # Tools & Skills Research Log
 
+## 2026-03-17 — Nightly Scan #3
+
+### Summary
+Web search (Gemini) fully rate-limited; all searches via SearXNG fallback. ClawHub scans completed. MCP ecosystem research done. One major finding: **official Xero MCP server** exists and is mature.
+
+### New Tools Found
+
+| Tool | What | Why Useful | Install |
+|------|------|-----------|---------|
+| **Blinko** | Self-hosted AI-powered knowledge base & notes | Local knowledge base with embedding support via Ollama; could complement Paperless-NGX for unstructured notes | `docker pull blinkospace/blinko` |
+| **Uptime Kuma** | Service uptime monitoring with alerts | Still not installed — monitors all our Docker services, APIs, websites with push notifications | `docker pull louislam/uptime-kuma` |
+| **Immich** | Self-hosted Google Photos alternative | Photo backup/management with ML-based search, face recognition; runs well on GPU servers | `docker compose` (needs GPU for ML features) |
+| **Woodpecker CI** | Lightweight CI/CD paired with Gitea | If running any git repos, this automates builds/deploys — lighter than Jenkins | `docker pull woodpeckerci/woodpecker-server` |
+| **IT Tools** | Browser-based utility collection | Quick conversions, encoders, generators — runs entirely client-side | `docker pull corentinth/it-tools` |
+
+### MCP Servers — Key Findings
+
+| Server | Stars | What | Value for Us | Effort |
+|--------|-------|------|-------------|--------|
+| **Xero MCP** (xeroapi/xero-mcp-server) | Official | Full Xero accounting API access via MCP | ⭐⭐⭐⭐⭐ HIGH — direct accounting integration | Medium — needs OAuth setup |
+| **GitHub MCP** (github/github-mcp-server) | 15.2k | Issues, PRs, discussions management | ⭐⭐⭐⭐ — already have gh CLI but MCP adds structured access | Low |
+| **Playwright MCP** (microsoft/playwright-mcp) | 11.6k | Browser automation via MCP | ⭐⭐⭐ — we have browser tool already | Low |
+| **Sentry MCP** (getsentry/sentry-mcp) | 173 | Error tracking & performance | ⭐⭐ — useful if running Sentry | Medium |
+| **MongoDB MCP** | 202 | Database access via MCP | ⭐⭐ — only if using Mongo | Low |
+| **AWS MCP** (awslabs/mcp) | 3.7k | AWS docs, billing, service metadata | ⭐⭐ — useful if on AWS | Low |
+| **Notion MCP** (composio) | Popular | Note-taking integration | ⭐⭐ — only if using Notion | Low |
+
+### ClawHub Skills Scan
+
+**Potentially useful new finds:**
+- `firefly-iii` — Firefly III integration skill (personal finance, if deploying Firefly)
+- `uptime-kuma` — Uptime Kuma management skill
+- `openclaw-backup` / `cron-backup` — Automated backup skills (worth evaluating)
+- `system-resource-monitor` / `auto-monitor` — System monitoring skills
+- `ping-monitor` — Network monitoring
+
+**Skipped (low trust/generic):**
+- Most "productivity" and "automation" skills are generic prompt wrappers
+- Security skills overlap with our existing healthcheck + trivy + lynis setup
+- Many Docker skills duplicate our existing docker-essentials
+
+### N8N Updates (from search)
+- N8N in 2026 has expanded AI agent nodes, MCP support, and new integration nodes
+- Worth checking if our N8N instance is up to date — new nodes may cover gaps
+
+### GPU Server Tooling
+- No major new CLI tools found specifically for multi-GPU monitoring beyond nvidia-smi/nvtop
+- Ollama continues to be the standard for local LLM hosting
+- Consider setting up monitoring dashboards (Grafana + nvidia_gpu_exporter) for the 5x 3090 setup
+
+### Recommendations (Ranked by Impact)
+
+1. **⭐ Set up Xero MCP server via mcporter** — Official server exists at github.com/xeroapi/xero-mcp-server. This is the accounting integration we need. Needs OAuth app setup in Xero developer portal.
+2. **📊 Install Uptime Kuma** — Still the top recommendation from last scan; simple Docker deploy, monitors everything
+3. **🧰 Install IT Tools** — Zero-config utility toolkit, useful for quick conversions/encoders
+4. **📸 Evaluate Immich** — If photo management is needed, this is the gold standard; GPU server can handle ML features
+5. **💾 Evaluate backup skills on ClawHub** — `openclaw-backup` or `cron-backup` for automated workspace backups
+6. **🔄 Update N8N** — Check for new integration nodes and AI agent capabilities
+
+### 🚨 Alert-Worthy Finding
+**Xero MCP Server is officially available** — Published by Xero themselves (xeroapi/xero-mcp-server on GitHub). This provides full accounting API access via MCP. Could be connected via mcporter for invoice management, expense tracking, bank reconciliation, and financial reporting directly from OpenClaw. This was flagged as a gap in previous scans.
+
+### Notes
+- Gemini web_search quota fully exhausted — all 4 parallel searches returned 429
+- SearXNG via localhost blocked by web_fetch (private IP), had to use exec+curl instead
+- Next scan: deep-dive on Xero MCP setup requirements, check N8N version, explore Firecrawl MCP as web scraping alternative
+
+---
+
 ## 2026-03-16 — Nightly Scan #2
 
 ### Summary

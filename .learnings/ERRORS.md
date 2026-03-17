@@ -7,3 +7,7 @@
 
 ## 2026-03-15
 - No new errors detected in last 24h sessions (overnight was quiet — only paperless backup cron ran successfully).
+
+## 2026-03-16
+- **iCloud Drive hang** (03:19): bird daemon became unresponsive during backup symlink/stats phase. Restarting bird didn't fully recover. Backup cleanup at 04:00 skipped — `find`/`ls` hung on iCloud path. May need reboot to resolve.
+- **macOS update still pending**: CLI `softwareupdate --install` failed (sudo auth in non-interactive context). Needs manual System Settings install.

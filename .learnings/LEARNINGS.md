@@ -9,3 +9,7 @@
 
 ## 2026-03-15
 - **Self-improvement bottleneck**: 5 consecutive proposals stuck at 🔲 Proposed. The process generates ideas but has no approval flow. Low-risk items should auto-implement.
+
+## 2026-03-16
+- **iCloud Drive fragility**: bird daemon hangs can cascade — backup scripts that touch iCloud paths hang indefinitely without `timeout`. Always wrap iCloud FS ops in `timeout`.
+- **Improvement proposals need user attention**: 6th consecutive unapproved proposal. Consider batching or auto-implementing lowest-risk items.

@@ -77,7 +77,7 @@ _Curated knowledge. Updated: 2026-03-15 (memory maintenance review)._
 - Docs at `docs/email-dashboard-20260314.md`
 - **Next:** Connect to real WSL classifier output
 
-### LoRA Training — 🔄 In Progress (Qwen 7B)
+### LoRA Training — ✅ Complete (Qwen 7B)
 - **Dataset:** 30,511 email→summary pairs (14,644 used for training)
 - **Current run:** Qwen 7B via Unsloth, 161M trainable params (2.08% of 7.8B), 3 epochs, 2,748 steps
   - ~41% complete (step 1133/2748) as of Mar 15 01:10, ~26-30s/step on single RTX 3090

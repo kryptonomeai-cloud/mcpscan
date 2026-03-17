@@ -59,3 +59,40 @@ Deep dive into kernel-level anti-cheat mechanisms — interesting from a securit
 
 *Skipped: rack-mount hydroponics, treasure hunter story, bumblebee biology, Washington Post piece, creative/show HN projects (GrobPaint, Han language, Ichinichi notes app), Ageless Linux, Marketing for Founders, SBCL Fibers, Library of Short Stories, Airbus UCAV news.*
 
+
+---
+
+## 2026-03-16 (Monday) — 07:15 UTC
+
+### 🤖 AI/ML
+
+- **"What is agentic engineering?"** (Simon Willison + HN) — Simon published a guide to agentic engineering patterns. Likely worth reading for OpenClaw/agent design work. [Link](https://simonwillison.net/guides/agentic-engineering-patterns/what-is-agentic-engineering/)
+- **"How I write software with LLMs"** (HN) — Practical first-person account of LLM-assisted software dev workflow. [Link](https://www.stavros.io/posts/how-i-write-software-with-llms/)
+- **"LLMs can be exhausting"** (HN) — Honest take on the fatigue of working with LLMs daily — emotional/ergonomic angle. [Link](https://tomjohnell.com/llms-can-be-absolutely-exhausting/)
+- **LLM Architecture Gallery** (HN) — Sebastian Raschka's visual gallery of LLM architectures — handy reference. [Link](https://sebastianraschka.com/llm-architecture-gallery/)
+- **Quillx / AIx open standard** (HN) — Proposal for an open standard to disclose AI involvement in software projects (like a `.ai-disclosure` file). [Link](https://github.com/QAInsights/AIx)
+- **Athletic humanoid tennis via imperfect motion data** (HN) — DeepMind-style robotics: training humanoid to play tennis from imperfect human motion capture. Neat advance. [Link](https://zzk273.github.io/LATENT/)
+- **Stop Sloppypasta** (HN) — Campaign/tool to detect and flag lazy AI copy-paste in code/text. [Link](https://stopsloppypasta.ai/)
+
+### 🔒 Security
+
+- **⚠️ Glassworm Unicode attacks back** (HN) — **FLAG**: Invisible Unicode characters used to inject malicious code into GitHub repos, npm packages, and VSCode extensions. Ongoing active campaign. Relevant for any OSS contributors. [Link](https://www.aikido.dev/blog/glassworm-returns-unicode-attack-github-npm-vscode)
+- **Android 17 blocks accessibility API abuse** (The Hacker News) — Android 17 restricts non-accessibility apps from using the Accessibility API, closing a major malware vector. Good news for Android security. [Link](https://thehackernews.com/2026/03/android-17-blocks-non-accessibility.html)
+- **Canada Bill C-22 — mass metadata surveillance** (HN) — Canadian legislation mandates warrantless metadata access; significant privacy concerns flagged by Michael Geist. [Link](https://www.michaelgeist.ca/2026/03/a-tale-of-two-bills-lawful-access-returns-with-changes-to-warrantless-access-but-dangerous-backdoor-surveillance-risks-remains/)
+
+### 🛠 General Tech
+
+- **Chrome DevTools MCP** (HN, 2025) — Chrome DevTools now has an MCP server for debugging browser sessions from AI agents. Relevant for browser automation work. [Link](https://developer.chrome.com/blog/chrome-devtools-mcp-debug-your-browser-session)
+- **GitHub Actions as PaaS control plane** (HN) — Experiment using GitHub Actions as the orchestration layer for a homebrew PaaS. Creative infra hack. [Link](https://towlion.github.io)
+- **Federal Right to Privacy Act draft** (HN) — US draft legislation for a federal privacy law; worth watching if it gains traction. [Link](https://righttoprivacyact.github.io)
+- **Separating Wayland compositor & window manager** (HN) — Technical post on River WM's approach to splitting compositor and WM responsibilities. [Link](https://isaacfreund.com/blog/river-window-management/)
+
+### ⏭ Skipped (older/fluff)
+- ASCII/Unicode quotation marks (2007 reference post)
+- Visual Intro to ML (2015 classic, not new)
+- Intel Optane explainer (2023 archive)
+- Linux Programming Interface as course text (reference)
+- Nasdaq's Shame (finance/market piece, low relevance)
+- The 49MB web page (web bloat audit, interesting but low priority)
+- Cannabinoids & Alzheimer's (2016 research, surfaced as curiosity)
+

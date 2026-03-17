@@ -32,3 +32,26 @@
 **Action Items:**
 - Monitor nas-zimaos heartbeat — if stale >24h, restart CrowdSec container on NAS
 - CVE search will retry next run
+
+## 2026-03-16 05:00 UTC — Daily Security Sweep
+
+### CrowdSec
+- All machines ✔️ except **nas-zimaos** (heartbeat 38h stale)
+- No alerts or active bans
+- CAPI connected, community blocklist enabled
+- Container: healthy
+
+### Infrastructure
+- Mac mini firewall: **enabled**
+- Mac mini listening ports: none unexpected (lsof returned clean)
+- GPU server: fail2ban OK (0 banned), UFW active with proper rules
+- GPU rkhunter: SSH timed out before rkhunter could run (non-critical)
+- Trivy container scan: ran on 2 images, no HIGH/CRITICAL findings reported
+- Brew security tools: all up to date (no outdated trivy/lynis)
+
+### CVE Intel
+- Web search quota exhausted; unable to check fresh CVEs this run
+
+### Issues Noted
+- ⚠️ nas-zimaos CrowdSec heartbeat stale 38h — recurring issue, likely NAS sleeping or agent stopped
+- Trivy scan incomplete (SIGTERM on timeout) — consider increasing timeout

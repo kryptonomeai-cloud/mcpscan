@@ -1,0 +1,10 @@
+{
+  "port": 18900,
+  "rpID": "localhost",
+  "rpName": "Secrets Proxy",
+  "origin": "http://localhost:18900",
+  "telegramChatId": "8387589944",
+  "requestTTL": 300,
+  "secretTTL": 60,
+  "bindHost": "0.0.0.0"
+}

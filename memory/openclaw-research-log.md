@@ -34,3 +34,47 @@
 
 ### Action Items
 - None — system healthy and on current version
+
+---
+
+## 2026-03-16 07:45 UTC — Daily Monitor
+
+### 1. Version Check
+- Installed: OpenClaw 2026.3.13 (61d171a)
+- Latest on GitHub: v2026.3.13-1 (recovery release, published 2026-03-14)
+  - Note: npm package is still 2026.3.13 — the -1 suffix is Git tag/GitHub release only
+  - This is a RECOVERY release fixing a broken v2026.3.13 tag path — not a new version
+- Status: ✅ UP TO DATE (no action needed)
+
+### Key fixes in v2026.3.13 (recovery):
+- fix(compaction): full-session token count for post-compaction sanity check
+- fix(telegram): thread media transport policy into SSRF (security)
+- fix(session): preserve lastAccountId and lastThreadId on session reset
+- fix(agents): drop Anthropic thinking blocks on replay
+- fix: address delivery dedupe review follow-ups
+- fix: handle Discord gateway metadata fetch failures
+
+### 2. Documentation Changes
+- clawddocs skill NOT installed (skills/clawddocs missing) — skipped
+- Only 3 skills installed: capability-evolver, playwright-scraper-skill, web-monitor
+
+### 3. ClawHub & Skills
+- Top "new" results: news-related skills (new-visitor-cold-start, cctv-news-fetcher, etc.)
+- No security-relevant new skills flagged
+- Installed skills: capability-evolver, playwright-scraper-skill, web-monitor — no updates checked
+
+### 4. Dashboard & UI
+- Not checked (no search results fetched this run)
+
+### 5. Config Health (openclaw doctor)
+- Loaded: 10 plugins, Disabled: 31, Errors: 0
+- Telegram: ok, Slack: ok
+- Agents: main, forge, scout, sentinel, venture, taskmaster
+- Session store: 138 entries — healthy
+- No errors or warnings requiring action
+
+### Action Items
+- The telegram SSRF fix in v2026.3.13 is worth noting but already installed
+- clawddocs skill missing — cannot track doc changes until installed
+- Consider: `clawhub install clawddocs` if doc monitoring is desired
+

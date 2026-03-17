@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Approve Secret — Secrets Proxy</title>
+<style>
+  :root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #e6edf3; --muted: #8b949e; --green: #3fb950; --red: #f85149; --blue: #58a6ff; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); min-height: 100dvh; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; max-width: 400px; width: 100%; text-align: center; }
+  .icon { font-size: 3rem; margin-bottom: 1rem; }
+  h1 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+  .secret-name { font-size: 1.5rem; font-weight: 700; color: var(--blue); margin: 0.75rem 0; word-break: break-word; }
+  .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 1.5rem; }
+  .meta span { display: block; margin: 0.25rem 0; }
+  .tier-badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+  .tier-one-time { background: #f8514922; color: var(--red); }
+  .tier-session { background: #58a6ff22; color: var(--blue); }
+  .tier-standing { background: #3fb95022; color: var(--green); }
+  .buttons { display: flex; gap: 0.75rem; flex-direction: column; }
+  button { padding: 0.875rem 1.5rem; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: opacity 0.15s; }
+  button:active { opacity: 0.8; }
+  button:disabled { opacity: 0.5; cursor: not-allowed; }
+  .btn-approve { background: var(--green); color: #000; }
+  .btn-deny { background: transparent; color: var(--red); border: 1px solid var(--red); }
+  .status { margin-top: 1rem; padding: 0.75rem; border-radius: 8px; font-weight: 600; }
+  .status-approved { background: #3fb95022; color: var(--green); }
+  .status-denied { background: #f8514922; color: var(--red); }
+  .status-expired { background: #d2992222; color: #d29922; }
+  .status-error { background: #f8514922; color: var(--red); }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="icon">🔐</div>
+  <h1>Secret Request</h1>
+  <div id="loading">Loading...</div>
+  <div id="content" class="hidden">
+    <div class="secret-name" id="secretName"></div>
+    <div class="meta">
+      <span id="tierBadge"></span>
+      <span id="timestamp"></span>
+    </div>
+    <div class="buttons" id="buttons">
+      <button class="btn-approve" id="btnApprove" onclick="doApprove()">Approve with Biometric</button>
+      <button class="btn-deny" id="btnDeny" onclick="doDeny()">Deny</button>
+    </div>
+    <div id="statusMsg" class="status hidden"></div>
+  </div>
+  <div id="errorMsg" class="hidden"></div>
+</div>
+
+<script type="module">
+import { startAuthentication } from 'https://cdn.jsdelivr.net/npm/@simplewebauthn/browser@13/dist/bundle/index.js';
+
+const requestId = location.pathname.split('/approve/')[1];
+let requestData = null;
+
+async function loadRequest() {
+  try {
+    // Fetch request info from poll endpoint (we'll add a public info endpoint or use the approval page data)
+    const res = await fetch(`/api/request-info/${requestId}`);
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({ error: 'Request not found' }));
+      showError(err.error || 'Request not found or expired');
+      return;
+    }
+    requestData = await res.json();
+
+    document.getElementById('secretName').textContent = requestData.secret_name;
+    const tierClass = `tier-${requestData.tier}`;
+    document.getElementById('tierBadge').innerHTML = `<span class="tier-badge ${tierClass}">${requestData.tier}</span>`;
+    document.getElementById('timestamp').textContent = `Requested: ${new Date(requestData.created_at).toLocaleString()}`;
+
+    if (requestData.status !== 'pending') {
+      showStatus(requestData.status);
+      document.getElementById('buttons').classList.add('hidden');
+    }
+
+    document.getElementById('loading').classList.add('hidden');
+    document.getElementById('content').classList.remove('hidden');
+  } catch (err) {
+    showError('Failed to load request: ' + err.message);
+  }
+}
+
+window.doApprove = async function () {
+  const btn = document.getElementById('btnApprove');
+  btn.disabled = true;
+  btn.textContent = 'Authenticating...';
+
+  try {
+    // Get authentication options
+    const optRes = await fetch('/api/webauthn/auth-options');
+    if (!optRes.ok) throw new Error('Failed to get auth options');
+    const options = await optRes.json();
+
+    // Trigger biometric
+    const authResponse = await startAuthentication({ optionsJSON: options });
+
+    // Submit approval with auth response
+    const approveRes = await fetch(`/api/approve/${requestId}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ authResponse }),
+    });
+
+    if (!approveRes.ok) {
+      const err = await approveRes.json();
+      throw new Error(err.error || 'Approval failed');
+    }
+
+    const result = await approveRes.json();
+    showStatus('approved');
+    document.getElementById('buttons').classList.add('hidden');
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = 'Approve with Biometric';
+    if (err.name === 'NotAllowedError') {
+      showError('Biometric authentication was cancelled');
+    } else {
+      showError(err.message);
+    }
+  }
+};
+
+window.doDeny = async function () {
+  const btn = document.getElementById('btnDeny');
+  btn.disabled = true;
+
+  try {
+    const res = await fetch(`/api/deny/${requestId}`, { method: 'POST' });
+    if (!res.ok) throw new Error('Deny failed');
+    showStatus('denied');
+    document.getElementById('buttons').classList.add('hidden');
+  } catch (err) {
+    btn.disabled = false;
+    showError(err.message);
+  }
+};
+
+function showStatus(status) {
+  const el = document.getElementById('statusMsg');
+  el.classList.remove('hidden', 'status-approved', 'status-denied', 'status-expired', 'status-error');
+  const labels = {
+    approved: '✅ Approved — secret released',
+    denied: '❌ Denied',
+    expired: '⏰ Expired',
+    error: '⚠️ Error',
+  };
+  el.textContent = labels[status] || status;
+  el.classList.add(`status-${status}`);
+}
+
+function showError(msg) {
+  const el = document.getElementById('errorMsg');
+  el.textContent = '⚠️ ' + msg;
+  el.classList.remove('hidden');
+  el.classList.add('status', 'status-error');
+  document.getElementById('loading').classList.add('hidden');
+}
+
+loadRequest();
+</script>
+</body>
+</html>

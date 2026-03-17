@@ -60,3 +60,41 @@
   - Current running: crowdsec, termix, shell-executor, searxng, beszel, vaultwarden, n8n-n8n-1
   - freqtrade is absent — may have crashed, been stopped, or intentionally halted
 
+
+## 2026-03-16 09:00 UTC — Morning Audit
+
+**Status: 1 anomaly detected**
+
+### Docker Container: freqtrade MISSING
+- Baseline lists `freqtrade` as a permanent container (added 2026-03-15)
+- Currently NOT running — absent from `docker ps` output
+- All other expected containers running healthy: termix, crowdsec, shell-executor, searxng, beszel, vaultwarden, n8n-n8n-1
+
+### LaunchAgents / LaunchDaemons
+- ✅ User LaunchAgents: exact match (21 entries)
+- ✅ System LaunchAgents: exact match
+- ✅ LaunchDaemons: exact match (8 entries)
+
+### Listening Ports
+- ⚠️ Script returned no port data — `process-audit.sh` ports section was empty. May be a script/permissions issue worth investigating.
+
+### User Processes
+- ✅ No unknown processes detected. All match known process list.
+
+
+## 2026-03-16 21:00 UTC (Evening Audit)
+
+**Status: ⚠️ 1 anomaly detected**
+
+### Missing Docker Container
+- `freqtrade` is listed in the baseline (`configs/process-baseline.json`) but is **not currently running**.
+  - All other containers healthy: termix, crowdsec, shell-executor, searxng, beszel, vaultwarden, n8n-n8n-1
+
+### All Other Checks: Clean
+- LaunchAgents (user): ✓ matches baseline (21 entries)
+- LaunchAgents (system): ✓ matches baseline (2 entries)
+- LaunchDaemons: ✓ matches baseline (8 entries)
+- No unknown listening ports reported
+- No unknown/suspicious user processes
+
+---
