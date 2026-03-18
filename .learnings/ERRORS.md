@@ -11,3 +11,6 @@
 ## 2026-03-16
 - **iCloud Drive hang** (03:19): bird daemon became unresponsive during backup symlink/stats phase. Restarting bird didn't fully recover. Backup cleanup at 04:00 skipped — `find`/`ls` hung on iCloud path. May need reboot to resolve.
 - **macOS update still pending**: CLI `softwareupdate --install` failed (sudo auth in non-interactive context). Needs manual System Settings install.
+
+## 2026-03-17
+- **iCloud backup cleanup failed again** (04:00): 3rd consecutive day. `find -mtime +7` on iCloud path hung. Backup export itself succeeded but stale files accumulating.

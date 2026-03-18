@@ -13,3 +13,7 @@
 ## 2026-03-16
 - **iCloud Drive fragility**: bird daemon hangs can cascade — backup scripts that touch iCloud paths hang indefinitely without `timeout`. Always wrap iCloud FS ops in `timeout`.
 - **Improvement proposals need user attention**: 6th consecutive unapproved proposal. Consider batching or auto-implementing lowest-risk items.
+
+## 2026-03-17
+- **iCloud cleanup failure is now a 3-day streak** (Mar 16×2, Mar 17). Pattern promoted to recurring. Timeout wrappers are non-negotiable for iCloud FS ops.
+- **Improvement pipeline has zero throughput**: 7 proposals, 0 implemented. Process needs either auto-implement for low-risk items or explicit user review cadence.

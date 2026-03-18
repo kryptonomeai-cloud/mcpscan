@@ -22,3 +22,25 @@
 - ETH: $2,264 (+3.98%) 🟢
 
 **Note:** Finnhub API key not configured. Data sourced from Yahoo Finance.
+
+---
+## 📈 Market Summary — Tuesday, March 17 2026
+
+**Indices (prev. close)**
+- S&P 500: 6,699 ▲+0.40%
+- Nasdaq:  22,374 ▲+0.28%
+- Dow:     46,946 ▲+0.58%
+
+**Tech/AI Stocks**
+- NVDA:  $183.22 ▲+0.04%  _(AI GPU leader — flat, consolidating)_
+- AAPL:  $252.82 ▼-1.15%
+- MSFT:  $399.95 ▼-0.48%
+- GOOG:  $304.42 ▲+0.40%
+- META:  $627.45 ▼-1.68%
+- AMD:   $196.58 ▼-0.59%
+- TSLA:  $395.56 ▲+0.14%
+
+**Notable Movers (>3%)**
+- COIN:  $203.32 ▲+5.22% 🚀 _(crypto-adjacent: strong BTC sentiment)_
+
+**Notes:** Broad market mildly positive. Crypto-adjacent COIN leads tech names with >5% gain. AI names (NVDA/AMD) subdued. META underperforming (-1.68%). No Finnhub CLI available — data via Yahoo Finance fallback. No earnings data retrieved this session.

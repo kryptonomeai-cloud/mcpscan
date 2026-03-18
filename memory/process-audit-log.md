@@ -98,3 +98,28 @@
 - No unknown/suspicious user processes
 
 ---
+
+## 2026-03-17 09:00 UTC — Morning Audit
+
+**Result:** Clean — no anomalies.
+
+- LaunchAgents (user/system): All match baseline.
+- LaunchDaemons: All match baseline.
+- Docker containers: All running containers are in baseline. Note: `freqtrade` in baseline but not currently running (not a security concern).
+- Processes: All match known process list. Transient shell processes (bash, find, ls, sort, zsh, head, tail) from audit execution — normal.
+- No new listening ports, unknown agents, or suspicious processes detected.
+
+## 2026-03-17 21:00 UTC — Evening Audit
+
+**Result: One anomaly detected**
+
+### Docker Container Deviation
+- **freqtrade** container is in the baseline but **not currently running**
+  - Baseline expects: `freqtrade` (listed in `dockerContainers`)
+  - Current state: container absent from `docker ps` output
+  - All other containers match baseline: termix, crowdsec, shell-executor, searxng, beszel, vaultwarden, n8n-n8n-1 ✅
+
+### LaunchAgents/Daemons: ✅ Match baseline exactly
+### Listening Ports: ✅ No new ports flagged
+### Processes: ✅ All within known process list
+

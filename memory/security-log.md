@@ -55,3 +55,35 @@
 ### Issues Noted
 - ⚠️ nas-zimaos CrowdSec heartbeat stale 38h — recurring issue, likely NAS sleeping or agent stopped
 - Trivy scan incomplete (SIGTERM on timeout) — consider increasing timeout
+
+## 2026-03-17 05:00 UTC — Daily Security Sweep
+
+### CrowdSec
+- Container: healthy, uptime 47h
+- Machines: localhost ✔️, gpu-server ✔️, nas-zimaos ⚠️ (62h stale heartbeat)
+- Bouncers: 7 valid, NAS bouncers stale ~62h, caddy-bouncer@172.23.0.1 stale 5 days
+- Alerts/Decisions: none
+- CAPI: connected, community blocklist enabled
+
+### Infrastructure
+- Mac mini firewall: enabled ✔️
+- Mac mini listening ports: all expected (rapportd, AirPlay, Ollama localhost, Docker services, beszel, lume, node/OpenClaw)
+- No unexpected external-facing ports detected
+- Port 2121 (Python FTP?) on *:2121 — recurring, noted previously
+- GPU server: fail2ban sshd clean (0 banned), UFW active with proper rules, rkhunter timed out (124)
+
+### CVE Intel
+- Web search rate-limited; SearXNG fallback used
+- macOS: CVE-2026-20619 (info disclosure) noted; Apple released macOS Sequoia 15.4 security update — check if applied
+- Node.js: Jan 2026 security releases — verify current version
+- No critical/high CVEs requiring immediate action found for our stack
+
+### Tool Versions
+- trivy, lynis: no outdated packages flagged by brew
+
+### Action Items
+- ⚠️ NAS CrowdSec agent offline ~62h — check NAS status
+- ⚠️ caddy-bouncer@172.23.0.1 stale 5 days
+- Verify macOS Sequoia 15.4 update applied
+- Investigate port 2121 if not intentional
+- rkhunter on GPU timed out — run manually if needed

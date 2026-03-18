@@ -1,5 +1,101 @@
 # Tools & Skills Research Log
 
+## 2026-03-18 — Nightly Scan #4
+
+### Summary
+Web search (Gemini) rate-limited again; all searches via SearXNG fallback (localhost also blocked by web_fetch, used curl). ClawHub searched across 6 categories. Found strong recommendations for CLI tools that would directly boost AI agent capability.
+
+### 🔧 New CLI Tools Found (Not Yet Installed)
+
+**HIGH PRIORITY — Direct AI Agent Capability Boost:**
+
+| Tool | What | Why | Install |
+|------|------|-----|---------|
+| **ast-grep** | Structural code search/refactor via AST patterns | #1 recommended tool for AI coding agents — find/replace code structurally instead of fragile regex. Supports 20+ languages via tree-sitter | `brew install ast-grep` |
+| **difftastic** | Structural diff (AST-aware) | Reviews AI-generated changes by syntax nodes not lines — ignores whitespace/formatting noise | `brew install difftastic` |
+| **shellcheck** | Shell script linter | Safety net for generated shell commands — catches unquoted vars, POSIX issues, destructive patterns | `brew install shellcheck` |
+| **fzf** | Interactive fuzzy finder | Search files, processes, git commits interactively — fundamental productivity multiplier | `brew install fzf` |
+| **yq** | jq for YAML/JSON/TOML/XML | Programmatic YAML editing preserving comments — critical for Docker Compose, K8s, CI configs | `brew install yq` |
+| **atuin** | Shell history in SQLite + sync | Searchable history database with filters, encrypted sync between machines | `brew install atuin` |
+
+**MEDIUM PRIORITY — Nice Improvements:**
+
+| Tool | What | Why | Install |
+|------|------|-----|---------|
+| **sd** | Modern sed replacement (PCRE regex) | Sane regex syntax, string-literal mode — fewer escaping errors | `brew install sd` |
+| **scc** | Fast code line counter + complexity | Instant codebase shape overview — useful context for AI before diving in | `brew install scc` |
+| **btop** | System resource monitor (CPU/GPU/RAM/disk/net) | Full TUI resource dashboard, much better than `top` | `brew install btop` |
+| **hyperfine** | Command-line benchmarking | Statistical analysis of command performance, markdown export | `brew install hyperfine` |
+| **watchexec** | File watcher → command executor | Persistent feedback loops: rerun tests on save, rebuild on change | `brew install watchexec` |
+| **lazydocker** | Terminal UI for Docker | Quick container/image/volume management without remembering docker commands | `brew install lazydocker` |
+
+**Batch install command (all high priority):**
+```bash
+brew install ast-grep difftastic shellcheck fzf yq atuin
+```
+
+**Batch install command (all medium priority):**
+```bash
+brew install sd scc btop hyperfine watchexec lazydocker
+```
+
+### 🧩 ClawHub Skills Found
+
+| Skill | Category | Notes |
+|-------|----------|-------|
+| **firefly-iii** | Finance | Firefly III integration — open-source personal finance |
+| **system-resource-monitor** | Monitoring | System resource monitoring |
+| **web-monitor-pro** | Monitoring | Enhanced web monitoring (we have web-monitor already) |
+| **security-monitor** | Security | Security monitoring skill |
+| **mcp-hass** | Home Assistant | Home Assistant via MCP protocol |
+| **atlassian-mcp** | Productivity | Jira + Confluence MCP integration |
+| **clickup-mcp** | Productivity | ClickUp project management MCP |
+| **wordpress-mcp** | CMS | WordPress MCP integration |
+| **rescuetime** | Productivity | Time tracking integration |
+
+**Note:** Many ClawHub skills are community-contributed with varying quality. Only install from trusted/verified publishers. Cross-reference with malicious skills list before installing.
+
+### 🔗 MCP Server Ecosystem Update
+
+| MCP Server | What | Value | Effort |
+|------------|------|-------|--------|
+| **Xero MCP** (official) | Full Xero accounting access — 40+ tools for invoices, bank reconciliation, reporting | ⭐⭐⭐⭐⭐ | Medium — needs Xero OAuth app setup. Official repo: github.com/XeroAPI/xero-mcp-server |
+| **Home Assistant MCP** | Control smart home devices, automations, scenes via MCP | ⭐⭐⭐⭐ | Low — if HA is running |
+| **Atlassian MCP** | Jira issues + Confluence docs | ⭐⭐⭐ | Medium — needs Atlassian API token |
+| **ClickUp MCP** | Project management tasks/lists | ⭐⭐⭐ | Low |
+| **Composio** | 6,000+ app automations as MCP tools | ⭐⭐⭐⭐ | Medium — cloud service |
+
+**MCP Ecosystem status:** 1,200+ servers catalogued (mcp-awesome.com), 410+ ranked on GitHub. Enterprise adoption accelerating in 2026. Key trend: official vendor MCP servers (Xero, Atlassian, Microsoft) replacing community implementations.
+
+### 🐳 Docker Containers to Consider (Updated)
+
+| Container | What | Priority |
+|-----------|------|----------|
+| **Uptime Kuma** | Service uptime monitoring with alerts | HIGH — still not deployed, simple and effective |
+| **Frigate** | NVR with AI object detection | Medium — if cameras need upgrade from camsnap |
+| **Immich** | Self-hosted Google Photos replacement | Medium — photo management |
+
+### 📊 Recommendations (Ranked by Impact)
+
+1. **🔧 Install ast-grep + difftastic + shellcheck** — Direct boost to AI coding agent quality. ast-grep alone transforms code refactoring from fragile regex to structural matching. One `brew install` command.
+2. **🔧 Install fzf + yq + atuin** — Foundational productivity CLI tools missing from the setup. fzf especially is used everywhere.
+3. **📊 Deploy Uptime Kuma** (Docker) — Still not deployed from last scan. Simple monitoring for all services.
+4. **🔗 Set up Xero MCP server** — Official Xero MCP server exists with 40+ accounting tools. Was flagged as offline last scan — should be priority fix.
+5. **🛠️ Install lazydocker + btop** — Better container and system monitoring from terminal.
+6. **🔍 Evaluate Composio MCP** — 6,000+ app integrations as MCP tools could be transformative.
+
+### 🚨 Alert Status
+- No game-changing new discoveries requiring immediate alert
+- Xero MCP (flagged last scan) remains the highest-value integration to fix
+- CLI tools (ast-grep, difftastic, shellcheck) are the biggest easy wins — just need `brew install`
+
+### Notes
+- Gemini web_search quota exhausted (429) — all 4 initial searches failed, SearXNG curl fallback worked
+- web_fetch blocks localhost — had to use exec+curl for SearXNG
+- Previous scan recommendations (lazydocker, btop, Uptime Kuma) still not actioned
+- uv (Python package manager) already installed ✅
+- Next scan focus: GPU server specific tools, N8N workflow templates, Paperless-NGX optimizations
+
 ## 2026-03-17 — Nightly Scan #3
 
 ### Summary

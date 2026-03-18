@@ -1,5 +1,39 @@
 
 ---
+## 2026-03-17 07:45 UTC — Daily Monitor
+
+### Version
+- **Installed:** 2026.3.13 (61d171a)
+- **Latest on GitHub:** 2026.3.13-1 (recovery release, published 2026-03-14)
+  - The `-1` suffix is a GitHub/tag-only fix; npm version is still `2026.3.13` — **no update needed**
+  - Notable fixes in this release:
+    - `fix(telegram)`: thread media transport policy into SSRF — minor security hardening
+    - `fix(compaction)`: full-session token count for post-compaction sanity check
+    - `fix(session)`: preserve lastAccountId and lastThreadId on session reset
+    - `fix(agents)`: drop Anthropic thinking blocks on replay
+    - Discord gateway metadata fetch failure handling
+    - Delivery dedupe review follow-ups
+  - **Assessment:** We're current (npm 2026.3.13 = latest npm). The GitHub tag was just a recovery tag. No action required.
+
+### Documentation (clawddocs)
+- clawddocs skill not installed at expected path (`~/.openclaw/workspace/skills/clawddocs`). Scripts skipped.
+
+### ClawHub & Skills
+- `clawhub search new` returned news-aggregator skills only — nothing relevant
+- `clawhub updates` — no updates available for installed skills
+- Installed skills: `web-monitor 1.0.0`, `capability-evolver`, `playwright-scraper-skill`
+
+### Config Health (`openclaw doctor`)
+- **Loaded:** 10 skills | **Disabled:** 31 | **Errors:** 0
+- Telegram: ✅ ok | Slack: ✅ ok
+- Agents active: main, forge, scout, sentinel, venture, taskmaster
+- Heartbeat interval: 30m (main)
+- No warnings. Doctor suggests `openclaw doctor --fix` but nothing urgent.
+
+### Action Items
+- None. System healthy, version current.
+
+---
 ## 2026-03-15 07:45 UTC — Daily Monitor
 
 ### Version

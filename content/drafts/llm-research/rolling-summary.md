@@ -1,6 +1,6 @@
 # LLM Landscape — Rolling Summary
 
-> Last updated: 2026-03-17
+> Last updated: 2026-03-18
 
 ---
 
@@ -20,7 +20,8 @@
 
 | Model | Params (active) | Architecture | Context | License | Notes |
 |-------|-----------------|-------------|---------|---------|-------|
-| **Mistral Small 4** | 119B (6.5B) | MoE 128×4 | 256K | Apache 2.0 | **NEW** — Unified instruct/reasoning/code, multimodal, NVFP4 available |
+| **Mistral Small 4** | 119B (6.5B) | MoE 128×4 | 256K | Apache 2.0 | Unified instruct/reasoning/code, multimodal, NVFP4 available |
+| **Leanstral** | 119B (6.5B) | MoE (MS4 base) | 256K | Apache 2.0 | **NEW** — First open-source Lean 4 theorem proving agent |
 | NVIDIA Nemotron 3 Super | 120B (12B) | Mamba-2+MoE+Attn | 1M | NVIDIA Open | Agentic, long-context king |
 | Sarvam-105B | 105B (10.3B) | MoE+MLA | 128K | Apache 2.0 | Indian languages, strong reasoning |
 | MiniMax M2.5 | 229B (MoE) | Transformer | — | Open weights | SOTA SWE-Bench at fraction of cost |
@@ -60,16 +61,17 @@
 9. **Long-context pricing wars**: Anthropic eliminates long-context premium entirely (flat rate to 1M). OpenAI/Google still charge more above 200-272K tokens.
 10. **Speculation + quantization**: Mistral's eagle head for speculative decoding + NVFP4 checkpoints show inference optimization is as important as training.
 
-## Recent Moves (March 15–17)
+## Recent Moves (March 15–18)
 
-- **Mistral**: Released Mistral Small 4 (119B, 6.5B active) — unified instruct/reasoning/code, Apache 2.0, NVFP4 available
+- **Mistral**: Released Mistral Small 4 (119B, 6.5B active) — unified instruct/reasoning/code, Apache 2.0, NVFP4 available. Also released **Leanstral** (Lean 4 theorem prover) and **Forge** (enterprise fine-tuning platform).
+- **NVIDIA GTC 2026**: Announced **NemoClaw** — security/privacy wrapper for OpenClaw. Jensen calls OpenClaw "the OS for personal AI." Also teased Vera Ruben Space 1 (AI data centers in space).
+- **Google**: Expanding Gemini Personal Intelligence to free-tier users in Gemini app and Chrome.
+- **OpenAI**: Refocusing on coding + enterprise, deprioritizing Sora, Atlas browser, and hardware gadgets.
+- **Meta Avocado**: Delayed from March to May+. Performance reportedly lags rivals.
+- **Moltbook** (Meta-acquired): Updated ToS — users "solely responsible" for AI agent actions.
 - **MiroMind AI**: MiroThinker 1.7 (30B/235B) — deep research agents, SOTA BrowseComp-ZH
-- **Meta**: Signed $27B Nebius deal for AI cloud infra (Vera Rubin chips), 5-year term
-- **Alibaba**: Restructuring AI under "Token Hub" (ATH), enterprise AI agent coming this week
-- **OpenAI**: Wellbeing advisors voted unanimously against "Adult Mode" / erotic features
 - **Hume AI**: TADA 3B-ml multilingual update
 - **IBM**: Granite 4.0-1b-speech iterating (Japanese ASR, keyword biasing)
-- **China semiconductor**: Hua Hong developing 7nm AI chip fab with Huawei collaboration
 
 ## Models to Watch
 
@@ -82,6 +84,8 @@
 - **Claude Opus 4.6** — Still the benchmark. 1M context at flat rate — hard to beat for complex work.
 - **TADA (Hume AI)** — Local TTS game-changer. MIT license, now multilingual.
 - **Alibaba enterprise agent** — Watch for this week's announcement. Qwen-based, Taobao/Alipay integrated.
+- **NemoClaw** — NVIDIA's security wrapper for OpenClaw. Directly relevant to our setup.
+- **Meta Avocado** — Delayed to May+. If open-weight, could be significant.
 
 ## Our Hardware Fit (Mac mini + 5× RTX 3090 24GB)
 

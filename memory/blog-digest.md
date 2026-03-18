@@ -96,3 +96,82 @@ Deep dive into kernel-level anti-cheat mechanisms — interesting from a securit
 - The 49MB web page (web bloat audit, interesting but low priority)
 - Cannabinoids & Alzheimer's (2016 research, surfaced as curiosity)
 
+
+---
+
+## 2026-03-17 — Daily Blog Digest
+
+### 🤖 AI/ML
+
+**⚠️ Mistral Small 4 Released** (Simon Willison / Mistral)
+Huge new open-source model: 119B parameters (MoE, 6B active), Apache 2.0 licensed. Combines reasoning (Magistral), multimodal (Pixtral), and agentic coding (Devstral) in one model. 242GB on HuggingFace. Supports `reasoning_effort` parameter.
+
+**Codex Subagents Now GA** (Simon Willison / OpenAI)
+OpenAI Codex subagents out of preview and into general availability. Works similarly to Claude Code's implementation — default agents (explorer, worker, default) plus custom TOML-defined agents in `~/.codex/agents/`. Supports custom models per agent.
+
+**Leanstral: Open-Source Agent for Formal Proof Engineering** (Mistral / HN)
+Mistral releases Leanstral, a coding agent built on Lean 4 for formal verification. Aims to reduce human review bottleneck in high-stakes code by formally proving implementations against specs. 6B active params, open-source.
+
+**Coding Agents for Data Analysis** (Simon Willison)
+Simon's NICAR 2026 workshop handout — practical guide on using Claude Code and Codex for data journalism (DB queries, data cleaning, visualisations, scraping). Good reference material.
+
+**Anthropic Alignment Quote** (Simon Willison)
+Anthropic alignment-science team member on the blackmail exercise: the point was to create visceral, policy-relevant results demonstrating misalignment risk. Referenced in a New Yorker piece on the Pentagon/Anthropic relationship.
+
+**Language Model Teams as Distributed Systems** (HN / arXiv)
+Academic paper modelling LLM development teams as distributed systems — potentially interesting lens on coordination and failure modes in AI development orgs.
+
+---
+
+### 🔐 Security
+
+**⚠️ CISA KEV: Wing FTP CVE-2025-47813 Actively Exploited**
+CVSS 4.3 — info disclosure leaking server install path via long UID cookie. Affects Wing FTP ≤7.4.3, patched in 7.4.4. CISA confirmed active exploitation. Patch if you run Wing FTP.
+
+**⚠️ GlassWorm Supply Chain Attack: GitHub Tokens → Python Repos**
+Stolen GitHub tokens used to force-push malware into hundreds of Python repos (Django apps, ML code, Streamlit dashboards, PyPI packages). Malware appended to `setup.py`, `main.py`, `app.py`. Anyone running `pip install` from a compromised repo is at risk. Injections started ~March 8. Review any recently installed Python packages.
+
+**⚠️ MacSync macOS Infostealer via ClickFix + Fake AI Tool Installers**
+Three ClickFix campaigns distributing MacSync infostealer on macOS via fake AI tool installers. Social-engineering based (user runs copied terminal commands). Actively targeting macOS users — be cautious with any "install this AI tool" prompts.
+
+**Weekly Recap: Chrome 0-Days, Router Botnets, AWS Breach, Rogue AI Agents**
+Google patched 2 actively exploited Chrome 0-days: CVE-2026-3909 (OOB write in Skia) and a second high-severity bug. Also covered: router botnets, AWS breach, rogue AI agent activity. Busy week.
+
+**DRILLAPP Backdoor Targeting Ukraine via Microsoft Edge Debugging**
+State-level espionage tool abusing Edge's remote debugging protocol for stealth. Geopolitically motivated, likely not broadly relevant but notable technique.
+
+**Why Security Validation Is Becoming Agentic** (The Hacker News — sponsored/opinion)
+Industry piece on agentic security validation — more signal than ad, worth a skim if evaluating SecOps tooling.
+
+---
+
+### 🛠️ OpenClaw / Tooling
+
+**OpenAI: Why Codex Security Doesn't Include a SAST Report** (OpenAI)
+Interesting rationale piece — OpenAI explains their security posture decision for Codex, presumably relevant to how we think about agentic coding tool security.
+
+**Show HN: Claude Code Skills for Godot Game Building** (HN)
+Someone built Claude Code skills that generate complete Godot games (godogen). Niche but interesting example of Claude Code skill composition.
+
+**Voygr (YC W26): Maps API for AI Agents** (HN)
+New maps API specifically designed for agents and AI apps — potentially useful for location-aware agent workflows.
+
+---
+
+### 💻 General Tech
+
+**Jepsen: MariaDB Galera Cluster 12.1.2** (HN)
+New Jepsen distributed systems analysis. If you run MariaDB Galera, worth reading for consistency/correctness findings.
+
+**"Every Layer of Review Makes You 10x Slower"** (HN / apenwarr)
+Engineering culture post on review overhead — resonant given the agentic AI velocity context.
+
+**AirPods Max 2** (HN / Apple)
+Apple released AirPods Max 2. Incremental upgrade.
+
+**SEC Preparing to Scrap Quarterly Reporting Requirement** (HN / Reuters)
+Significant regulatory change — US SEC may drop mandatory quarterly earnings reports. Big deal for public company finance/IR.
+
+**Meta's Renewed Commitment to jemalloc** (HN)
+Meta doubling down on jemalloc memory allocator for data infrastructure. Interesting for systems/infra folks.
+

@@ -1,6 +1,6 @@
 # WORKQUEUE.md — Active Task Tracker
 
-_Last updated: 2026-03-16 15:19_
+_Last updated: 2026-03-17 17:20_
 
 ## ✅ Completed
 
@@ -39,10 +39,11 @@ _Last updated: 2026-03-16 15:19_
 
 _(none — all remaining tasks are manual or blocked)_
 
-### Previous Cycle Results (2026-03-16 15:19)
+### Previous Cycle Results (2026-03-17 17:20)
 - No sub-agents spawned — nothing automatable remaining
-- ⛔ Freqtrade: still blocked (needs human decision on strategy relaxation)
+- ⛔ Freqtrade: still crashed (Exited 255, ~3 days). Needs human decision on strategy relaxation before restart.
 - ⛔ Vercel: still blocked (needs manual dashboard fix)
+- ⛔ GPU server: shut down since Mar 16 (no WoL) — blocks HMRC deploy & LoRA eval
 - All 🔲 backlog items require physical/manual human action
 
 ## 🔲 Backlog
