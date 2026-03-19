@@ -16,4 +16,5 @@
 
 ## 2026-03-17
 - **iCloud cleanup failure is now a 3-day streak** (Mar 16×2, Mar 17). Pattern promoted to recurring. Timeout wrappers are non-negotiable for iCloud FS ops.
-- **Improvement pipeline has zero throughput**: 7 proposals, 0 implemented. Process needs either auto-implement for low-risk items or explicit user review cadence.
+- **Improvement pipeline has zero throughput**: 8 proposals, 0 implemented. Process needs either auto-implement for low-risk items or explicit user review cadence. (4th time noted — promoted to LESSONS.md candidate)
+- **iCloud cleanup failure is now 4 days**: Mar 16×2, Mar 17, Mar 18. Timeout wrappers still not applied because proposal pipeline is blocked.

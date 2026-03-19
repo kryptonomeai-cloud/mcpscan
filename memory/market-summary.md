@@ -44,3 +44,29 @@
 - COIN:  $203.32 ▲+5.22% 🚀 _(crypto-adjacent: strong BTC sentiment)_
 
 **Notes:** Broad market mildly positive. Crypto-adjacent COIN leads tech names with >5% gain. AI names (NVDA/AMD) subdued. META underperforming (-1.68%). No Finnhub CLI available — data via Yahoo Finance fallback. No earnings data retrieved this session.
+
+---
+## 📈 Market Summary — Wednesday, March 18, 2026
+
+**Indices (pre-market / prior close basis)**
+- S&P 500: 6,716 (+1.27%)
+- NASDAQ: 22,479 (+1.69%)
+- Dow Jones: 46,993 (+0.93%)
+
+**Tech/AI Stocks**
+- NVDA: $181.93 (+0.93%) — within 52wk range $86–$212
+- AAPL: $254.23 (+1.64%)
+- MSFT: $399.41 (+0.98%)
+- GOOG: $309.41 (+2.64%) ⬆️ notable
+- TSLA: $399.27 (+2.06%) ⬆️ notable
+- AMD: $196.31 (+1.51%)
+- META: $622.66 (+1.46%)
+- COIN: $210.23 (+7.52%) 🚀 big mover
+
+**Notes**
+- Broad market rally day; tech broadly up
+- COIN biggest mover (+7.5%), crypto-adjacent interest high
+- GOOG and TSLA both >2% — worth watching
+- SPY/VOO were up on 3/17 per MarketWatch news snippets
+
+_Data sourced via Yahoo Finance API. Finnhub CLI not installed; web fallback used._

@@ -1,5 +1,76 @@
 # Tools & Skills Research Log
 
+## 2026-03-19 — Nightly Scan #5
+
+### Summary
+Gemini web_search fully rate-limited (429 on all 4 queries). SearXNG fallback via curl worked. ClawHub searched across 8 categories. Found several new tools not previously flagged.
+
+### 🆕 New Discoveries (Not in Previous Scans)
+
+| Tool | What | Why Useful | Install |
+|------|------|-----------|---------|
+| **Dockhand** | All-in-one Docker management TUI (replaces Portainer, lazydocker, ctop, etc.) | Exploding in popularity March 2026 — consolidates 7 Docker tools into one. Better than lazydocker for our multi-host setup | Check: `brew install dockhand` or Docker image |
+| **Beads** (Steve Yegge) | Distributed graph issue tracker for AI coding agents | CLI-first project/task management designed for AI agents. 225k+ lines generated without human review. Git-friendly, Dolt-powered | `npm install -g beads` or GitHub: steveyegge/beads |
+| **OpenCode** | Open-source AI coding agent with LSP support | Alternative to Claude Code/Codex — has built-in LSP for language-aware completions. Growing fast in 2026 | See opencode.ai |
+| **Gemini CLI** | Google's open-source terminal AI agent | Built-in Google Search grounding, free tier generous. Good for second-opinion coding tasks | `npm install -g @google/gemini-cli` |
+| **Plane** | Self-hosted Jira alternative with AI | Launched self-hosted AI on March 1, 2026. BYOK model support. Could replace any project tracking needs | Docker compose |
+| **Composio + N8N** | Social media automation via MCP + N8N | Composio MCP server integrates with our existing N8N for social media automation workflows | npx @composio/mcp@latest |
+| **Coupler.io Xero MCP** | AI data analyst for Xero accounting | Alternative to official Xero MCP — positions itself as "personal AI data analyst for Xero" | Cloud service, likely API key needed |
+
+### 📋 Status of Previous Recommendations (Still Not Actioned)
+All high-priority CLI tools from scans #3-4 remain uninstalled:
+- ❌ ast-grep, difftastic, shellcheck, fzf, yq, atuin — none installed
+- ❌ sd, scc, btop, lazydocker — none installed  
+- ❌ Uptime Kuma — not deployed
+- ❌ Xero MCP — still not set up
+
+**Quick-win batch install (unchanged):**
+```bash
+brew install ast-grep difftastic shellcheck fzf yq atuin sd scc btop lazydocker
+```
+
+### 🧩 ClawHub Skills Update
+New categories searched: paperless, n8n, homeassistant, calendar, security, notification, smart-home
+
+| Skill | Category | Notes |
+|-------|----------|-------|
+| **paperless-ngx** | Document Mgmt | ClawHub skill for Paperless-NGX — we run this in Docker already |
+| **paperless-ngx-tools** | Document Mgmt | Additional tooling for Paperless |
+| **n8n** | Automation | N8N workflow skill — we run N8N in Docker |
+| **homeassistant-n8n-agent** | Smart Home | HA + N8N combined agent skill |
+| **macos-calendar** | Calendar | macOS Calendar integration (we have gog for Google Cal) |
+| **firefly-iii** | Finance | Firefly III personal finance (seen before) |
+| **security-auditor** | Security | Security auditing skill |
+
+### 🔗 MCP Server Updates
+- **Composio** now has N8N integration guide — could connect our existing N8N to MCP ecosystem
+- **Xero MCP** has two options: official XeroAPI/xero-mcp-server (40+ tools) and Coupler.io (data analyst focus)
+- **QuickBooks MCP** — new YouTube guide from Jan 2026 on Claude + QuickBooks MCP for custom AI accountant
+- Ecosystem now at 1,200+ catalogued servers
+
+### 📊 Recommendations (Ranked by Impact — Updated)
+
+1. **🔧 brew install the CLI tools** — 5 scans in, still not installed. One command, massive capability boost. `brew install ast-grep difftastic shellcheck fzf yq atuin`
+2. **🐳 Try Dockhand** — if it replaces 7 Docker tools as claimed, better than lazydocker recommendation
+3. **🔗 Set up Xero MCP** — official server has 40+ accounting tools. Highest-value MCP integration
+4. **📊 Deploy Uptime Kuma** — simple service monitoring, still the easiest win for observability
+5. **🤖 Evaluate Beads** — if AI coding agents are used frequently, Beads could improve project coherence
+6. **🔄 Composio + N8N** — bridges our existing N8N to 6,000+ app integrations via MCP
+
+### 🚨 Alert Status
+- **No alerts sent** — no game-changing breakthrough requiring immediate notification
+- Dockhand is interesting but needs validation before alerting
+- Recurring theme: the CLI tools batch install is the single biggest easy win sitting idle
+
+### Notes
+- Gemini quota exhausted again — consistent pattern, may need rate limit management or alternative search provider
+- SearXNG fallback reliable via exec+curl (web_fetch blocks localhost)
+- Beads repo had activity 21 hours ago — actively maintained
+- NanoClaw (Docker partnership announced March 13, 2026) — watch for secure agent container tooling
+- Next scan focus: Dockhand validation, GPU server tools (nvtop, nvidia-smi alternatives), Paperless-NGX ClawHub skill evaluation
+
+---
+
 ## 2026-03-18 — Nightly Scan #4
 
 ### Summary

@@ -87,3 +87,32 @@
 - Verify macOS Sequoia 15.4 update applied
 - Investigate port 2121 if not intentional
 - rkhunter on GPU timed out — run manually if needed
+
+## 2026-03-18 05:00 UTC — Daily Sweep
+
+### CrowdSec
+- Container: healthy, CAPI connected
+- Machines: localhost ✔️, gpu-server ✔️, nas-zimaos ⚠️ (86h+ stale — worsening)
+- NAS bouncers at 185.15.59.224 stale since Mar 14
+- caddy-bouncer@172.23.0.1 stale since Mar 12
+- No alerts, no active decisions
+
+### Infrastructure
+- Mac firewall: ✅ enabled
+- GPU server: fail2ban sshd clean (0 banned), UFW properly restrictive
+- rkhunter: timed out again (needs manual run)
+- Docker containers: all healthy (freqtrade, termix, crowdsec, searxng, beszel, vaultwarden, n8n, shell-executor)
+
+### Listening Ports (Mac mini)
+- Expected: ollama(11434), node(38222-5,7070,7080), docker(5678,8080,8090,8222,8888,9756,8081,8880), beszel(45876), lume(7777), ControlCenter(5000,7000)
+- ⚠️ Port 2121 (Python) still open — flagged last sweep, unresolved
+- Port 8200/8111/5111 (Python, localhost) — likely dev servers
+
+### GPU Server UFW
+- Properly locked: Ollama LAN-only, SSH Mac+Tailscale only, ComfyUI/TRELLIS/Beszel Mac-only, SMTP/VNC blocked
+
+### Tool Updates
+- No outdated security tools detected via brew
+
+### CVE Check
+- web_search rate-limited, SearXNG blocked — CVE check skipped this run

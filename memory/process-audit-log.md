@@ -123,3 +123,26 @@
 ### Listening Ports: ✅ No new ports flagged
 ### Processes: ✅ All within known process list
 
+
+## 2026-03-18 09:00 UTC — Process Security Audit
+
+**Result: CLEAN — no anomalies**
+
+- Listening ports: none captured (script returned empty section — may indicate lsof filter issue or no externally-bound ports at time of run)
+- LaunchAgents (user): 21/21 match baseline ✓
+- LaunchAgents (system): 2/2 match baseline ✓
+- LaunchDaemons: 8/8 match baseline ✓
+- Docker containers: 8/8 match baseline ✓ (freqtrade up 7h, all others up 3 days)
+- User processes: all known; ShipIt (Claude.app updater) noted but benign
+
+
+## 2026-03-18 21:00 UTC — Process Security Audit (Evening)
+
+**Result: CLEAN — no anomalies**
+
+- Listening ports: none captured (consistent with prior runs — lsof filter or no externally-bound ports)
+- LaunchAgents (user): 21/21 match baseline ✓
+- LaunchAgents (system): 2/2 match baseline ✓
+- LaunchDaemons: 8/8 match baseline ✓
+- Docker containers: 8/8 match baseline ✓ (freqtrade up 19h, all others up 3 days)
+- User processes: all known; `claude` PID 35628 is active Claude Code session (expected); ShipIt (Claude.app updater) still present but benign

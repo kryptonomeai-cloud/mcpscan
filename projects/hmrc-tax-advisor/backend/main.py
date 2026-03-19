@@ -1,6 +1,7 @@
 """HMRC Tax Advisor — FastAPI backend wrapping RAG pipeline."""
 from __future__ import annotations
 
+import os
 import re
 import time
 from typing import Optional
@@ -11,8 +12,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 # ── Config ──────────────────────────────────────────────────────────
-OLLAMA_URL = "http://localhost:11434"
-QDRANT_URL = "http://192.168.0.18:6333"
+OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434")
+QDRANT_URL = os.environ.get("QDRANT_URL", "http://localhost:6333")
 COLLECTION = "hmrc-manuals"
 EMBED_MODEL = "bge-m3"
 LLM_MODEL = "qwen3:32b"

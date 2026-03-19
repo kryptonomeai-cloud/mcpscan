@@ -112,3 +112,34 @@
 - clawddocs skill missing — cannot track doc changes until installed
 - Consider: `clawhub install clawddocs` if doc monitoring is desired
 
+
+## 2026-03-18 07:45 UTC — Daily Monitor
+
+### Version Check
+- **Installed:** OpenClaw 2026.3.13 (61d171a)
+- **Latest on GitHub:** v2026.3.13-1 (recovery release, published 14 Mar)
+  - This is a tag/GitHub-only suffix; npm version remains `2026.3.13` — **no update needed**
+  - Release notes: bug fix release with multiple fixes across compaction, Telegram SSRF, Discord gateway, session reset, Android UI, iOS onboarding, and agent compatibility
+
+### Documentation
+- `~/.openclaw/workspace/skills/clawddocs` directory not found — clawddocs skill not installed locally
+
+### ClawHub & Skills
+- **clawhub CLI:** v0.7.0
+- **Installed workspace skills:** capability-evolver, playwright-scraper-skill, web-monitor
+- `clawhub list` shows only `web-monitor 1.0.0` (working dir context)
+- `clawhub updates` / `clawhub check` subcommands not supported in this CLI version
+- Notable new skills on ClawHub search (top results): cctv-news-fetcher, news aggregators (not security-relevant)
+
+### Config Health (`openclaw doctor`)
+- Telegram: ✅ ok
+- Slack: ✅ ok
+- Loaded: 10 plugins, Disabled: 31, Errors: 0
+- Agents: main, forge, scout, sentinel, venture, taskmaster
+- No warnings or errors — clean bill of health
+
+### Action Items
+- None urgent. Current version is effectively up to date (2026.3.13 = latest npm)
+- Noteworthy fix in latest release: `fix(telegram): thread media transport policy into SSRF` — security-relevant but already included in installed version
+- clawddocs skill missing locally (not installed) — no impact unless docs tracking needed
+

@@ -175,3 +175,109 @@ Significant regulatory change — US SEC may drop mandatory quarterly earnings r
 **Meta's Renewed Commitment to jemalloc** (HN)
 Meta doubling down on jemalloc memory allocator for data infrastructure. Interesting for systems/infra folks.
 
+
+## 2026-03-18 — Wednesday Morning Scan (07:15 UTC)
+
+33 new articles found across: Ars Technica AI, Hacker News, OpenAI, Simon Willison, The Hacker News
+
+---
+
+### 🚨 URGENT / FLAG
+
+**[CVE-2026-32746] Critical Telnetd RCE — Unauthenticated Root via Port 23**
+Unpatched flaw in telnetd allows unauthenticated root code execution. If anything on your network exposes port 23, kill it now.
+→ https://thehackernews.com/2026/03/critical-telnetd-flaw-cve-2026-32746.html
+
+**Apple WebKit Same-Origin Policy Bypass (iOS & macOS) — Patched**
+Apple pushed a fix for a WebKit vuln that let attackers bypass SOP; update iOS/macOS promptly.
+→ https://thehackernews.com/2026/03/apple-fixes-webkit-vulnerability.html
+
+---
+
+### 🤖 AI / ML
+
+**OpenAI releases GPT-5.4 mini and nano**
+Two new lightweight models — nano is extremely cheap (Simon Willison clocks ~76,000 image descriptions for $52). Good for high-volume, cost-sensitive pipelines.
+→ https://openai.com/index/introducing-gpt-5-4-mini-and-nano
+→ Simon's take: https://simonwillison.net/2026/Mar/17/mini-and-nano/
+
+**Mistral AI Releases Forge**
+Mistral's new product launch — details TBC, but worth watching given their cadence.
+→ https://mistral.ai/news/forge
+
+**AI Flaws in Amazon Bedrock, LangSmith, SGLang — Data Exfiltration & RCE**
+Security researchers found exploitable flaws across three major AI infra platforms. Relevant if using any of these in production.
+→ https://thehackernews.com/2026/03/ai-flaws-in-amazon-bedrock-langsmith.html
+
+**"Why AI systems don't learn" — Arxiv paper on autonomous learning from cognitive science**
+Academic take on why current AI lacks genuine autonomous learning; useful context for AI capability debates.
+→ https://arxiv.org/abs/2603.15381
+
+**Unsloth Studio**
+Unsloth launched a Studio UI — model fine-tuning getting more accessible.
+→ https://unsloth.ai/docs/new/studio
+
+**Simon Willison: Subagents (Agentic Engineering Patterns)**
+Simon's guide on subagent patterns — directly relevant to OpenClaw's own agentic architecture.
+→ https://simonwillison.net/guides/agentic-engineering-patterns/subagents/
+
+**Launch an autonomous AI agent with sandboxed execution in 2 lines of code**
+onprem library demo — local agent with sandbox; lightweight alternative to heavier frameworks.
+→ https://amaiya.github.io/onprem/examples_agent.html
+
+**Get Shit Done: meta-prompting + spec-driven dev system**
+GitHub project combining context engineering and spec-driven coding — practical prompting framework.
+→ https://github.com/gsd-build/get-shit-done
+
+**CISOs securing AI with yesterday's tools — study**
+Survey finds security teams are behind on AI-specific threat models and tooling. No surprise, but worth tracking.
+→ https://thehackernews.com/2026/03/ai-is-everywhere-but-cisos-are-still.html
+
+---
+
+### 🔒 Security
+
+**LeakNet Ransomware — ClickFix via hacked sites, Deno in-memory loader**
+Novel ransomware chain: compromised sites deliver ClickFix social engineering → in-memory Deno payload. Stealthy and evolving.
+→ https://thehackernews.com/2026/03/leaknet-ransomware-uses-clickfix-via.html
+
+**Konni APT — EndRAT via phishing, KakaoTalk for C2 propagation**
+North Korea-linked Konni group using KakaoTalk as malware propagation channel alongside phishing.
+→ https://thehackernews.com/2026/03/konni-deploys-endrat-through-spear.html
+
+**Microsoft's Xbox One finally hacked via voltage glitching**
+'Bliss' hacker broke the "unhackable" 2013 console — voltage glitching allows unsigned code at every level. Impressive exploit, low real-world impact.
+→ https://www.tomshardware.com/video-games/console-gaming/microsofts-unhackable-xbox-one-has-been-hacked-by-bliss...
+
+**SSH has no Host header**
+Technical deep-dive on SSH's lack of SNI-like host negotiation — relevant for multi-tenant SSH proxying setups.
+→ https://blog.exe.dev/ssh-host-header
+
+---
+
+### 🌐 General Tech
+
+**Switzerland built an alternative to BGP**
+SCION-based routing deployed nationally — a real-world BGP alternative with path control and fault isolation.
+→ https://www.theregister.com/2026/03/17/switzerland_bgp_alternative/
+
+**Python 3.15 JIT back on track**
+JIT compiler work for CPython is progressing again after earlier setbacks — relevant for performance-sensitive Python.
+→ https://fidget-spinner.github.io/posts/jit-on-track.html
+
+**Edge.js: Node.js apps inside a WebAssembly sandbox (Wasmer)**
+Run Node apps in WASM for sandboxed, portable execution — interesting for safe plugin/agent runtimes.
+→ https://wasmer.io/posts/edgejs-safe-nodejs-using-wasm-sandbox
+
+**Sub-millisecond VM sandboxes via CoW memory forking (zeroboot)**
+Show HN project achieving <1ms sandbox spin-up using copy-on-write forking. Potentially very useful for agent sandbox infra.
+→ https://github.com/adammiribyan/zeroboot
+
+**Robotocore — Digital Twin of AWS**
+Open-source AWS simulation environment for testing cloud architectures locally. Interesting for dev/test workflows.
+→ https://github.com/robotocore/robotocore
+
+---
+
+_Skipped: YC job postings (2), Kita Launch HN, "A Decade of Slug" (retro gaming), product design opinion piece, "Have a Fucking Website" essay, OpenAI compensation tool post, Ars Samsung S26 review_
+

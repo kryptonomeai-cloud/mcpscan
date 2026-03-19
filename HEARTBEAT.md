@@ -1,5 +1,12 @@
 # HEARTBEAT.md
 
-# Keep this file empty (or with only comments) to skip heartbeat API calls.
+## Priority: Volt Energy App Build
+- Check `projects/energy-app/` for build progress
+- If no active sub-agent is building Volt, spawn one to continue Phase 1
+- Phase 1 tasks: Expo scaffold, Supabase setup, Octopus API client, Dashboard UI
+- Reference: `projects/energy-app/PROJECT_PLAN.md`
+- Max 2 sub-agents at a time for Volt (one build, one research)
 
-# Add tasks below when you want the agent to check something periodically.
+## Freqtrade Monitor
+- Check if freqtrade container is running and has made any trades
+- Report trade activity only if there are new trades
