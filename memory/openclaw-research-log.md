@@ -143,3 +143,39 @@
 - Noteworthy fix in latest release: `fix(telegram): thread media transport policy into SSRF` — security-relevant but already included in installed version
 - clawddocs skill missing locally (not installed) — no impact unless docs tracking needed
 
+
+## 2026-03-19 07:45 UTC — Daily Monitor Run
+
+### Version Check
+- **Installed:** 2026.3.13 (61d171a)
+- **Latest on GitHub:** 2026.3.13 / 2026.3.13-1 (recovery tag, same npm version)
+- **Status: UP TO DATE** ✅
+- Latest release (2026.3.13) is a recovery release for a broken tag. No new version.
+- Notable fixes in current version:
+  - fix(compaction): full-session token count for post-compaction sanity check
+  - fix(telegram): thread media transport policy into SSRF (security-related)
+  - fix(session): preserve lastAccountId and lastThreadId on session reset
+  - fix(agents): drop Anthropic thinking blocks on replay
+  - feat(android): chat settings UI redesign
+
+### Documentation / clawddocs
+- clawddocs skill NOT installed at expected path (~/.openclaw/workspace/skills/clawddocs)
+- Skipped doc checks
+
+### ClawHub & Skills
+- clawhub search returned news-aggregator type skills (no OpenClaw-core skills in top results)
+- No critical security-relevant skill updates identified
+
+### Config Health (openclaw doctor)
+- Loaded: 10 plugins/integrations
+- Disabled: 31
+- Errors: 0 ✅
+- Telegram: ok | Slack: ok
+- Agents active: main, forge, scout, sentinel, venture, taskmaster
+- Sessions store healthy (143 entries)
+- Suggestion: "openclaw doctor --fix" available (non-critical)
+
+### Action Items
+- None urgent. System healthy.
+- clawddocs skill missing — if doc monitoring is desired, reinstall from ClawHub.
+

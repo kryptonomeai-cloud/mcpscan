@@ -14,3 +14,6 @@
 
 ## 2026-03-17
 - **iCloud backup cleanup failed again** (04:00): 3rd consecutive day. `find -mtime +7` on iCloud path hung. Backup export itself succeeded but stale files accumulating.
+
+## 2026-03-19
+- **Daily MiniClaw Backup cron timeout** (03:00): 3 consecutive failures. Hangs for ~20 min then times out. Both sonnet and opus fallback models timed out. Root cause: iCloud `bird` daemon hang cascading into backup script. Same pattern as paperless cleanup failures.

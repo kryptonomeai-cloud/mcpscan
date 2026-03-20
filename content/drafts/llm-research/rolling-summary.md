@@ -1,6 +1,6 @@
 # LLM Landscape — Rolling Summary
 
-> Last updated: 2026-03-19
+> Last updated: 2026-03-20
 
 ---
 
@@ -71,22 +71,26 @@
 10. **Hardware race**: NVIDIA Vera Rubin (10× perf/watt), Groq 3 LPU (35× tokens/watt), Feynman/Kyber previewed. $1T projected revenue.
 11. **Anonymous model testing**: Hunter Alpha on OpenRouter shows labs may be doing stealth testing in production. DeepSeek V4 rumored April.
 
-## Recent Moves (March 17–19)
+## Recent Moves (March 17–20)
 
-- **OpenAI**: Released **GPT-5.4 mini** ($0.75/$4.50, 400K context) and **GPT-5.4 nano** ($0.20/$1.25, cheapest frontier). Both available in API. Mini also in Codex/ChatGPT.
-- **NVIDIA GTC 2026** (March 16-19): Vera Rubin platform, Groq 3 LPU, Feynman architecture, Kyber rack prototype, DLSS 5, NemoClaw for OpenClaw. $1T revenue projection.
-- **Google Gemini API** (March 18): Built-in Tools + Function Calling combination feature. Cost controls in AI Studio.
+- **OpenAI**: Released **GPT-5.4 mini** ($0.75/$4.50, 400K context) and **GPT-5.4 nano** ($0.20/$1.25, cheapest frontier). **GPT-5.3 Instant** rolling out as new default ChatGPT model (↓27% hallucination on web search). ChatGPT model picker redesigned into Instant/Thinking/Pro tiers.
+- **NVIDIA GTC 2026** (March 16-19): Vera Rubin platform, Groq 3 LPU, Feynman architecture, Kyber rack prototype, DLSS 5, NemoClaw for OpenClaw. $1T revenue projection. **SPEED-Bench** published (Mar 19) — unified speculative decoding benchmark.
+- **Google**: Gemini API Built-in Tools + Function Calling (March 18). **Stitch design platform live** — AI vibe design tool. **Vibe coding in AI Studio** with Gemini 3.1 Pro.
 - **Anthropic** (March 17): Persistent Cowork agent thread for Pro/Max. 2× usage promo continues through March 28.
+- **H Company × NVIDIA**: **Holotron-12B** released (Mar 17) — open-weight 12B computer-use agent with hybrid SSM, 2× throughput on single H100.
 - **Hunter Alpha mystery** (March 11→): 1T-param anonymous model on OpenRouter, suspected DeepSeek V4. 160B+ tokens processed. Active speculation.
-- **Meta Avocado**: Still delayed to May+. Performance concerns.
-- **Mistral**: Released Mistral Small 4 (March 15), Leanstral, Forge.
+- **Meta Avocado**: Still delayed to May+. Performance concerns. **Meta AI agent caused Sev-1 security breach** — autonomous forum post → 2hr unauthorized data access.
+- **Mistral**: Released Mistral Small 4 (March 15), Leanstral, **Forge** (Mar 17) — enterprise custom model training on proprietary data.
 - **MiroMind AI**: MiroThinker 1.7 (30B/235B) deep research agents.
+- **Hugging Face**: State of Open Source Spring 2026 report — 13M users, 2M+ models. GGML/llama.cpp joined HF. Storage Buckets launched.
 
 ## Models to Watch
 
 - **Hunter Alpha / DeepSeek V4** — If confirmed open-weight, 1T model with 1M context is transformative. April timeline rumored.
-- **GPT-5.4 nano** — NEW. Cheapest frontier model. Test for lightweight OpenClaw subagent tasks immediately.
+- **GPT-5.4 nano** — Cheapest frontier model. Test for lightweight OpenClaw subagent tasks immediately.
+- **Holotron-12B** — NEW. Open-weight 12B computer-use agent with SSM. Could run on 1-2× 3090. Test for local CUA.
 - **Mistral Small 4 NVFP4** — 6.5B active, Apache 2.0, might fit across 5×3090. Top priority for local testing.
+- **Mistral Forge** — Enterprise custom model training. Watch for pricing/availability details.
 - **MiniMax M2.5** — Game-changing for cost-sensitive agentic work.
 - **NemoClaw** — NVIDIA security wrapper for OpenClaw. Directly relevant.
 - **Qwen3.5 ecosystem** — The "base model" for community. Rapid iteration continues.
@@ -107,6 +111,7 @@
 
 **Should test:**
 - **Mistral Small 4 NVFP4** — 6.5B active, needs full model loaded. NVFP4 checkpoint may fit across 5×3090 (120GB total). HIGH PRIORITY.
+- **Holotron-12B** — 12B SSM hybrid, efficient computer-use agent. Should fit on 1-2× 3090.
 
 **Could run with effort:**
 - Sarvam-105B (10.3B active, aggressive quantization across 5×3090)

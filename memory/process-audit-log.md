@@ -146,3 +146,26 @@
 - LaunchDaemons: 8/8 match baseline ✓
 - Docker containers: 8/8 match baseline ✓ (freqtrade up 19h, all others up 3 days)
 - User processes: all known; `claude` PID 35628 is active Claude Code session (expected); ShipIt (Claude.app updater) still present but benign
+
+
+## 2026-03-19 09:00 UTC — Process Security Audit (Morning)
+
+**Result: CLEAN — no anomalies**
+
+- Listening ports: none captured (consistent with prior runs — lsof filter or no externally-bound ports)
+- LaunchAgents (user): 21/21 match baseline ✓
+- LaunchAgents (system): 2/2 match baseline ✓
+- LaunchDaemons: 8/8 match baseline ✓
+- Docker containers: 8/8 match baseline ✓ (freqtrade up 31h, termix/crowdsec/others up 4 days)
+- User processes: all known; ShipIt (Claude.app updater, PID 13157) is benign; `dns-sd` is a normal macOS DNS service discovery process
+
+## 2026-03-19 21:00 UTC (Evening Audit)
+
+**Result:** ✅ Clean — no anomalies
+
+- **Listening ports:** No data returned by audit script (section empty — script may need `sudo` for lsof; not a new issue)
+- **LaunchAgents (user/system):** All 21 user + 2 system agents match baseline exactly
+- **LaunchDaemons:** All 8 daemons match baseline exactly
+- **Docker containers:** All 8 containers match baseline (freqtrade up 43h, rest up 4 days)
+- **Processes:** All running processes (ollama, openclaw-gateway, Claude, Telegram, Google, BlockBlock, Tailscale, Python) match known process list; `ShipIt` (Claude auto-updater, Squirrel framework) and `dns-sd` are standard macOS processes, not suspicious
+

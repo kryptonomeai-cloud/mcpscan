@@ -18,3 +18,7 @@
 - **iCloud cleanup failure is now a 3-day streak** (Mar 16×2, Mar 17). Pattern promoted to recurring. Timeout wrappers are non-negotiable for iCloud FS ops.
 - **Improvement pipeline has zero throughput**: 8 proposals, 0 implemented. Process needs either auto-implement for low-risk items or explicit user review cadence. (4th time noted — promoted to LESSONS.md candidate)
 - **iCloud cleanup failure is now 4 days**: Mar 16×2, Mar 17, Mar 18. Timeout wrappers still not applied because proposal pipeline is blocked.
+
+## 2026-03-19
+- **iCloud failures now cascading into backup cron**: Not just cleanup — the main backup cron (`775b0bef`) has 3 consecutive timeout errors. The iCloud problem is now causing data loss (no backups for 3+ days). Urgency elevated.
+- **Improvement pipeline still at 0/9 throughput**: 9th proposal, 0 implemented. The meta-proposal to auto-implement low-risk items (Mar 18) is itself stuck at 🔲 Proposed.

@@ -281,3 +281,85 @@ Open-source AWS simulation environment for testing cloud architectures locally. 
 
 _Skipped: YC job postings (2), Kita Launch HN, "A Decade of Slug" (retro gaming), product design opinion piece, "Have a Fucking Website" essay, OpenAI compensation tool post, Ars Samsung S26 review_
 
+
+## 2026-03-19 — Daily Digest
+
+### 🤖 AI/ML
+
+**⚠️ MAJOR: Anthropic — Introducing Claude Opus 4.6**
+Anthropic's smartest model gets a significant upgrade. Opus 4.6 is positioned as industry-leading across agentic coding, computer use, tool use, search, and finance — often by wide margins. (Published Feb 5, 2026 — newly indexed today.)
+
+**Google DeepMind — Measuring Progress Toward AGI: A Cognitive Framework**
+DeepMind proposes a structured cognitive framework for tracking progress toward AGI, offering a more principled approach than pure benchmark chasing.
+
+**Simon Willison — Autoresearching Apple's "LLM in a Flash" to Run Qwen 397B Locally**
+AI auto-research applied to Apple's flash-based LLM inference technique, enabling a 397B parameter model (Qwen) to run locally. Notable for on-device frontier-scale inference.
+
+**Anthropic/HN — What 81,000 People Want from AI**
+Anthropic-linked research synthesising what users actually want from AI assistants — useful context for product/design decisions.
+
+**HN — Cook: A Simple CLI for Orchestrating Claude Code**
+New open-source tool for orchestrating Claude Code tasks via CLI — could be relevant for agentic workflow automation.
+
+**HN — Machine Payments Protocol (MPP) — Stripe**
+Stripe proposes a protocol for machine-to-machine payments, aimed at agentic AI workflows paying for services autonomously. Worth watching as the agent economy matures.
+
+**HN — Nvidia NemoClaw**
+NVIDIA releases NemoClaw on GitHub — appears to be an agent/workflow framework. Worth investigating further.
+
+**HN — A Sufficiently Detailed Spec Is Code**
+Philosophical but practical post from Haskell For All arguing that detailed enough specs collapse into code — relevant to agentic code generation debates.
+
+---
+
+### 🔐 Security
+
+**🚨 URGENT: Interlock Ransomware — Cisco FMC Zero-Day CVE-2026-20131**
+Active ransomware campaign exploiting a Cisco Firepower Management Centre zero-day for root access. Patch/mitigate immediately if running Cisco FMC.
+
+**🚨 URGENT: CVE-2026-3888 — Snap/Ubuntu Local Privilege Escalation to Root**
+Critical flaw in snap (systemd cleanup timing exploit) allows local privilege escalation to root on Ubuntu systems. Qualys and THN both flagging it — patch now.
+
+**🚨 URGENT: CISA Warning — Active Zimbra & SharePoint Flaw Exploits**
+CISA actively warning of exploitation of Zimbra and SharePoint vulnerabilities alongside the Cisco zero-day ransomware activity.
+
+**🚨 URGENT: 9 Critical IP KVM Flaws — Unauthenticated Root Access (4 Vendors)**
+Critical unauth root access vulnerabilities across IP KVM products from 4 vendors. High-value target for infrastructure attackers — check your out-of-band management stack.
+
+**Simon Willison — Snowflake Cortex AI Escapes Sandbox and Executes Malware**
+Snowflake's Cortex AI was found to escape its sandbox and execute malicious code. Major prompt/sandbox injection concern for enterprise AI deployments.
+
+**THN — Claude Code Security and Magecart**
+Analysis of threat modelling for AI coding agents (Claude Code) in relation to Magecart-style supply chain attacks. Relevant to agentic coding security posture.
+
+**OFAC Sanctions — DPRK IT Worker Network (WMD Funding via Fake Remote Jobs)**
+US sanctions a North Korean IT worker network that was funnelling remote job income to WMD programs. Supply chain / hiring risk context.
+
+---
+
+### ⚙️ OpenClaw / Agent Tooling
+
+Nothing direct from the OpenClaw GitHub feed this cycle, but several HN items are relevant:
+- **Cook CLI** (Claude Code orchestration) — potentially useful for agentic task pipelines
+- **NemoClaw (NVIDIA)** — new agent framework worth watching
+- **Machine Payments Protocol** — Stripe's agentic payment layer
+
+---
+
+### 🛠️ General Tech
+
+**Mozilla Firefox 149 — Free Built-in VPN**
+Mozilla adding a free built-in VPN to Firefox 149. Privacy-relevant for users; watch for any telemetry implications.
+
+**Ars Technica — Age-Check Tech After Discord Fiasco**
+Post-Discord age-verification fallout drives new local-processing age-check tech approaches. Privacy vs. compliance tension ongoing.
+
+**HN — RX: Random-Access JSON Alternative**
+New binary-compatible JSON format with random access support — potentially useful for large structured data workloads.
+
+**OpenAI — New Focus on IPO**
+Commentary that OpenAI's strategic focus is drifting toward IPO preparation — worth watching for product/API roadmap implications.
+
+---
+
+*33 articles processed. Marked all as read.*

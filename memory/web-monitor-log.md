@@ -16,3 +16,12 @@
 ### ✅ No changes
 - ClawHub
 - Ollama Blog
+
+## 2026-03-19 20:42 UTC
+
+### 🔔 OpenClaw Docs — Changed
+- Navigation label "Home" renamed to "Overview"
+- Getting started section updated: WhatsApp/gateway pairing instructions replaced with simpler "Chat" step pointing to `openclaw dashboard` or connecting Telegram
+- Quick start link renamed to "Getting Started"
+- Minor navigation restructure (removed "Core concepts" entry from sidebar)
+

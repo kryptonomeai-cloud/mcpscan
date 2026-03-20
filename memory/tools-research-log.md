@@ -1,5 +1,81 @@
 # Tools & Skills Research Log
 
+## 2026-03-20 — Nightly Scan #6
+
+### Summary
+Web search (Gemini) fully rate-limited (429). SearXNG also had all engines suspended (Brave, DuckDuckGo, Google, Startpage). Research conducted via GitHub API, brew catalogs, and ClawHub directly.
+
+### New MCP Servers Found
+
+| Server | Stars | What | Value | Effort |
+|--------|-------|------|-------|--------|
+| **n8n-mcp** (brew) | — | Build N8N workflows via MCP — we already run N8N! | ⭐⭐⭐⭐⭐ | Low — `brew install n8n-mcp` |
+| **context7-mcp** (brew) | 49.8k | Up-to-date code docs for LLMs — resolves stale training data | ⭐⭐⭐⭐ | Low — `brew install context7-mcp` |
+| **mcp-google-sheets** (brew) | — | Read/write Google Sheets via MCP | ⭐⭐⭐ | Low — `brew install mcp-google-sheets` |
+| **financial-datasets** | 1.7k | Stock market data API via MCP | ⭐⭐⭐ | Medium — needs API key |
+| **mcp-grafana** (brew) | — | Grafana integration via MCP | ⭐⭐⭐ | Medium — needs Grafana running |
+| **slack-mcp-server** (brew) | — | Advanced Slack MCP with DMs, history | ⭐⭐ | Low — already have Slack via OpenClaw |
+| **mcptools** (brew) | — | CLI for interacting with MCP servers directly | ⭐⭐⭐ | Low — `brew install mcptools` |
+
+**Top pick: n8n-mcp** — Since we already run N8N in Docker, this lets us create and manage workflows programmatically. Massive automation potential.
+
+**Runner-up: context7-mcp** — 50k GitHub stars, provides current library docs to LLMs. Very useful for coding tasks where training data is stale.
+
+### Brew MCP Ecosystem Growth
+Homebrew now has 30+ MCP-related packages. Notable additions since last scan:
+- `context7-mcp` (v2.1.4) — huge community adoption
+- `n8n-mcp` (v2.37.4) — N8N workflow builder
+- `mcp-google-sheets` (v0.6.1) — Sheets integration
+- `mcptools` (v0.7.1) — generic MCP server CLI
+- `fastmcp` (v3.1.1) — Python MCP server framework
+
+### ClawHub Skills Scan
+Currently installed: `web-monitor` (1.0.0) only.
+
+Interesting skills found:
+| Skill | Category | Notes |
+|-------|----------|-------|
+| `firefly-iii` | Finance | Personal finance — could complement Xero |
+| `rescuetime` | Productivity | Time tracking integration |
+| `openclaw-backup` | Backup | OpenClaw config/workspace backup |
+| `gateway-monitor-macos` | Monitoring | macOS gateway health monitoring |
+| `docker-diag` | Docker | Docker diagnostics |
+| `network-device-scanner` | Network | Network device discovery |
+| `system-resource-monitor` | Monitoring | System resource tracking |
+
+**Caution:** ClawHub skill details returned empty for all — `clawhub info` returned nothing. Skills may be stubs or low-quality. Do NOT install without manual review.
+
+### CLI Tools Gap Analysis
+None of these popular modern CLI tools are installed:
+- **lazydocker** — Docker TUI (recommended last scan, still not installed)
+- **dust** — Better `du` disk usage
+- **duf** — Better `df` disk free
+- **btop/bottom** — System monitors
+- **bat** — Better `cat` with syntax highlighting
+- **eza** — Better `ls`
+- **fd** — Better `find`
+- **sd** — Better `sed`
+- **glow** — Markdown renderer in terminal
+- **atuin** — Shell history search
+- **mise** — Dev tool version manager (polyglot replacement for nvm/pyenv/etc)
+
+### Recommendations (Ranked by Impact)
+
+1. **🔗 Install n8n-mcp** — Direct N8N workflow creation via MCP. We run N8N already; this unlocks programmatic automation building. `brew install n8n-mcp` then `mcporter add n8n`
+2. **📚 Install context7-mcp** — 50k stars, gives current docs to coding agents. `brew install context7-mcp`
+3. **🔧 Fix Xero MCP** — Still offline from last scan. Needs attention.
+4. **🐳 Install lazydocker** — Quick Docker management. `brew install lazydocker`
+5. **📊 Install mcptools** — Debug and interact with any MCP server from CLI. `brew install mcptools`
+6. **🛠️ Install mise** — Manage Node/Python/Ruby versions cleanly. `brew install mise`
+7. **📋 Install mcp-google-sheets** — If using Google Sheets at all. `brew install mcp-google-sheets`
+
+### Status
+- Xero MCP: still offline (flagged 2 scans ago)
+- Web search: Gemini quota exhausted, SearXNG engines all suspended — both sources unavailable tonight
+- Next scan: retry web searches, investigate financial-datasets MCP, check GPU server tooling
+
+---
+
 ## 2026-03-19 — Nightly Scan #5
 
 ### Summary

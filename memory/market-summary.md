@@ -70,3 +70,32 @@
 - SPY/VOO were up on 3/17 per MarketWatch news snippets
 
 _Data sourced via Yahoo Finance API. Finnhub CLI not installed; web fallback used._
+
+---
+## 📈 Market Summary — Thursday, March 19, 2026
+
+**Data as of market close Wed Mar 18 | US market pre-open Thu Mar 19**
+
+### Indices
+- SPY: $661.43 🔴 -1.40%
+- QQQ: $594.90 🔴 -1.39%
+
+### Tech & AI Stocks
+- NVDA: $180.40 🔴 -0.84%
+- AMD:  $199.46 🟢 +1.60%
+- AAPL: $249.94 🔴 -1.69%
+- MSFT: $391.79 🔴 -1.91%
+- GOOG: $306.30 🔴 -1.01%
+- META: $615.68 🔴 -1.12%
+- TSLA: $392.78 🔴 -1.63%
+
+### Crypto-Adjacent
+- COIN: $202.29 🔴 -3.78% ⚠️ Notable
+
+### Notes
+- Broad market selloff Wed; QQQ and SPY both -1.4%
+- AMD bucked the trend, +1.6%
+- COIN notable drop -3.78% amid crypto pullback
+- No Finnhub API key found — prices via stooq.com (day-delayed)
+- Fallback: add Finnhub key to Keychain for real-time quotes
+

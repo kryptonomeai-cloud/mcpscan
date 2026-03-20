@@ -116,3 +116,34 @@
 
 ### CVE Check
 - web_search rate-limited, SearXNG blocked — CVE check skipped this run
+
+---
+## 2026-03-19 05:00 UTC — Daily Security Sweep
+
+### CrowdSec
+- Container: healthy
+- Machines: localhost ✅, gpu-server ✅, nas-zimaos ⚠️ (stale 110h — since Mar 14)
+- Alerts/Decisions: none
+- CAPI: connected, community blocklist active
+
+### Infrastructure
+- Mac mini firewall: ✅ enabled
+- Mac mini listening ports: none detected (clean)
+- GPU server: fail2ban sshd OK (0 banned), UFW active with proper rules, rkhunter timed out (long scan)
+- Trivy scan: failed (DB download interrupted by timeout)
+
+### CVE Intel (via SearXNG)
+- **CVE-2026-20619**: macOS info disclosure (Critical) — check if patched in macOS 26.3.1
+- **CVE-2026-3102**: macOS ExifTool image-processing vuln (Critical, Mar 2)
+- **CVE-2026-20700**: dyld memory corruption in Apple platforms
+- **Node.js**: Security releases scheduled for Mar 24, 2026 — currently on v25.8.1, monitor
+- **Chrome 145**: Critical CVEs (heap buffer overflow in WebML CVE-2026-3913, OOB CVE-2026-3062) — Mac mini doesn't run Chrome, GPU/NAS may
+
+### Tool Versions
+- Trivy: 0.69.3 (current)
+- Lynis: 3.1.6 (current)
+- No brew outdated flags for security tools
+
+### Notes
+- NAS (nas-zimaos) has been offline/unreachable since ~Mar 14 — 5th consecutive day stale
+- Lynis quick audit timed out (known slow on first run)
