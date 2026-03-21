@@ -22,3 +22,7 @@
 ## 2026-03-19
 - **iCloud failures now cascading into backup cron**: Not just cleanup — the main backup cron (`775b0bef`) has 3 consecutive timeout errors. The iCloud problem is now causing data loss (no backups for 3+ days). Urgency elevated.
 - **Improvement pipeline still at 0/9 throughput**: 9th proposal, 0 implemented. The meta-proposal to auto-implement low-risk items (Mar 18) is itself stuck at 🔲 Proposed.
+
+## 2026-03-20
+- **Improvement pipeline at 0/10 — 10th consecutive day**: The pipeline is now generating more overhead than value. 10 proposals, 0 implemented. The proposals about fixing the pipeline are themselves stuck in the pipeline. This is a recursive deadlock. Need user intervention OR auto-approve for LOW-risk items.
+- **iCloud backup failures now 4+ days**: Paperless backup succeeds (NAS export works), but workspace backup and iCloud cleanup continue failing. The fix has been proposed since Mar 16 but can't be applied.

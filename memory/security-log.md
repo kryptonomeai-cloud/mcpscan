@@ -147,3 +147,37 @@
 ### Notes
 - NAS (nas-zimaos) has been offline/unreachable since ~Mar 14 — 5th consecutive day stale
 - Lynis quick audit timed out (known slow on first run)
+
+---
+
+## 2026-03-20 05:00 UTC — Daily Security Sweep
+
+### CrowdSec
+- Container: healthy ✅
+- Machines: localhost ✔️, gpu-server ✔️, nas-zimaos ⚠️ stale 134h (offline since ~Mar 14, 6th day)
+- CAPI: connected, community blocklists pulling
+- Alerts: none | Decisions: none
+- Bouncers: all valid
+
+### GPU Server
+- fail2ban sshd: 0 banned, 0 currently failed ✅
+- UFW: active, properly locked down (SSH Mac-mini + Tailscale only, Ollama LAN only)
+- rkhunter: timed out (exit 124) — may need manual check
+
+### Mac Mini
+- Firewall: enabled ✅
+- Listening ports: unable to enumerate (sandbox restriction on lsof/netstat)
+
+### Tool Versions
+- Trivy: 0.69.3
+- Lynis: 3.1.6
+- No brew outdated flags for trivy/lynis
+
+### CVE Intel
+- web_search quota exhausted (429), SearXNG blocked by sandbox
+- Unable to check CVEs this run
+
+### Notes
+- NAS (nas-zimaos) still offline — now 6 days stale, worth investigating
+- rkhunter on GPU timed out — consider running manually
+- Lynis quick audit returned no output (may need interactive run)

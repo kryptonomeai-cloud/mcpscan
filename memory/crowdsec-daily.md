@@ -1,24 +1,21 @@
-# CrowdSec Daily Status — 2026-03-19 05:00 UTC
+# CrowdSec Daily Status — 2026-03-20 05:00 UTC
 
 ## Container Health: ✅ healthy
 
 ## Machines
-| Machine | Status | Last Heartbeat |
-|---------|--------|----------------|
-| localhost (Mac mini) | ✅ | 56s ago |
-| gpu-server | ✅ | 25s ago |
-| nas-zimaos | ⚠️ | **110h 25m ago** (stale since ~Mar 14) |
+| Name | Status | Last Heartbeat |
+|------|--------|----------------|
+| localhost | ✔️ | 56s |
+| gpu-server | ✔️ | 25s |
+| nas-zimaos | ✔️ | ⚠️ 134h25m (stale since ~Mar 14) |
 
-## Bouncers
-All 8 bouncers valid. GPU-side bouncers pulling fresh. NAS-side bouncers last pulled Mar 14 (matches stale machine).
+## Bouncers (all valid ✔️)
+- gpu-server-fw, nas-fw-bouncer, caddy-bouncer, gpu-firewall-bouncer
+- nas-fw-bouncer@172.23.0.1, caddy-bouncer@172.23.0.1, gpu-firewall-bouncer@172.23.0.1
+- udm-se-bouncer
+- **Note:** NAS-IP bouncers last pulled Mar 14 (stale, consistent with NAS machine offline)
 
-## Alerts & Decisions
-- No active alerts
-- No active decisions/bans
+## CAPI: ✅ Connected (community, sharing enabled, blocklists pulling)
 
-## CAPI
-- ✅ Connected to community API
-- Signal sharing: enabled
-- Community blocklist pull: enabled
-- Console enrollment: active
-- Subscription: COMMUNITY
+## Alerts: None active
+## Decisions: None active

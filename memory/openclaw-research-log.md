@@ -179,3 +179,37 @@
 - None urgent. System healthy.
 - clawddocs skill missing — if doc monitoring is desired, reinstall from ClawHub.
 
+
+---
+## 2026-03-20 07:45 UTC — Daily Monitor Run
+
+### Version
+- **Installed:** 2026.3.13 (61d171a)
+- **Latest on GitHub:** v2026.3.13-1 (recovery release, 14 Mar)
+  - This is a Git tag/release-only bump; npm package is still 2026.3.13 — no action needed.
+
+### Release Highlights (v2026.3.13-1 recovery)
+- **Bug fixes (no security flags):**
+  - `fix(compaction)`: full-session token count for post-compaction sanity check
+  - `fix(telegram)`: thread media transport policy into SSRF (#44639) — minor SSRF path fix
+  - `fix(session)`: preserve lastAccountId and lastThreadId on session reset
+  - `fix(agents)`: drop Anthropic thinking blocks on replay
+  - `fix`: Discord gateway metadata fetch failures handled gracefully
+  - `fix`: delivery dedupe review follow-ups
+- **Misc:** CLI xhigh thinking help text alignment, docs fixes
+
+### Documentation (clawddocs)
+- clawddocs skill not installed at expected path — scripts skipped
+
+### ClawHub — New Skills
+Top new listings (by score): new-sloth, cctv-news-fetcher, news, hot-news-aggregator, apple-news, ai-news — all news-aggregator type, nothing security-relevant or immediately useful.
+
+### Config Health (openclaw doctor)
+- Loaded: 10 plugins, Disabled: 31, **Errors: 0**
+- Telegram: ok, Slack: ok
+- Agents active: main, forge, scout, sentinel, venture, taskmaster
+- Heartbeat: 30m (main)
+- No warnings. Clean bill of health.
+
+### Action Items
+- None required. Running current npm version. No security releases. Config healthy.

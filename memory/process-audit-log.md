@@ -169,3 +169,33 @@
 - **Docker containers:** All 8 containers match baseline (freqtrade up 43h, rest up 4 days)
 - **Processes:** All running processes (ollama, openclaw-gateway, Claude, Telegram, Google, BlockBlock, Tailscale, Python) match known process list; `ShipIt` (Claude auto-updater, Squirrel framework) and `dns-sd` are standard macOS processes, not suspicious
 
+
+## 2026-03-20 21:00 UTC — Evening Audit
+
+**Result:** ⚠️ 1 anomaly detected
+
+### NEW LaunchDaemon not in baseline
+- **`com.nordvpn.macos.helper.plist`** is present in system LaunchDaemons but was **not in the baseline** (baseline has 8 daemons; current has 9)
+- Corresponding running processes: `/Applications/NordVPN.app/Contents/MacOS/NordVPN` (miniclaw) and `/Library/PrivilegedHelperTools/com.nordvpn.macos.helper` (root)
+- "NordVPN" is also absent from the baseline `knownProcesses` list
+- NordVPN is a legitimate VPN application — this is likely intentional (installed after baseline was set) but should be acknowledged and baseline updated if correct
+
+### Other checks: Clean
+- **LaunchAgents (user):** 21/21 match baseline ✓
+- **LaunchAgents (system):** 2/2 match baseline ✓
+- **LaunchDaemons:** 8/9 match baseline — 1 new entry (NordVPN helper)
+- **Docker containers:** All 8 match baseline ✓ (freqtrade up 2 days, rest up 5 days)
+- **Processes:** All others known; ShipIt (Claude.app Squirrel updater) — benign, recurring
+
+---
+
+## 2026-03-20 09:00 UTC
+
+**Result:** ✅ Clean — no anomalies
+
+- **Listening ports:** None flagged (section empty — no new ports detected)
+- **LaunchAgents (user/system):** All 21 user + 2 system agents match baseline exactly
+- **LaunchDaemons:** All 8 daemons match baseline exactly
+- **Docker containers:** All 8 containers match baseline (freqtrade, termix, crowdsec, shell-executor, searxng, beszel, vaultwarden, n8n-n8n-1)
+- **User processes:** All known process types present (openclaw-gateway, Claude, Telegram, ollama, BlockBlock, Google, Python)
+

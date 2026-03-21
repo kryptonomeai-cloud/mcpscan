@@ -25,3 +25,8 @@
 - Quick start link renamed to "Getting Started"
 - Minor navigation restructure (removed "Core concepts" entry from sidebar)
 
+
+## 2026-03-20 20:42 UTC
+
+**OpenClaw Docs** (https://docs.openclaw.ai) — Navigation menu item renamed from "Tools" to "Tools & Plugins".
+

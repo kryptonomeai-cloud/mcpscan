@@ -363,3 +363,51 @@ Commentary that OpenAI's strategic focus is drifting toward IPO preparation — 
 ---
 
 *33 articles processed. Marked all as read.*
+
+## 2026-03-20 — Daily Digest (07:15 UTC)
+
+### 🚨 URGENT / HIGH PRIORITY
+
+**Security:**
+- **DarkSword iOS Exploit Kit** — 6 flaws including 3 zero-days enabling full iPhone takeover; Apple has warned older iPhones are vulnerable. Patch immediately if on older iOS.
+- **Azure Sign-In Log Bypass (3rd & 4th)** — TrustedSec discloses two more Azure audit log bypass flaws; attackers can sign in without leaving traces. Major concern for M365-heavy orgs.
+- **DoJ Disrupts 3M-Device IoT Botnet** — Botnets behind record 31.4 Tbps DDoS attacks taken down. (Also covered by Krebs.)
+- **54 EDR Killers via BYOVD** — 54 malware families exploiting 35 signed vulnerable drivers to disable endpoint security tools. Widespread and serious.
+- **FortiGate RaaS + Citrix Exploits** — ThreatsDay bulletin covers active exploitation of FortiGate as ransomware delivery + Citrix vulnerabilities.
+
+---
+
+### 🤖 AI / ML
+
+- **OpenAI acquires Astral** (uv, ruff, ty) — OpenAI buying the Python tooling company behind uv and ruff. Simon Willison has thoughtful commentary on implications for the open-source ecosystem.
+- **OpenAI: Monitoring internal coding agents for misalignment** — Blog post on how OpenAI tracks its own AI coding agents for out-of-distribution behaviour. Relevant for anyone deploying agents in production.
+- **Scaling Karpathy's Autoresearch with GPU Cluster** — SkyPilot blog on what happens when you give Karpathy's auto-research agent a cluster of GPUs. Interesting scaling dynamics.
+- **NanoGPT Slowrun: 10x Data Efficiency** — Research claiming 10x better data efficiency with infinite compute via slower training. Potentially significant if it holds up.
+- **Kitten TTS models** — Three new tiny TTS models, smallest under 25MB. Useful for edge/local deployments.
+- **Canary (YC W26)** — AI QA tool that understands your codebase for automated quality assurance.
+- **Claude Code channels** — Anthropic published docs on pushing events into running Claude sessions via channels. Directly relevant to OpenClaw architecture.
+
+---
+
+### 🔐 Security (non-urgent)
+
+- **Speagle Malware via Cobra DocGuard** — Supply chain attack hijacking document security software to steal data.
+- **Perseus Android Banking Malware** — Monitors notes apps to extract sensitive data; targets banking credentials.
+- **MCP Abuse in ThreatsDay Bulletin** — MCP (Model Context Protocol) being abused in attacks — worth tracking given OpenClaw's MCP usage.
+
+---
+
+### 🛠️ General Tech
+
+- **Kin: Semantic version control** — Tracks code as entities (functions, classes) rather than files. Interesting rethink of git's model.
+- **arXiv declares independence from Cornell** — Preprint server going independent after decades under Cornell. Governance shift for academic publishing.
+- **Noq: QUIC implementation in Rust (iroh)** — New QUIC library from the iroh team, relevant for P2P/networking work.
+- **Cockpit** — Web-based server management UI trending on HN; solid tool for Linux server admin.
+- **Google Android sideloading: 24-hour process** — Google introducing a new 24-hour delay/verification flow for sideloading unverified apps.
+- **Clockwise acquired by Salesforce** — AI calendar scheduling tool absorbed into Salesforce.
+- **Voltair (YC W26)** — Drone + charging network for power utilities. Infrastructure-scale drone operations.
+- **Be intentional about AI and your codebase** — Thoughtful essay on how AI coding tools subtly shift code quality and ownership.
+
+---
+
+*32 articles scanned. 4 urgent security items flagged. All marked as read.*

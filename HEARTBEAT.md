@@ -1,11 +1,11 @@
 # HEARTBEAT.md
 
-## Priority: Volt Energy App Build
-- Check `projects/energy-app/` for build progress
-- If no active sub-agent is building Volt, spawn one to continue Phase 1
-- Phase 1 tasks: Expo scaffold, Supabase setup, Octopus API client, Dashboard UI
-- Reference: `projects/energy-app/PROJECT_PLAN.md`
-- Max 2 sub-agents at a time for Volt (one build, one research)
+## Volt Energy App — ✅ COMPLETE (Phase 8)
+- All phases done through App Store prep, Sentry, PostHog, 77 tests, privacy/terms
+- Tabs: dashboard, usage, tariffs, charging, solar, AI, carbon, settings
+- Last commit: App Store build numbers + privacy manifest
+- **Next steps for human:** EAS build submission, App Store Connect upload, TestFlight beta
+- No sub-agent needed — nothing left to build autonomously
 
 ## Freqtrade Monitor
 - Check if freqtrade container is running and has made any trades

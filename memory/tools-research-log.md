@@ -1,5 +1,94 @@
 # Tools & Skills Research Log
 
+## 2026-03-21 — Nightly Scan #7
+
+### Summary
+Gemini web_search quota hit (429) again — used SearXNG fallback for all web searches. ClawHub search worked fine. Focused on: MCP finance ecosystem, CLI productivity gaps, new self-hosted tools, and ClawHub skill updates.
+
+### New Tools Found
+
+#### CLI Tools — Still Not Installed (from prior scans, still recommended)
+| Tool | What | Install | Priority |
+|------|------|---------|----------|
+| `lazydocker` | Docker TUI — manage containers/logs/stats visually | `brew install lazydocker` | High |
+| `btop` | Resource monitor (better htop) | `brew install btop` | Medium |
+| `dust` | Disk usage analyzer (visual tree) | `brew install dust` | Medium |
+| `zoxide` | Smarter `cd` — remembers frequent dirs | `brew install zoxide` | Medium |
+| `bat` | `cat` with syntax highlighting + git integration | `brew install bat` | Low |
+| `fzf` | Fuzzy finder for files/history/processes | `brew install fzf` | Medium |
+| `eza` | Modern `ls` replacement with git integration | `brew install eza` | Low |
+| `glow` | Terminal markdown renderer | `brew install glow` | Low |
+
+None of these were installed yet as of this scan. `lazydocker` is most impactful for our Docker-heavy setup.
+
+#### New Discovery: BentoPDF
+- Lightweight PDF editor — runs entirely in browser (frontend only)
+- Alternative to StirlingPDF, much lighter weight
+- GitHub: https://github.com/alam00000/bentopdf
+- We have nano-pdf CLI already — skip unless web UI needed
+
+### MCP Server Ecosystem Updates
+
+#### Finance MCP Servers (Major category growth in 2026)
+| Server | What | Effort | Value |
+|--------|------|--------|-------|
+| **Stripe MCP** | Payments & revenue data | Low (official) | ⭐⭐⭐ if using Stripe |
+| **QuickBooks MCP** (Intuit) | Small business accounting | Medium | ⭐⭐⭐ |
+| **Xero MCP** | Global accounting — new granular OAuth scopes (March 2026) | Medium | ⭐⭐⭐⭐ — already relevant to us |
+| **Alpha Vantage MCP** | Real-time + historical market data | Low | ⭐⭐⭐ |
+| **Financial Datasets MCP** | Clean financial statement data | Low | ⭐⭐ |
+| **Alpaca MCP** | Algorithmic trading | Medium | ⭐⭐ |
+| **Plaid MCP** | Bank account aggregation | Medium | ⭐⭐⭐ |
+| **YNAB MCP** (community) | Budget tracking | Low | ⭐⭐ |
+| **Monarch Money MCP** (community) | Personal finance | Low | ⭐⭐ |
+| **Joiin MCP** | Consolidated financial reporting (connects Xero) | Medium | ⭐⭐⭐ |
+
+**Key finding:** Xero changed its OAuth scopes on March 2, 2026 — all new apps need 10 granular scopes instead of 2 broad ones. Existing apps have until September. Worth checking if our Xero MCP integration needs updating.
+
+#### Firefly III MCP Servers
+Two options found:
+1. **etnperlong/firefly-iii-mcp** (GitHub, June 2025) — original
+2. **LamPyrid** (Reddit, Jan 2026) — newer, simpler approach
+- If we deploy Firefly III Docker container, we'd get full self-hosted personal finance with AI integration
+
+### ClawHub Skills of Interest
+
+#### New/Updated Since Last Scan
+| Skill | What | Notes |
+|-------|------|-------|
+| **firefly-iii** (pushp1997) | Firefly III finance management | Updated 2026-03-20 (yesterday!), v1.0.0 — mature |
+| **finance-radar** (elevo11) | Stock/crypto analysis via Yahoo Finance | v1.1.0, updated 2026-03-16 — good for market checks |
+| **home-assistant** | Home Assistant integration | Multiple versions available — if HA is in the stack |
+| **gateway-monitor-macos** | Monitor OpenClaw gateway on macOS | Could help with self-monitoring |
+
+#### Already Have / Skip
+- docker-essentials — already installed
+- security skills — we have healthcheck + trivy + lynis
+- web-monitor, blogwatcher — already installed
+
+### Self-Hosted Tool Updates
+- **Pulse** — Proxmox-specific monitoring (not relevant, we don't run Proxmox)
+- **BentoPDF** — lightweight PDF frontend (we have nano-pdf)
+- **Uptime Kuma** — still not deployed, still recommended from prior scan
+
+### Recommendations (Ranked by Impact)
+
+1. **🐳 Install lazydocker** — we're running 5+ Docker containers and still have no TUI management. Quick win: `brew install lazydocker`
+2. **📊 Install finance-radar skill** — free stock/crypto analysis via Yahoo Finance, no API key needed. `clawhub install finance-radar`
+3. **💰 Consider firefly-iii skill** — if personal finance tracking is wanted, this just got updated yesterday and is mature
+4. **⚠️ Check Xero OAuth scopes** — Xero changed scopes March 2, existing apps have until September to migrate
+5. **📡 Install Uptime Kuma** (Docker) — still the top recommendation for service monitoring, keeps getting pushed back
+6. **🔍 Install fzf + zoxide** — biggest terminal productivity boost for minimal effort
+7. **📈 Evaluate Alpha Vantage MCP** — free tier gives market data access via mcporter
+
+### Notes
+- Gemini search quota exhausted again — this is the third scan hitting 429. Consider switching web_search provider or scheduling scans when quota refreshes.
+- MCP finance ecosystem has matured significantly — Stripe, Xero, QuickBooks all have official or well-maintained servers now.
+- ClawHub skill quality still varies; firefly-iii and finance-radar from recent inspections look legitimate.
+- Next scan focus: GPU server tooling (CUDA monitoring, model serving), N8N workflow templates, Paperless-NGX updates.
+
+---
+
 ## 2026-03-20 — Nightly Scan #6
 
 ### Summary

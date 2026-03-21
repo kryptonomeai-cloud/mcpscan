@@ -99,3 +99,33 @@ _Data sourced via Yahoo Finance API. Finnhub CLI not installed; web fallback use
 - No Finnhub API key found — prices via stooq.com (day-delayed)
 - Fallback: add Finnhub key to Keychain for real-time quotes
 
+
+---
+## 📈 Market Summary — Friday, March 20, 2026 (07:30 GMT, Pre-Market)
+
+**⚠️ Note:** Finnhub API key not found & finnhub_cli.py script missing. Data sourced via web fallback. US market opens at 14:30 GMT.
+
+**🌍 European Markets (sharp sell-off this morning):**
+- FTSE 100: 10,063.50 ▼ -2.35%
+- DAX: 22,839.56 ▼ -2.82%
+- CAC 40: 7,807.87 ▼ -2.03%
+- Stoxx 600: 583.64 ▼ -2.39%
+
+**📉 Context from yesterday (Mar 19):**
+- SPY/VOO (S&P 500) was **down** — negative session
+- Week was mixed: up Mon/Tue, down Wed/Thu
+
+**🔥 Notable Stories:**
+- **SMCI (Super Micro):** Co-founder charged in backdoor scheme to divert Nvidia chips to China — significant negative for both SMCI & NVDA sentiment
+- **NVDA insiders selling:** Multiple insider transactions at ~$176–184/share (Shah, Puri, Dabiri) suggesting caution at current levels
+- **Planet Labs (PL):** Stock soaring — satellite co says AI will unlock major new revenue
+- **Jeff Bezos:** Planning space-based data centers to rival Musk/SpaceX
+
+**💡 AI/Tech Watchlist:**
+- NVDA ~$176–184 range (insider sale prices); SMCI controversy is a headwind
+- European rout may pressure US tech at open — watch for contagion
+- AI/satellite plays (PL) showing momentum
+
+**📅 Upcoming:** No major US earnings flagged for today (triple witching options expiry window — potential volatility)
+
+_Data limitations: Finnhub unavailable, stooq/Yahoo rate-limited. Configure FINNHUB_API_KEY for richer data next run._
