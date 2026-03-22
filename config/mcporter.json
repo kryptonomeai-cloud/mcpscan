@@ -27,10 +27,16 @@
     },
     "propertydata": {
       "command": "npx",
-      "args": ["-y", "@biznezstack/propertydata-mcp@1.0.0"],
+      "args": [
+        "-y",
+        "@biznezstack/propertydata-mcp@1.0.0"
+      ],
       "env": {
         "PROPERTYDATA_API_KEY": "NEEDS_API_KEY"
       }
+    },
+    "comfyui": {
+      "baseUrl": "http://127.0.0.1:8189/mcp"
     }
   },
   "imports": []

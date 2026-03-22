@@ -1,5 +1,78 @@
 # Tools & Skills Research Log
 
+## 2026-03-22 — Nightly Scan #8
+
+### Summary
+Web search hit Gemini 429 quota; SearXNG localhost blocked by web_fetch policy. Used exec+curl for SearXNG fallback — got good results from 6 searches. ClawHub searched: productivity, monitor, automation, finance, docker, security, gateway-monitor.
+
+### New Self-Hosted Apps Worth Noting (from selfh.st 2025 favorites)
+
+| App | What | Why It Matters | Install |
+|-----|------|----------------|---------|
+| **Arcane** | Modern Docker management platform (Portainer alternative) | Cleaner UI, no enterprise nag, full Docker management | Docker |
+| **BentoPDF** | Browser-based PDF toolkit (70+ operations) | We have nano-pdf CLI but this adds a web UI option | Docker |
+| **LoggiFly** | Log pattern monitoring → notifications (via Apprise) | Lightweight alternative to complex monitoring; good for Docker container logs | Docker |
+| **Pangolin** | Reverse proxy with tunneled VPS, web dashboard | Dominates reverse proxy conversation in 2025-2026; streamlined tunneling | Docker |
+| **PatchMon** | Linux patch monitoring across machines (agent-based) | Great for GPU server — centralized view of what needs updating | Docker |
+| **Postgresus** | Web-based PostgreSQL backup automation | Scheduled backups with encryption, multi-destination storage | Docker |
+| **NoteDiscovery** | Self-hosted Obsidian alternative with plugins & graph view | Plain Markdown, plugin system — interesting if moving away from Apple Notes | Docker |
+
+### CLI Tools from 2026 Roundups
+
+| Tool | What | Status | Install |
+|------|------|--------|---------|
+| **atuin** | Shell history sync + SQLite search, encrypted cross-machine sync | Previously recommended — still not installed | `brew install atuin` |
+| **btop** | Resource monitor (CPU/GPU/RAM/disk/network) with TUI | Previously recommended — still not installed | `brew install btop` |
+| **displayplacer** | Programmatic multi-display configuration | Niche — only if multi-monitor setup | `brew install displayplacer` |
+| **fastfetch** | System specs at a glance (neofetch successor) | Nice to have, fast | `brew install fastfetch` |
+| **fzf** | Fuzzy finder for files/processes/git — interactive | Probably already installed? Check | `brew install fzf` |
+
+### MCP Ecosystem Update (from official 2026 roadmap)
+- MCP spec last released Nov 2025; no new spec version yet but active development
+- **Key 2026 priorities:**
+  1. Transport Evolution — Streamable HTTP scaling, stateless servers, `.well-known` discovery
+  2. Agent Communication — Tasks primitive improvements (retry, expiry)
+  3. Governance — Working Groups can accept SEPs without full core review
+  4. Enterprise Readiness — Audit trails, SSO auth, gateway behavior, config portability
+- **Implication for us:** MCP servers getting more production-ready; `.well-known` discovery will make finding/connecting servers easier. Enterprise auth means banking/finance MCP servers more likely in 2026.
+
+### ClawHub Skills Scan
+
+**New/Notable finds:**
+| Skill | Score | Notes |
+|-------|-------|-------|
+| `gateway-monitor-auto-restart` | 3.458 | Auto-restart gateway on failure — useful for reliability |
+| `gateway-monitor-macos` | 3.392 | macOS-specific gateway monitoring — already noted last scan |
+| `finance-radar` | 3.451 | Finance monitoring — investigate further |
+| `lof-monitor` | 1.911 | Stock/investment monitoring — niche |
+| `automation-workflows` | 3.767 | Generic workflow automation — high relevance score |
+| `ai-web-automation` | 3.622 | AI-driven web automation — could reduce manual browser work |
+| `system-resource-monitor` | 3.565 | System resource monitoring — already noted |
+| `security-monitor` | 3.559 | Security monitoring skill |
+| `docker-diag` | 3.487 | Docker diagnostics — already noted |
+
+**⚠️ Caution:** Most ClawHub skills are unverified community submissions. Scores reflect relevance, not quality. Only install from trusted publishers or after code review.
+
+### Recommendations (Ranked by Impact)
+
+1. **🔔 Install LoggiFly** (Docker) — lightweight log monitoring with Apprise notifications. Would catch Docker container issues automatically. Low effort, high value.
+2. **🔧 Install atuin** — shell history sync between Mac mini and GPU server. Keeps getting recommended, still not installed.
+3. **📊 Install btop** — better resource monitoring TUI. Keeps getting recommended, still not installed.
+4. **🐳 Consider Arcane** — if Portainer feels heavy/nagging, Arcane is the modern alternative.
+5. **🔍 Check if fzf is installed** — it's fundamental enough that it should be.
+6. **🛡️ Evaluate PatchMon** — centralized patch monitoring for GPU server (Ubuntu) — good security hygiene.
+7. **📈 Investigate `gateway-monitor-auto-restart` ClawHub skill** — auto-restart on gateway failure could improve uptime.
+
+### What Didn't Change
+- Previous scan recommendations still valid: Uptime Kuma, Anyquery, lazydocker, Firefly III
+- Xero MCP status still needs checking
+- No game-changing new MCP servers found this cycle (ecosystem maturing but no breakthrough banking/finance integrations yet)
+
+### Alert Assessment
+No game-changing discoveries warranting a Telegram alert tonight. LoggiFly is nice but not urgent. MCP roadmap confirms finance/banking integrations are coming but not here yet. Will continue monitoring.
+
+---
+
 ## 2026-03-21 — Nightly Scan #7
 
 ### Summary

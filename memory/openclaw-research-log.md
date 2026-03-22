@@ -213,3 +213,41 @@ Top new listings (by score): new-sloth, cctv-news-fetcher, news, hot-news-aggreg
 
 ### Action Items
 - None required. Running current npm version. No security releases. Config healthy.
+
+---
+## 2026-03-21 07:45 UTC — Daily OpenClaw Monitor
+
+### 1. Version Check
+- **Installed:** OpenClaw 2026.3.13 (61d171a)
+- **Latest on GitHub:** v2026.3.13 (released 14 Mar) — same version, up to date ✅
+- Recovery release `v2026.3.13-1` exists only for GitHub tag purposes; npm version remains `2026.3.13`
+- Notable changes in this release:
+  - **Bug (session):** `fix(compaction)` — full-session token count for post-compaction sanity check
+  - **Security (telegram):** `fix(telegram)` — thread media transport policy into SSRF (Telegram SSRF fix)
+  - **Bug (discord):** Handle Discord gateway metadata fetch failures
+  - **Bug (session):** Preserve `lastAccountId` and `lastThreadId` on session reset
+  - **Bug (agents):** Drop Anthropic thinking blocks on replay
+  - **Fix:** Address delivery dedupe review follow-ups
+  - **Misc:** CLI xhigh thinking help text alignment, docs fixes
+
+### 2. Documentation / clawddocs
+- ⚠️ `clawddocs` skill not installed at expected path (`~/.openclaw/workspace/skills/clawddocs`) — skip
+
+### 3. ClawHub & Skills
+- Only 3 skills installed locally: `capability-evolver`, `playwright-scraper-skill`, `web-monitor`
+- New trending skills on ClawHub (top by relevance score): news aggregators (cctv-news-fetcher, hot-news-aggregator, apple-news, ai-news, etc.)
+- No security-flagged skills noted in new listings
+
+### 4. Dashboard & UI
+- No new search performed this cycle (low priority, no notable signals from other checks)
+
+### 5. Config Health (openclaw doctor)
+- **Status: Clean ✅** — 0 errors, 10 skills loaded, 31 disabled
+- Telegram: ok (@miniClawMTA_bot)
+- Slack: ok
+- Agents configured: main, forge, scout, sentinel, venture, taskmaster
+- Heartbeat: 30m on main
+- No warnings; `--fix` flag available but no issues to fix
+
+### Summary
+No action needed. System is on latest version. One notable security fix in current version (Telegram SSRF) — already on this version so covered. Config healthy.

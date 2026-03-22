@@ -12,4 +12,6 @@
 
 | 2026-03-20 | 10-day pipeline stall — add 3-day auto-approve for LOW-risk | 🔲 Proposed | Unblocks entire pipeline, restores backups |
 
-**Pipeline health:** 0/10 proposals implemented. Zero throughput. **10th consecutive day.** ⚠️ Active backup data loss (4+ days). Pipeline is generating overhead, not improvement.
+| 2026-03-21 | Self-improvement cron waste — switch to weekly Sonnet | 🔲 Proposed | Saves ~$3/wk, reduces noise |
+
+**Pipeline health:** 0/11 proposals implemented. Zero throughput. **11th consecutive day.** ⚠️ Active backup data loss (5+ days). Pipeline is generating overhead, not improvement. This cron has cost ~$4-5 in Opus tokens with zero output.

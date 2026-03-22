@@ -1,21 +1,25 @@
-# CrowdSec Daily Status — 2026-03-20 05:00 UTC
-
-## Container Health: ✅ healthy
+# CrowdSec Daily Status — 2026-03-21
 
 ## Machines
 | Name | Status | Last Heartbeat |
 |------|--------|----------------|
-| localhost | ✔️ | 56s |
-| gpu-server | ✔️ | 25s |
-| nas-zimaos | ✔️ | ⚠️ 134h25m (stale since ~Mar 14) |
+| localhost | ✔️ | 55s |
+| gpu-server | ✔️ | 24s |
+| nas-zimaos | ⚠️ | 158h (stale since ~Mar 14) |
 
-## Bouncers (all valid ✔️)
-- gpu-server-fw, nas-fw-bouncer, caddy-bouncer, gpu-firewall-bouncer
-- nas-fw-bouncer@172.23.0.1, caddy-bouncer@172.23.0.1, gpu-firewall-bouncer@172.23.0.1
-- udm-se-bouncer
-- **Note:** NAS-IP bouncers last pulled Mar 14 (stale, consistent with NAS machine offline)
+## Bouncers
+All 8 bouncers valid. gpu-firewall-bouncer and nas-fw-bouncer@172.23.0.1 pulling fresh. NAS-side bouncers last pulled Mar 14.
 
-## CAPI: ✅ Connected (community, sharing enabled, blocklists pulling)
+## Alerts & Decisions
+- No active alerts
+- No active decisions (bans)
 
-## Alerts: None active
-## Decisions: None active
+## CAPI
+- Connected, community subscription
+- Signal sharing: enabled
+- Community blocklist pull: enabled
+- Console blocklist pull: enabled
+
+## Container Health
+- CrowdSec container: **healthy**
+- All containers up (freqtrade, termix, crowdsec, shell-executor, searxng, beszel, vaultwarden, n8n)

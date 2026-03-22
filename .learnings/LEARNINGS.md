@@ -26,3 +26,6 @@
 ## 2026-03-20
 - **Improvement pipeline at 0/10 — 10th consecutive day**: The pipeline is now generating more overhead than value. 10 proposals, 0 implemented. The proposals about fixing the pipeline are themselves stuck in the pipeline. This is a recursive deadlock. Need user intervention OR auto-approve for LOW-risk items.
 - **iCloud backup failures now 4+ days**: Paperless backup succeeds (NAS export works), but workspace backup and iCloud cleanup continue failing. The fix has been proposed since Mar 16 but can't be applied.
+
+## 2026-03-21
+- **Self-improvement pipeline is a net cost**: 11 days × ~$0.40 Opus = ~$4.40 spent, 0 improvements shipped. The daily cadence rediscovers the same problems. Weekly + Sonnet would capture 90% of value at 15% cost. Daily improvement crons need a built-in approval mechanism from day 1 or they become pure overhead.

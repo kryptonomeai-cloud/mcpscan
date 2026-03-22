@@ -45,6 +45,15 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - When you make a mistake → document it so future-you doesn't repeat it
 - **Text > Brain** 📝
 
+### ⚡ Write IMMEDIATELY — Don't Wait for Flush!
+
+- **Compaction can hit at any time** — if you haven't written it down, it's gone
+- After completing a task, installing something, or making a decision → append to `memory/YYYY-MM-DD.md` RIGHT THEN
+- When the user shares a link, name, or reference → write it down before doing anything else
+- Don't batch memory writes — write as you go, every few exchanges if needed
+- The pre-compaction flush is a SAFETY NET, not the primary write mechanism
+- **Rule of thumb:** If you'd be annoyed at yourself for forgetting it, write it NOW
+
 ## Red Lines
 
 - Don't exfiltrate private data. Ever.

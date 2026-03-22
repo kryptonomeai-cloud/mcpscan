@@ -189,6 +189,24 @@
 
 ---
 
+## 2026-03-21 09:00 UTC — Morning Audit
+
+**Result:** ⚠️ 1 recurring anomaly (second consecutive detection)
+
+### Persistent: NEW LaunchDaemon not in baseline
+- **`com.nordvpn.macos.helper.plist`** — not in baseline (first detected 2026-03-20 21:00)
+- NordVPN process is also running: `/Applications/NordVPN.app/Contents/MacOS/NordVPN` (miniclaw)
+- Likely a legitimate installation made after the baseline was set — **recommend updating baseline if intentional**
+
+### All other checks: Clean
+- LaunchAgents (user): 21/21 ✓
+- LaunchAgents (system): 2/2 ✓
+- LaunchDaemons: 8 in baseline present; `com.nordvpn.macos.helper.plist` extra (as above)
+- Docker containers: All 8 match baseline ✓ (freqtrade up 3 days, rest 6 days — healthy)
+- Processes: All known; ShipIt (Claude.app Squirrel updater) recurring but benign
+
+---
+
 ## 2026-03-20 09:00 UTC
 
 **Result:** ✅ Clean — no anomalies
@@ -199,3 +217,12 @@
 - **Docker containers:** All 8 containers match baseline (freqtrade, termix, crowdsec, shell-executor, searxng, beszel, vaultwarden, n8n-n8n-1)
 - **User processes:** All known process types present (openclaw-gateway, Claude, Telegram, ollama, BlockBlock, Google, Python)
 
+
+## 2026-03-21 21:00 UTC — Evening Audit
+
+- **LaunchAgents (user/system):** ✅ All 21 user + 2 system agents match baseline
+- **LaunchDaemons:** ⚠️ `com.nordvpn.macos.helper.plist` present — NOT in baseline
+- **Docker containers:** ✅ All 8 containers match baseline
+- **User processes:** ✅ All known process types match (NordVPN app + helper are expected given NordVPN is installed)
+
+**Anomaly:** `com.nordvpn.macos.helper.plist` found in LaunchDaemons — not listed in baseline. NordVPN process (`/Applications/NordVPN.app`) and its privileged helper (`/Library/PrivilegedHelperTools/com.nordvpn.macos.helper`) are running. This is consistent with NordVPN being actively used but the daemon was not included in the baseline created 2026-03-14. Recommend adding to baseline if NordVPN is a permanent install.

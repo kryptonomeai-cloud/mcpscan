@@ -411,3 +411,86 @@ Commentary that OpenAI's strategic focus is drifting toward IPO preparation — 
 ---
 
 *32 articles scanned. 4 urgent security items flagged. All marked as read.*
+
+---
+
+## 2026-03-21 — Morning Digest (07:15 UTC)
+
+27 new articles. Notable items below.
+
+### 🔴 Security — URGENT
+
+**Trivy Security Scanner GitHub Actions Breached — 75 Tags Hijacked**
+Critical supply-chain attack: the popular Trivy container scanner's GitHub Actions were compromised, with 75 tags hijacked to steal CI/CD secrets. If you use Trivy in CI, audit your pipelines immediately.
+→ https://thehackernews.com/2026/03/trivy-security-scanner-github-actions.html
+
+**CVE-2026-33017 — Critical Langflow Flaw, Exploited Within 20 Hours**
+Critical vulnerability in Langflow (popular AI workflow builder) was actively attacked within 20 hours of disclosure. Patch or isolate immediately if running Langflow.
+→ https://thehackernews.com/2026/03/critical-langflow-flaw-cve-2026-33017.html
+
+**Magento PolyShell Flaw — Unauthenticated RCE & Account Takeover**
+Unauth file upload + RCE + account takeover in Magento. If you run any Magento shops, treat this as urgent.
+→ https://thehackernews.com/2026/03/magento-polyshell-flaw-enables.html
+
+**France's Aircraft Carrier Located via Strava — "Stravaleaks"**
+Le Monde tracked a French carrier in real time via fitness app data. Classic OPSEC failure resurfacing — relevant reminder if your users have fitness trackers near sensitive locations.
+→ https://www.lemonde.fr/en/international/article/2026/03/20/stravaleaks-france-s-aircraft-carrier-located-in-real-time-by-le-monde-through-fitness-app_6751640_4.html
+
+### 🤖 AI/ML
+
+**OpenCode — Open Source AI Coding Agent**
+New open-source AI coding agent at opencode.ai. Worth watching as a potential Claude Code / Codex alternative.
+→ https://opencode.ai/
+
+**Attention Residuals (MoonshotAI)**
+Research from Moonshot AI on attention residuals — architectural ML work, niche but interesting for anyone following transformer internals.
+→ https://github.com/MoonshotAI/Attention-Residuals
+
+**Kimi.ai / Cursor integration** (Simon Willison)
+Brief note on Kimi.ai and Cursor integration — Moonshot's model appearing in coding tools.
+→ https://simonwillison.net/2026/Mar/20/cursor-on-kimi/#atom-everything
+
+**NumKong — 2,000 Mixed Precision Kernels**
+Ash Vardanian's library of mixed-precision compute kernels. Interesting for ML infrastructure work.
+→ https://ashvardanian.com/posts/numkong/
+
+**ChatGPT Number Bias (7200-7500 range)**
+Fascinating finding: ask ChatGPT to pick from 1–10,000 and it consistently clusters around 7200–7500. Neat quirk of LLM training data bias.
+→ https://old.reddit.com/r/ChatGPT/comments/1rz2ooh/
+
+### 🔧 General Tech
+
+**Google Adds 24-Hour Wait for Android Sideloading**
+Android now enforces a 24h cooling-off period + mandatory reboot for unverified app sideloads. Security win, friction for power users.
+→ https://thehackernews.com/2026/03/google-adds-24-hour-wait-for-unverified.html
+
+**Ubuntu 26.04 Ends Silent sudo Passwords**
+Ubuntu 26.04 will finally echo asterisks (or similar) when typing sudo passwords — ending 46 years of blank terminal feedback. Small UX change, big muscle-memory adjustment.
+→ https://pbxscience.com/ubuntu-26-04-ends-46-years-of-silent-sudo-passwords/
+
+**Rust WASM Parser Rewritten in TypeScript — Got Faster**
+Counter-intuitive result: rewriting a Rust/WASM parser in plain TypeScript made it faster. Good reminder that WASM overhead isn't free.
+→ https://www.openui.com/blog/rust-wasm-parser
+
+**purl — curl for HTTP Requests Requiring Payment**
+New CLI tool for making HTTP requests that require micropayment/authentication flows. Niche but interesting for paid API work.
+→ https://www.purl.dev/
+
+**Entso-E Final Report on 2025 Iberian Blackout**
+Official post-mortem on the massive April 2025 Iberian power blackout. Infrastructure nerds: required reading.
+→ https://www.entsoe.eu/publications/blackout/28-april-2025-iberian-blackout/
+
+### ⏭️ Skipped (fluff/low signal)
+- FFmpeg 101 (2024 tutorial, not new)
+- Linux APIs book (reference material)
+- Red Grid Link (Bluetooth team tracker — niche)
+- Ghostling (Ghostty org project, unclear scope)
+- Fortran Bluesky client (novelty)
+- Japanese chopstick etiquette (culture fluff)
+- Molly Guard (old sysadmin concept)
+- Turbo Pascal 3.02A deconstructed (nostalgia)
+- Project Hail Mary linguistics article (culture)
+- Behavioral Analytics in AI Attacks (vendor content)
+- Delve fake compliance (satire/commentary)
+- Windows quality commitment (PR post)
+

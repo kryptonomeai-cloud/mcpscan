@@ -13,6 +13,12 @@ Things like:
 - Device nicknames
 - Anything environment-specific
 
+## TTS
+
+- **Preferred voice:** George (Warm, Captivating Storyteller) — ID: `JBFqnCBsd6RMkjVDRZzb`
+- Jarvis-style: composed, warm, understated charm
+- Use: `sag -v George "text"` or set `ELEVENLABS_VOICE_ID=JBFqnCBsd6RMkjVDRZzb`
+
 ## Examples
 
 ```markdown
@@ -24,11 +30,6 @@ Things like:
 ### SSH
 
 - home-server → 192.168.1.100, user: admin
-
-### TTS
-
-- Preferred voice: "Nova" (warm, slightly British)
-- Default speaker: Kitchen HomePod
 ```
 
 ## Why Separate?

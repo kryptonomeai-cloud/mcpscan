@@ -1,5 +1,35 @@
 # Security Log
 
+## 2026-03-21 (Sat) — 05:00 UTC
+
+### Sweep Summary: ✅ All Clear (minor notes)
+
+### CrowdSec
+- All machines online. nas-zimaos heartbeat stale **7 days** (since Mar 14) — ⚠️ persistent issue
+- No active alerts or bans. CAPI connected, community blocklist pulling.
+- All 8 bouncers valid. NAS-side bouncers last pulled Mar 14.
+- Container: healthy
+
+### Infrastructure
+- **Mac mini firewall:** Enabled ✔️
+- **Mac mini ports:** No unexpected LISTEN ports detected
+- **GPU server:** fail2ban sshd — 0 banned, 1 total failed. UFW active, rules locked down.
+- **rkhunter:** Timed out (code 124) — may need manual run
+- **Docker containers:** All 8 up and healthy (freqtrade, termix, crowdsec, shell-executor, searxng, beszel, vaultwarden, n8n)
+
+### CVE & Threat Intel
+- **Node.js:** Security releases scheduled for Tue Mar 24 — monitor and patch v25.x when available
+- **CVE-2026-1526:** Undici WebSocket Client DoS — check if Node v25.8.1 affected
+- No new critical CVEs found for macOS, Docker 29.2.1, Ollama 0.18.1, or Chrome this week
+
+### Tool Versions
+- No outdated security tools detected via brew (trivy, lynis current)
+
+### Notes
+- NAS (nas-zimaos) heartbeat stale 7 days — needs investigation (was 6 days last week)
+- Node.js security release Mar 24 — schedule update after release
+- rkhunter on GPU continues to timeout — consider dedicated run
+
 ## 2026-03-15 (Sun) — 05:11 UTC
 
 ### Sweep Summary: ✅ All Clear (minor notes)

@@ -1,6 +1,6 @@
 # LLM Landscape — Rolling Summary
 
-> Last updated: 2026-03-21
+> Last updated: 2026-03-22
 
 ---
 
@@ -73,21 +73,27 @@
 7. **Inference optimization**: Nvidia KVTC shrinks KV cache 20× without weight changes. This is the bottleneck everyone's attacking.
 8. **Agentic benchmarks matter**: SWE-Bench, Terminal-Bench 2.0, GDPval-AA, MLE Bench Lite now defining model quality more than MMLU.
 9. **Deep research agents emerging**: MiroThinker 1.7 (300 tool calls), Cowork persistent threads — "agent models" purpose-built for long-chain tasks.
-10. **Distillation gold rush**: Community distilling Opus 4.6 reasoning into Qwen3.5 bases. Trending heavily on HuggingFace.
+10. **Distillation gold rush**: Community distilling Opus 4.6 reasoning into Qwen3.5 bases. Trending heavily on HuggingFace. v2 distills appearing.
 11. **Privacy in AI chat**: Moxie Marlinspike (Signal creator) integrating Confer encrypted AI into Meta AI. Could make encrypted LLM inference mainstream.
 12. **NemoClaw / OpenClaw ecosystem**: Nvidia officially wrapping OpenClaw for enterprise. Jensen called it "the operating system for personal AI."
+13. **Tool acquisitions for coding**: OpenAI buying Astral (Ruff/uv/ty) signals that owning dev tools is the new moat. Expect more M&A.
+14. **Always-on agents**: Claude Code channels + OpenClaw + NemoClaw — the industry is converging on persistent, event-driven AI assistants.
+15. **Custom model training from base**: Cursor's Composer 2 (Kimi K2.5 + continued pretraining + RL) is the playbook: take open/licensed base, specialize via training, not just prompting.
 
-## Recent Moves (March 19–21)
+## Recent Moves (March 19–22)
 
+- **OpenAI**: Acquiring **Astral** (Ruff/uv/ty) for Codex team. Tools staying open source. Desktop "superapp" confirmed (ChatGPT+Codex+Atlas). Hiring from 4,500→8,000.
+- **Anthropic**: Claude Code **channels** (research preview) — Telegram/Discord two-way messaging into running sessions. Moving toward always-on agent territory.
+- **Cursor**: Launched **Composer 2** (fine-tuned Kimi K2.5 via Fireworks AI, $0.50/$2.50). CursorBench 61.3, Terminal-Bench 61.7, SWE-bench ML 73.7.
+- **Nvidia**: **Nemotron Cascade 2 30B-A3B** uploaded to HF (Mar 22). **Nemotron 3 Super 120B** BF16/NVFP4 updated. **NemoClaw** enterprise wrapper launched at GTC.
 - **Xiaomi**: Released **MiMo-V2-Pro** (1T sparse, 42B active, 1M context). #10 on Artificial Analysis. Open-source variant planned.
 - **MiniMax**: Released **M2.7** (proprietary, self-evolving RL, SWE-Pro 56.22%). Chinese labs going proprietary.
-- **Cursor**: Launched **Composer 2** (fine-tuned Kimi K2.5, 86% cheaper, beats Opus 4.6 on Terminal-Bench).
-- **Mamba 3**: Released under Apache 2.0 by Gu/Dao. Inference-first SSM, ~4% improvement over transformers.
-- **Nvidia**: **KVTC** technique (20× KV cache compression). **Nemotron Cascade 2 30B-A3B** uploaded to HF. NemoClaw enterprise wrapper.
-- **Microsoft**: **MAI-Image-2** launched (#3 text-to-image). Rolling out in Copilot/Bing.
+- **Mistral**: **Forge** enterprise custom model training announced (Mar 17). **Leanstral** (Lean 4 theorem proving agent).
+- **Microsoft**: **MAI-Image-2** launched. Rolling out in Copilot/Bing.
+- **Meta**: AI replacing content moderators. Confer encryption partnership with Moxie Marlinspike.
 - **WordPress.com**: MCP write capabilities — AI agents can now create/publish content.
-- **Meta**: AI Support Assistant global rollout. Content moderation shifting to AI. Confer encryption partnership.
-- **Google**: Personal Intelligence rolling out to free Gemini users. Gemini screen automation on Galaxy S26.
+- **Pentagon vs Anthropic**: DoD filed rebuttal calling Anthropic a "supply chain risk" in ongoing lawsuit.
+- **Flash-MoE**: Qwen 397B running at 5.5 t/s on 48GB M3 Max via "LLM in a Flash" techniques.
 
 ## Models to Watch
 
@@ -98,6 +104,8 @@
 - **GPT-5.4 nano** — Cheapest frontier model at $0.20/$1.25. Test for lightweight subagent tasks.
 - **Holotron-12B** — Open-weight 12B computer-use agent with SSM. Could run on 1-2× 3090.
 - **Mistral Small 4 NVFP4** — 6.5B active, Apache 2.0, might fit across 5×3090.
+- **Claude Code channels** — Anthropic building OpenClaw-like functionality into Claude Code. Watch for GA and API key support.
+- **OpenAI superapp** — When it ships, this consolidates ChatGPT+Codex+Atlas. May change how we interact with OpenAI APIs.
 - **Mistral Forge** — Enterprise custom model training. Watch for pricing/availability.
 - **MiniMax M2.7 API** — Self-evolving model. Test when pricing is published.
 - **Mamba 3 derivatives** — Watch for community scaling this architecture to larger models.
