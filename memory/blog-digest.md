@@ -526,3 +526,70 @@ Official post-mortem on the massive April 2025 Iberian power blackout. Infrastru
 - Delve fake compliance (satire/commentary)
 - Windows quality commitment (PR post)
 
+
+## 2026-03-23 — Monday 07:15 UTC
+
+### 🚨 URGENT — Security
+
+**CVE-2025-32975 (CVSS 10.0) — Quest KACE SMA Active Exploitation**
+Active exploitation of a critical (perfect 10) RCE in Quest KACE SMA systems. Patch immediately if running this device management appliance.
+Source: The Hacker News
+
+---
+
+### 🤖 AI / ML
+
+**Flash-MoE: Running a 397B Parameter Model on a Laptop**
+Project claims to run a 397B MoE model locally on consumer hardware using flash attention tricks. Impressive if it holds up — worth watching.
+
+**Intuitions for Transformer Circuits**
+Explainer on mechanistic interpretability / transformer circuit analysis. Useful reading for anyone digging into model internals.
+
+**Reports of Code's Death Are Greatly Exaggerated**
+Steve Krouse pushes back on "vibe coding replaces programmers" hype — argues precision/correctness still matters and AI tools amplify rather than replace engineering rigour.
+
+**They're Vibe-Coding Spam Now**
+AI-generated spam emails are already flooding inboxes. Practical signal that LLM-assisted spam is a real and growing problem.
+
+**What Young Workers Are Doing to AI-Proof Themselves** (WSJ)
+Workers are doubling down on creative, interpersonal, and physical roles. Interesting labour market signal.
+
+---
+
+### 🔒 Security (non-urgent)
+
+**GrapheneOS: No Personal Information Required**
+GrapheneOS reaffirms it will remain usable without account/personal data requirements. Good news for privacy-focused users.
+
+---
+
+### 🛠️ General Tech
+
+**MAUI Is Coming to Linux** (via Avalonia preview)
+Microsoft's MAUI UI framework getting Linux support via Avalonia — first preview out. Big deal for .NET cross-platform devs.
+
+**The Future of Version Control — Manyana**
+Bram Cohen (BitTorrent creator) proposes a new distributed VCS model. Worth a read if you care about git alternatives.
+
+**Migrating the American Express Payment Network, Twice**
+Deep post on how Amex migrated critical payment infrastructure — architecture and war stories.
+
+**RollerCoaster Tycoon Optimization Deep Dive**
+A look under the hood of RCT's legendary hand-optimised assembly. Classic "gold standard" story revisited.
+
+**Windows Native App Development Is a Mess**
+Honest breakdown of the fragmented Win32/WinUI/MAUI/WPF landscape. Validates why cross-platform frameworks keep winning.
+
+**FPGA 3dfx Voodoo with Modern RTL Tools**
+Someone reimplemented the Voodoo GPU in FPGA using modern tooling. Fun retrocomputing/hardware project.
+
+**More Common Mistakes in System Architecture Diagrams**
+Practical list of diagram anti-patterns. Useful reference.
+
+---
+
+### 📌 Skipped (fluff/noise)
+
+- HN job posts, "You are not your job" opinion piece, NixOS love letter, PC Gamer RSS irony post, knowledge-offline project (no substance visible), systems reading group retrospective (Microsoft internal interest only), "Collaboration Is Bullshit" op-ed.
+
+---

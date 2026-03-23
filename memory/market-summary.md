@@ -129,3 +129,31 @@ _Data sourced via Yahoo Finance API. Finnhub CLI not installed; web fallback use
 **📅 Upcoming:** No major US earnings flagged for today (triple witching options expiry window — potential volatility)
 
 _Data limitations: Finnhub unavailable, stooq/Yahoo rate-limited. Configure FINNHUB_API_KEY for richer data next run._
+
+---
+
+## 📈 Market Summary — Monday, 23 March 2026 (07:30 GMT, Pre-Market)
+
+**Macro backdrop:** Risk-off tone heading into Monday open. Trump/Iran tensions escalated over the weekend — Trump and Iran traded threats against civilian infrastructure, rattling futures. Market is "teetering on the edge of correction territory" per MarketWatch.
+
+**European markets (open):**
+- FTSE 100: 9,918 ▼ -1.44%
+- DAX: 22,380 ▼ -2.01%
+- CAC 40: 7,666 ▼ -1.82%
+- Stoxx 600: 573 ▼ -1.78%
+
+European indices broadly down 1.5–2%, driven by geopolitical risk and tariff uncertainty.
+
+**Key themes:**
+- 🇮🇷 US-Iran tensions: Trump threatening civilian infrastructure — markets rattled
+- 🛃 Tariff escalation: Americans warned of higher prices — cost pass-through concerns
+- ⚠️ TACO trade risk: "Buy the dip" pattern under pressure, analysts flagging potential correction
+- 🗓️ March 27 watch: Partial US government shutdown deadline — potential market catalyst
+
+**US pre-market:** Futures flat-to-down (data limited — no Finnhub key, APIs rate-limited at this hour). Individual stock quotes unavailable pre-open.
+
+**AI/Tech watch:** No specific movers confirmed pre-market, but geopolitical + tariff pressure likely weighs on risk assets including NVDA, AMD, COIN.
+
+**Upcoming this week:** March 27 shutdown deadline, PCE inflation data.
+
+_Data: MarketWatch (live). Finnhub script missing (skill not installed). Set up FINNHUB_API_KEY for stock-level data._

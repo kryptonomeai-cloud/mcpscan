@@ -1,30 +1,31 @@
-# CrowdSec Daily Status — 2026-03-22
+# CrowdSec Daily Status — 2026-03-23 05:00 UTC
 
 ## Machines
-| Name | Status | Last Heartbeat |
-|------|--------|----------------|
-| localhost (Mac mini) | ✔️ | 8s ago |
-| gpu-server | ✔️ | 37s ago |
-| nas-zimaos | ⚠️ | **182h27m ago (~7.6 days)** |
+| Name | IP | Status | Last Heartbeat |
+|------|-----|--------|----------------|
+| localhost | 127.0.0.1 | ✔️ | 58s ago |
+| gpu-server | 172.23.0.1 | ✔️ | 27s ago |
+| nas-zimaos | 185.15.59.224 | ⚠️ | **206h stale** |
 
 ## Bouncers
-All 7 bouncers valid. Active ones pulling regularly:
-- nas-fw-bouncer@172.23.0.1 — last pull 05:02
-- gpu-firewall-bouncer@172.23.0.1 — last pull 05:02
-- NAS-based bouncers (185.15.59.224) — last pull Mar 14 (stale, matches NAS offline)
+All 8 bouncers valid. Notable:
+- `nas-fw-bouncer@172.23.0.1` — last pull 05:00:09Z ✔️
+- `gpu-firewall-bouncer@172.23.0.1` — last pull 05:00:08Z ✔️
+- `caddy-bouncer@172.23.0.1` — last pull 2026-03-12 ⚠️ (11 days stale)
+- NAS bouncers (185.15.59.224) — last pull 2026-03-14 ⚠️ (stale with machine)
 
 ## Alerts & Decisions
 - No active alerts
 - No active decisions (bans)
 
 ## CAPI
-- Connected, community subscription
+- Status: **Connected** (community)
 - Signal sharing: enabled
 - Blocklist pull: enabled
 
 ## Container Health
-- crowdsec container: **healthy**
+- `crowdsec` container: **healthy**
 
-## ⚠️ Issues
-- **nas-zimaos machine heartbeat stale (7+ days)** — NAS may be offline or CrowdSec agent stopped
-- NAS-based bouncers also stale (last pull Mar 14)
+## Notes
+- nas-zimaos machine offline for ~8.5 days — NAS likely powered down or network issue. Known pattern.
+- caddy-bouncer on 172.23.0.1 hasn't pulled in 11 days — may need investigation if caddy is still running.

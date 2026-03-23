@@ -288,3 +288,37 @@ No action needed. System is on latest version. One notable security fix in curre
 
 ### Summary
 System healthy. On latest version. No action needed. Config clean with zero errors.
+
+## 2026-03-23 07:45 UTC — Daily Monitor
+
+### Version
+- **Current:** OpenClaw 2026.3.13 (61d171a)
+- **Latest on GitHub:** v2026.3.13-1 (recovery release, 14 Mar)
+  - The -1 suffix is GitHub tag/release only; npm package is still 2026.3.13
+  - **We are up to date** (running the same npm version)
+- Notable fixes in v2026.3.13:
+  - fix(telegram): thread media transport policy into SSRF (#44639)
+  - fix(compaction): full-session token count for post-compaction sanity check
+  - fix(session): preserve lastAccountId and lastThreadId on session reset
+  - fix(agents): drop Anthropic thinking blocks on replay
+  - feat(android): redesign chat settings UI
+
+### Documentation (clawddocs)
+- clawddocs skill directory not present at expected path (~/.openclaw/workspace/skills/clawddocs)
+- Skipped doc tracking scripts
+
+### ClawHub & Skills
+- Installed skills: web-monitor 1.0.0, moss 1.0.3
+- No update check available via clawhub CLI
+- Top new skills on ClawHub: new-house, cctv-news-fetcher, news, news-aggregator, ai-news-oracle (all news/content focused — low relevance)
+
+### Config Health (openclaw doctor)
+- ✅ No errors
+- Loaded: 10 plugins, Disabled: 31, Errors: 0
+- Telegram: ok, Slack: ok
+- Agents: main, forge, scout, sentinel, venture, taskmaster
+- Session store: 104 entries, active within last 43 min
+- No warnings requiring action
+
+### Actions Required
+- None. System healthy, version current.

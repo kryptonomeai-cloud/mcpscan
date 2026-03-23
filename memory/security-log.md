@@ -243,3 +243,43 @@
 - NAS (nas-zimaos) still offline — now 6 days stale, worth investigating
 - rkhunter on GPU timed out — consider running manually
 - Lynis quick audit returned no output (may need interactive run)
+
+---
+
+## 2026-03-23 05:00 UTC — Daily Security Sweep
+
+### CrowdSec
+- ✅ Localhost & GPU machines healthy, heartbeats <1min
+- ⚠️ nas-zimaos stale (206h) — likely offline
+- ⚠️ caddy-bouncer@172.23.0.1 last pull 11 days ago
+- ✅ No alerts or active bans
+- ✅ CAPI connected, community blocklist active
+- ✅ Container healthy
+
+### Mac mini
+- ✅ Firewall enabled
+- ✅ Docker containers all up (freqtrade, termix, crowdsec, shell-executor, searxng, beszel, vaultwarden, n8n)
+- ✅ No unexpected listening ports — all bound to 127.0.0.1 or expected services
+- ✅ Security tools (trivy, lynis) up to date per brew
+
+### GPU Server
+- ✅ SSH reachable
+- ✅ fail2ban sshd: 0 currently banned, 1 total failed attempt
+- ✅ UFW active with tight rules (Ollama LAN-only, SSH restricted to Mac mini + Tailscale)
+- ⚠️ rkhunter check timed out (SSH session ended before completion)
+
+### Docker Containers
+- ⚠️ Trivy DB download failed (credential error) — scan skipped. May need `docker login` or credential helper fix.
+- All 8 containers running, 3 report healthy status
+
+### CVE Intel
+- ⚠️ Web search quota exhausted & SearXNG localhost blocked — CVE check skipped this run
+- No manual CVE action needed based on current patch levels
+
+### Tool Versions
+- ✅ No outdated security tools in brew
+
+### Action Items
+- [ ] Investigate nas-zimaos offline status if persists >2 weeks
+- [ ] Check caddy-bouncer on 172.23.0.1 — 11 day stale pull
+- [ ] Fix trivy Docker credential helper for container scanning

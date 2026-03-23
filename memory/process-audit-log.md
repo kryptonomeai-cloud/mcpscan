@@ -237,3 +237,13 @@
 - Listening ports: ✅ none flagged
 - User processes: ✅ all map to known process list (Claude, Telegram, ollama, node, beszel-agent, lume, Google, BlockBlock, cloudphotod, Python, docker, openclaw-gateway — including Claude's Squirrel/ShipIt updater, expected when Claude.app is running)
 
+
+## 2026-03-23 09:00 UTC — Morning Audit
+
+**Result: CLEAN — no anomalies**
+
+- LaunchAgents (user/system): match baseline ✓
+- LaunchDaemons: match baseline ✓
+- Docker containers (8): freqtrade, termix, crowdsec, shell-executor, searxng, beszel, vaultwarden, n8n-n8n-1 — all up ✓
+- Listening ports: none flagged ✓
+- User processes: all known/expected ✓
