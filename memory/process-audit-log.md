@@ -226,3 +226,14 @@
 - **User processes:** ✅ All known process types match (NordVPN app + helper are expected given NordVPN is installed)
 
 **Anomaly:** `com.nordvpn.macos.helper.plist` found in LaunchDaemons — not listed in baseline. NordVPN process (`/Applications/NordVPN.app`) and its privileged helper (`/Library/PrivilegedHelperTools/com.nordvpn.macos.helper`) are running. This is consistent with NordVPN being actively used but the daemon was not included in the baseline created 2026-03-14. Recommend adding to baseline if NordVPN is a permanent install.
+
+## 2026-03-22 09:00 UTC — Scheduled Morning Audit
+
+**Result: CLEAN — no anomalies**
+
+- LaunchAgents (user/system): ✅ exact match with baseline
+- LaunchDaemons: ✅ exact match with baseline
+- Docker containers: ✅ all 8 expected containers running (freqtrade, termix, crowdsec, shell-executor, searxng, beszel, vaultwarden, n8n-n8n-1)
+- Listening ports: ✅ none flagged
+- User processes: ✅ all map to known process list (Claude, Telegram, ollama, node, beszel-agent, lume, Google, BlockBlock, cloudphotod, Python, docker, openclaw-gateway — including Claude's Squirrel/ShipIt updater, expected when Claude.app is running)
+

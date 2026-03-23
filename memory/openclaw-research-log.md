@@ -251,3 +251,40 @@ Top new listings (by score): new-sloth, cctv-news-fetcher, news, hot-news-aggreg
 
 ### Summary
 No action needed. System is on latest version. One notable security fix in current version (Telegram SSRF) — already on this version so covered. Config healthy.
+
+---
+## 2026-03-22 07:45 UTC
+
+### 1. Version Check
+- **Installed:** 2026.3.13 (61d171a)
+- **Latest on GitHub:** v2026.3.13-1 (recovery release, 14 Mar)
+  - The -1 suffix is GitHub tag only; npm version is still 2026.3.13 — **we are current**
+  - Notable fixes in current release:
+    - fix(compaction): full-session token count for post-compaction sanity check
+    - fix(telegram): thread media transport policy into SSRF ← security-relevant (already on this)
+    - fix(session): preserve lastAccountId and lastThreadId on session reset
+    - fix(agents): drop Anthropic thinking blocks on replay
+    - feat(android): redesign chat settings UI
+- **Action needed:** None — on latest
+
+### 2. Documentation (clawddocs)
+- clawddocs skill directory not found at expected path (~/.openclaw/workspace/skills/clawddocs)
+- Skipped doc tracking scripts
+
+### 3. ClawHub & Skills
+- Top new skills on ClawHub: new-sloth, cctv-news-fetcher, news, hot-news-aggregator, apple-news, ai-news
+- Mostly news aggregator variants — nothing security-relevant or particularly useful for our stack
+- No skill updates checked (no `clawhub update --check` available in this context)
+
+### 4. Dashboard & UI
+- Not checked this cycle (no new community integrations found in prior searches)
+
+### 5. Config Health (openclaw doctor)
+- Loaded: 10 channels | Disabled: 31 | Errors: **0**
+- Telegram: ok | Slack: ok
+- Agents: main, forge, scout, sentinel, venture, taskmaster
+- Heartbeat: 30m on main
+- No warnings; all healthy
+
+### Summary
+System healthy. On latest version. No action needed. Config clean with zero errors.

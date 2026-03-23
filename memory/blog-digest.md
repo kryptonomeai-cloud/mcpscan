@@ -1,6 +1,38 @@
 
 ---
 
+## 2026-03-22 (Sunday 07:15 UTC)
+
+### 🚨 Security (Urgent)
+
+- **FBI Warns: Russian Hackers Target Signal & WhatsApp** — Phishing campaigns targeting encrypted messaging apps; users should enable link-preview warnings and verify QR codes carefully. [Hacker News]
+- **⚠️ Oracle patches CVE-2026-21992** — Critical unauthenticated RCE in Oracle Identity Manager. Patch immediately if you run OIM. [Hacker News]
+- **⚠️ Trivy Supply Chain Attack / CanisterWorm** — Self-spreading worm hit 47 npm packages via a compromised Trivy scanner update. If you use Trivy in CI, audit your pipeline and lock to a known-good version. [Hacker News]
+- **CISA KEV Update: Apple, Craft CMS, Laravel bugs** — Must-patch by April 3, 2026 for federal systems; good practice to patch now regardless. [Hacker News]
+- **Cloudflare flags archive.today as C&C/Botnet** — 1.1.1.2 (family-safe DNS) now blocks the archiving site — likely a false positive, but worth noting if you rely on archive.today links. [HN]
+
+### 🤖 AI/ML
+
+- **Simon Willison: Using Git with coding agents** — Practical guide on version control patterns for agentic workflows — commits as checkpoints, branching strategies. Directly relevant for coding agent usage. [Simon Willison]
+- **Sashiko: Agentic Linux kernel code review** — AI system autonomously reviewing Linux kernel patches; interesting signal for where agentic code review is heading. [HN]
+- **Tinybox — Offline AI device, 120B parameters** — Tinygrad's local inference box supporting 120B-param models offline. Notable hardware milestone. [HN]
+- **Thinking Fast, Slow, and Artificial** — Academic paper on how AI is reshaping human reasoning patterns; cognitive offloading concerns. [HN]
+
+### 🛠️ General Tech
+
+- **Simon Willison: Profiling HN users from comments** — Neat LLM-based analysis of comment patterns; interesting demo of text profiling at scale. [Simon Willison]
+- **The Three Pillars of JavaScript Bloat** — Solid breakdown of why JS bundles stay fat (framework overhead, polyfills, tree-shaking failures). Good reference for web perf work. [HN]
+- **Floci — Free open-source local AWS emulator** — Alternative to LocalStack; worth watching if you do AWS dev locally. [HN]
+- **Grafeo — Embeddable graph database in Rust** — Fast, lean graph DB; interesting for anyone needing embedded graph storage. [HN]
+- **Professional video editing in browser (WebGPU/WASM)** — Tooscut.app — browser-native pro video editing; WebGPU maturing fast. [HN]
+- **Atomic — Self-hosted semantic personal knowledge base** — Show HN; semantically connected notes, self-hosted. Interesting for PKM setups. [HN]
+- **Hide macOS Tahoe menu icons** — Quick tip for decluttering the menu bar on macOS Tahoe. [HN]
+
+### ⏭️ Skipped (fluff/off-topic)
+Rat King (Wikipedia), Alpha Micro AM-1000E (retro hardware), Chest Fridge (2009), Common Lisp tooling, Termcraft (terminal game), Child protection/internet access op-ed, How Ford burned $12B in Brazil, Boomloom, Some things just take time.
+
+---
+
 ## 2026-03-15 (Sunday 07:15 UTC)
 
 ### 🚨 URGENT / HIGH PRIORITY

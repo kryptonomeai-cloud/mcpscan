@@ -1,5 +1,56 @@
 # Weekly Audit Log
 
+## 2026-03-22 04:03 UTC — Weekly System Audit
+
+**Overall: ✅ Healthy — 2 minor items noted**
+
+### Passed ✅
+- **OS:** macOS 26.3.1 (Build 25D2128), uptime 6d 22h, load avg 1.43/1.33/1.25
+- **Disk:** 697GB free of 926GB (2% used) — excellent
+- **Memory:** Normal (active 860k pages, inactive 849k, wired 137k, 0 swapouts)
+- **Firewall:** Enabled
+- **FileVault:** On
+- **SIP:** Enabled
+- **Docker:** 8/8 expected containers running, all up 4-6 days, healthy where applicable
+- **LaunchAgents/Daemons:** 23 user (2 new: ComfyUI MCP Server, OpenMOSS), 2 system, 9 daemons (1 new: NordVPN helper) — all accounted for
+- **CrowdSec:** Healthy, no active decisions
+- **Ollama:** Responding on :11434, 4 models (bge-m3, qwen3.5:27b, nomic-embed-text, qwen3:32b)
+- **OpenClaw Health:** All channel probes OK (Telegram + Slack)
+- **Cron Jobs:** 26 total, 20 enabled, 6 disabled (MOSS agents). All enabled jobs in OK state, 0 consecutive errors.
+- **Sessions:** 161 main agent sessions (stable from last week's 146)
+- **MEMORY.md:** 130 lines — within limits
+
+### Warnings ⚠️
+1. **OpenClaw update available** — v2026.3.13 on stable. Current version not auto-updated. User should decide when to apply.
+2. **macOS background security update pending** — "macOS Background Security Improvement (a)-25D771280a" requires restart. 208MB.
+
+### Informational ℹ️
+- **Brew:** 14 outdated packages (ca-certificates, caddy, cmake, deno, harfbuzz, libnghttp2, mlx-c, ollama, qemu, semgrep, simdjson, uv). Non-critical.
+- **Brew doctor:** Deprecated cask `memo` (cosmetic). Fixed: linked certifi + memo kegs, added /opt/homebrew/sbin to PATH.
+- **Time Machine:** Not configured (using restic + iCloud backups — acceptable)
+- **Security audit:** 1 critical (hooks.allowed_agent_ids_unrestricted — known/accepted config), 4 warnings (trusted_proxies, weak_tier models on sub-agents, multi_user heuristic, probe scope) — all known from previous audits.
+- **New LaunchAgents since last audit:** com.comfyui.mcp-server.plist, com.openmoss.server.plist — intentional additions
+- **New LaunchDaemon:** com.nordvpn.macos.helper.plist — NordVPN installation
+
+### Actions Taken
+- ✅ Linked unlinked brew kegs (certifi, memo)
+- ✅ Added /opt/homebrew/sbin to ~/.zshrc PATH
+- ✅ Updated process-baseline.json with 3 new LaunchAgent/Daemon entries
+
+### Docker Container Status
+| Container | Status |
+|-----------|--------|
+| freqtrade | Up 4 days |
+| termix | Up 6 days (healthy) |
+| crowdsec | Up 6 days (healthy) |
+| shell-executor | Up 6 days |
+| searxng | Up 6 days |
+| beszel | Up 6 days |
+| vaultwarden | Up 6 days (healthy) |
+| n8n-n8n-1 | Up 6 days |
+
+---
+
 ## 2026-03-15 04:01 UTC — Weekly System Audit
 
 **Overall: ✅ Healthy — 3 items need attention**

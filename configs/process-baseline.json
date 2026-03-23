@@ -1,5 +1,6 @@
 {
   "created": "2026-03-14T09:00:00Z",
+  "updated": "2026-03-22T04:03:00Z",
   "launchAgents": {
     "user": [
       "ai.openclaw.gateway.plist",
@@ -7,6 +8,7 @@
       "com.beszel.agent.plist",
       "com.caddy.reverse-proxy.plist",
       "com.clawmetry.dashboard.plist",
+      "com.comfyui.mcp-server.plist",
       "com.crowdsec.sshlog.plist",
       "com.google.GoogleUpdater.wake.plist",
       "com.google.keystone.agent.plist",
@@ -18,6 +20,7 @@
       "com.miniclaw.self-healer.plist",
       "com.openclaw-dashboard.plist",
       "com.openclaw.mission-control.plist",
+      "com.openmoss.server.plist",
       "com.paperless.ftp-server.plist",
       "com.paperless.inbox-watcher.plist",
       "com.trycua.lume_daemon.plist",
@@ -37,6 +40,7 @@
     "com.docker.vmnetd.plist",
     "com.google.GoogleUpdater.wake.system.plist",
     "com.google.keystone.daemon.plist",
+    "com.nordvpn.macos.helper.plist",
     "com.objective-see.blockblock.plist"
   ],
   "dockerContainers": [
@@ -68,5 +72,5 @@
     "lume",
     "freqtrade"
   ],
-  "notes": "Baseline updated 2026-03-15. Removed dashchat stack (no longer running). Added freqtrade and termix as permanent containers."
+  "notes": "Baseline updated 2026-03-22. Added com.comfyui.mcp-server.plist, com.openmoss.server.plist to user LaunchAgents. Added com.nordvpn.macos.helper.plist to LaunchDaemons."
 }

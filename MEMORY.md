@@ -1,17 +1,20 @@
 # MEMORY.md — Long-Term Memory
 
-_Curated knowledge. Updated: 2026-03-15 (memory maintenance review)._
+_Curated knowledge. Updated: 2026-03-22 (memory maintenance review)._
 
 ---
 
 ## Infrastructure
 
 ### MiniClaw (Mac mini)
-- macOS Tahoe, ARM64
-- Runs OpenClaw gateway, Docker services, cron jobs
+- macOS Tahoe 26.3.1, ARM64
+- Runs OpenClaw gateway, Docker services, cron jobs (26 total, 20 enabled, 6 disabled MOSS agents)
 - Restic backup → GPU server via REST (SSH tunnel), NOT NAS. 10 snapshots retained.
-- CrowdSec v1.7.6 (Docker-only), healthy, 14k+ IPs blocked, 4 bouncers
+- CrowdSec v1.7.6 (Docker-only), healthy, 8 bouncers valid
 - Ports hardened: 7070/7080/8880 rebound to 127.0.0.1; 18799 left open (phone LAN access, IP whitelist)
+- **NordVPN installed** (LaunchDaemon: `com.nordvpn.macos.helper.plist`, added to baseline Mar 21)
+- **New LaunchAgents**: ComfyUI MCP Server, OpenMOSS server (added to baseline Mar 22)
+- macOS background security update pending ("25D771280a", 208MB, requires restart)
 
 ### GPU Server (192.168.0.92)
 - 5× RTX 3090 (120 GB VRAM total), 125 GB RAM, 1.2 TB free disk
@@ -22,9 +25,16 @@ _Curated knowledge. Updated: 2026-03-15 (memory maintenance review)._
 - FSDP DDP recommended over unsloth balanced mode (~5-7s/step vs 46s/step)
 - GPU 0 runs ComfyUI venv process
 - SSH publickey auth intermittently fails — has resolved itself multiple times
+- **HMRC Tax Advisor backend deployed** (port 8001, tmux session `hmrc`, bound to 127.0.0.1)
+
+### NAS (nas-zimaos) — ⚠️ Offline
+- CrowdSec agent offline since ~Mar 14 (8+ days stale as of Mar 22)
+- NAS-side bouncers last pulled Mar 14
+- **Needs investigation** — possibly sleeping or agent stopped
 
 ### Paperless
-- Backup: 1.4 MB export, copied to iCloud
+- Backup: ~1.4 MB daily export to iCloud (working, verified Mar 22)
+- iCloud cleanup of old backups may lag due to sync issues
 - Scanner FTP port moved from 21 → 2121 (scanner device still needs updating)
 
 ---
@@ -65,30 +75,26 @@ _Curated knowledge. Updated: 2026-03-15 (memory maintenance review)._
 - **Blocked:** Vercel team permissions error (needs manual dashboard fix)
 - **Next:** mindfizz.co.uk DNS (GoDaddy → Vercel), GA4 property, social account signups
 
-### HMRC Tax Advisor — ✅ Fixed & Working
-- Backend at localhost:8200, frontend at localhost:3000
+### HMRC Tax Advisor — ✅ Deployed to GPU Server
+- **Backend:** GPU server port 8001 (tmux session `hmrc`, bound to 127.0.0.1 — needs SSH tunnel or `--host 0.0.0.0` for remote access)
+- **Frontend:** localhost:3000 (Mac mini)
 - **Fix:** Qwen3:32b is a thinking model — added `"think": False` to all Ollama `/api/generate` calls
 - Also: `keep_alive: "24h"`, timeouts increased to 300s
+- bge-m3 embedding model pulled on GPU server (1.2 GB), Qdrant on NAS (192.168.0.18:6333)
 - Test results: VAT threshold → HIGH confidence (5 citations, ~60s), Self assessment → HIGH confidence (5 citations, 87s)
-- **Next:** Deploy to Dell1 or NAS
 
 ### Email Classifier Dashboard — 🔄 Needs Real Data
 - React + Tailwind dashboard built with mock data
 - Docs at `docs/email-dashboard-20260314.md`
 - **Next:** Connect to real WSL classifier output
 
-### LoRA Training — ✅ Complete (Qwen 7B)
+### LoRA Training — ✅ Complete
 - **Dataset:** 30,511 email→summary pairs (14,644 used for training)
-- **Current run:** Qwen 7B via Unsloth, 161M trainable params (2.08% of 7.8B), 3 epochs, 2,748 steps
-  - ~41% complete (step 1133/2748) as of Mar 15 01:10, ~26-30s/step on single RTX 3090
-  - Loss: train 0.78, eval 0.82 (converging well, no overfitting)
-  - ETA: ~Sun Mar 15 afternoon (12:30-15:00 GMT)
-  - Output: `~/lora-output/qwen7b-v1/` on GPU server, tmux session `lora`
-  - Checkpoints saved: 600, 800, 1000
-- Previous: Qwen 32B LoRA completed (checkpoint-500), 70B partially done, 8B crashed (GGUF conversion EOFError)
+- **Completed runs:** Qwen 7B (3 epochs, 2,748 steps, ~26-30s/step), Qwen 32B (checkpoint-500)
+- Output: `~/lora-output/qwen7b-v1/` on GPU server
+- Previous attempts: 70B partially done, 8B crashed (GGUF conversion EOFError)
 - Axolotl failed (torch version mismatch — needs 2.8.0, server has 2.10.0)
 - **Lesson:** DDP tries full model per GPU → OOM. Use QLoRA + device_map="balanced" instead
-- Training crashed once at step 600 (unattended), was restarted successfully
 - Docs at `docs/lora-training-setup-20260314.md`
 
 ---
@@ -109,22 +115,23 @@ _Curated knowledge. Updated: 2026-03-15 (memory maintenance review)._
 - **Vercel deploys:** Local `next build` success ≠ Vercel deploy success; team permissions can silently block
 - **Backtesting ≠ live:** Hyperopt-optimised strategies can be too selective for real-time trading (EMACrossOptimised: 17 trades in 6 months, 0 in 27+ hours live)
 - **Trend filters in bear markets:** `close > ema150` type filters will block 100% of entries when market is bearish — consider making these conditional or removable
+- **CrowdSec NAS heartbeat:** If stale >24h, likely NAS sleeping or agent stopped — recurring issue since Mar 14
 
-## System Health (as of Mar 15)
+## System Health (as of Mar 22)
 
-- MiniClaw overall healthy: 720GB free, FileVault on, SIP enabled, firewall on
+- MiniClaw overall healthy: 697GB free, FileVault on, SIP enabled, firewall on
 - Docker: 8 containers running (freqtrade, termix, crowdsec, shell-executor, searxng, beszel, vaultwarden, n8n)
 - Ollama: 4 models loaded (bge-m3, qwen3.5:27b, nomic-embed-text, qwen3:32b)
-- OpenClaw: v2026.3.13 update available on stable channel (not auto-applied)
-- Brew: 19 outdated packages (caddy, deno, gh, go, node, ollama, poppler, etc.)
-- GPU maintenance cron job failing — ansible playbook directory doesn't exist, needs setup or path fix
-- Dashchat stack removed from baseline (no longer running)
-- Paperless backup working: daily export to iCloud (1.4 MB)
+- OpenClaw: v2026.3.13 — confirmed current (npm latest = 2026.3.13, GitHub tag `-1` is recovery tag only)
+- Brew: 14 outdated packages (non-critical: ca-certificates, caddy, cmake, deno, ollama, semgrep, uv, etc.)
+- GPU maintenance cron job still failing — ansible playbook directory doesn't exist, needs setup or disable
+- NAS CrowdSec agent offline 8+ days — needs investigation
+- Node.js security releases scheduled Mar 24 — monitor and patch v25.x
+- Port 2121 (Python FTP?) recurring on Mac mini — verify if intentional
 
 ## Operational Notes
 
 - Vercel deploys blocked by team auth issue — `vercel project ls` shows no projects despite linked team. Manual dashboard fix needed.
-- 4 consecutive improvement proposals stuck unapproved — process bottleneck identified
-- macOS Tahoe 26.3.1 update available (2.9 GB, requires restart)
 - Scanner device needs FTP port updated from 21 → 2121
 - UniFi password needs rotation + BFG git history scrub
+- rkhunter on GPU server consistently times out — consider manual run or increased timeout

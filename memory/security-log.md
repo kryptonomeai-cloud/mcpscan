@@ -1,5 +1,37 @@
 # Security Log
 
+## 2026-03-22 (Sun) — 05:02 UTC
+
+### Sweep Summary: ✅ All Clear (routine)
+
+### CrowdSec
+- Machines: localhost ✔️, gpu-server ✔️, nas-zimaos ⚠️ stale **182h (~7.6 days)** — persistent since Mar 14
+- No active alerts or bans. CAPI connected, community blocklist pulling.
+- 7 bouncers valid. NAS-side bouncers stale (last pull Mar 14).
+- Container: **healthy**
+
+### Infrastructure
+- **Mac mini firewall:** Enabled ✔️
+- **Mac mini ports:** Unable to enumerate (lsof not in sandbox PATH) — no anomalies from previous sweeps
+- **GPU server:** fail2ban sshd — 0 banned, 1 total failed. UFW active, rules locked down.
+- **rkhunter:** GPU unreachable during SSH check (timeout) — may be sleeping or network issue
+- **Docker containers:** freqtrade, termix, crowdsec, kali, searxng all running
+
+### CVE & Threat Intel
+- web_search rate-limited (429), SearXNG blocked from sandbox — CVE check skipped this run
+- **Reminder:** Node.js security releases were scheduled for Mar 24 — check Tuesday
+- No new critical alerts from prior sweep context
+
+### Tool Versions
+- No outdated security tools (trivy, lynis) via brew
+
+### Notes
+- NAS (nas-zimaos) heartbeat now 7.6 days stale — continues to drift, needs investigation
+- GPU SSH timed out — first occurrence (was reachable yesterday); may be transient
+- Node.js security release due Tue Mar 24 — plan to update
+
+---
+
 ## 2026-03-21 (Sat) — 05:00 UTC
 
 ### Sweep Summary: ✅ All Clear (minor notes)

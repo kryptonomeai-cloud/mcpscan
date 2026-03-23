@@ -1,5 +1,76 @@
 # Tools & Skills Research Log
 
+## 2026-03-23 — Nightly Scan #9
+
+### Summary
+Incremental scan. Web search quota exhausted (Gemini 429), fell back to SearXNG. Focused on MCP ecosystem updates, new CLI tools, and follow-up on previous recommendations.
+
+### Status of Previous Recommendations
+- **Xero MCP server**: Still offline (2 of 8 MCP servers offline: xero, comfyui)
+- **btop, lazydocker, atuin, dust, procs, bandwhich, age, glow**: ALL still not installed from last scan's recommendations
+- Active MCP servers (6/8): paperless, neural-memory, zapier, propertydata, docker, semgrep
+
+### New Findings
+
+#### MCP Ecosystem Updates
+| Server | What | Relevance | Priority |
+|--------|------|-----------|----------|
+| **Financial Modeling Prep MCP** | Stock data, fundamentals, SEC filings, ETFs via MCP | Good for financial monitoring/portfolio tracking | Medium |
+| **Octagon MCP** (OctagonAI) | Financial data + semantic search for AI agents | Alternative to FMP, more agent-focused | Medium |
+| **Joiin MCP** (joiin.co) | Multi-entity financial reporting, connects to Xero/QBO | Could complement or replace broken Xero MCP | ⭐ High |
+| **QuickBooks MCP** (CData) | QuickBooks data access via MCP | Alternative accounting integration | Low |
+| **Chroma MCP** | Vector DB for semantic doc search | Already have neural-memory, likely overlaps | Low |
+| **Terraform MCP** (HashiCorp official) | Infrastructure-as-code via MCP | Useful if managing infra declaratively | Low |
+
+#### New CLI Tools Worth Noting
+| Tool | What | Install | Priority |
+|------|------|---------|----------|
+| **Netdata** | Real-time infra monitoring, zero-config, per-second metrics | Docker or `brew install netdata` | ⭐ High — better than btop for persistent monitoring |
+| **OneUptime** | All-in-one observability (uptime + incidents + logs + traces) | Docker self-hosted | Medium — could replace Uptime Kuma recommendation |
+| **displayplacer** | Programmatic multi-monitor config | `brew install displayplacer` | Low — only useful for complex display setups |
+| **atuin** | Shell history sync across machines via SQLite + encrypted sync | `brew install atuin` | Medium — repeated recommendation |
+
+#### ClawHub Skills Scan
+Searched: productivity, monitor, automation, finance, docker, security, notification, email
+
+Notable skills (not yet installed):
+| Skill | What | Trust Level | Notes |
+|-------|------|-------------|-------|
+| `system-resource-monitor` | System resource monitoring | Unknown | Check publisher before installing |
+| `security-monitor` | Security monitoring | Unknown | Have healthcheck already |
+| `finance-radar` | Finance data tracking | Unknown | Could be useful for market monitoring |
+| `email-daily-summary` | Auto email digest | Unknown | Have gog skill already |
+| `automation-workflows` | Workflow automation | Unknown | N8N likely covers this |
+
+⚠️ No new verified/trusted publishers identified. ClawHub quality remains variable — recommend sticking with official/known skills.
+
+#### Self-Hosted Docker Updates
+- **Netdata** trending as lightweight alternative to full Prometheus+Grafana stack
+- **OneUptime** gaining traction as all-in-one (MIT licensed, replaces 5+ tools)
+- Previous recommendation of **Uptime Kuma** still valid and simpler to deploy
+
+### Recurring Issues
+1. **Xero MCP server still offline** — this has been flagged for multiple scans now
+2. **None of the 8 brew tools from Scan #8 were installed** — these are low-effort, high-value installs
+3. **Gemini search quota consistently hitting 429** at 02:45 — consider adjusting cron timing or switching search provider
+
+### Recommendations (Ranked by Impact)
+
+1. 🔧 **Fix Xero MCP** or evaluate **Joiin MCP** as replacement — accounting integration is broken
+2. 📦 **Install the easy brew wins** — `brew install btop lazydocker atuin dust` (5 min, immediate value)
+3. 📊 **Deploy Netdata** via Docker on GPU server — real-time monitoring with zero config
+4. 💰 **Evaluate Financial Modeling Prep MCP** — if financial data tracking is desired
+5. 🔍 **Consider Uptime Kuma** — still the simplest path to service monitoring
+
+### Next Scan Focus
+- Re-check Xero MCP fix status
+- Check if brew tools were installed
+- Deep-dive into Joiin MCP capabilities
+- Look at N8N community nodes for new integrations
+- Explore GPU server specific tooling (nvidia-smi MCP, training monitors)
+
+---
+
 ## 2026-03-22 — Nightly Scan #8
 
 ### Summary
