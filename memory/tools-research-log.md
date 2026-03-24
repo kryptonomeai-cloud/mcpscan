@@ -1,5 +1,56 @@
 # Tools & Skills Research Log
 
+## 2026-03-24 — Nightly Scan #10
+
+### Summary
+Web search quota exhausted again (Gemini 429), used SearXNG fallback successfully. Focused on AI coding agents, MCP ecosystem v1.27, new self-hosted tools, and ClawHub skill discovery.
+
+### Key Findings
+
+#### 🔥 Noteworthy — AI Coding Agents
+| Tool | What | Why It Matters | Priority |
+|------|------|----------------|----------|
+| **Junie CLI** (JetBrains) | LLM-agnostic coding agent, just entered Beta (March 2026) | BYOK pricing, supports all major models (OpenAI/Anthropic/Google/Grok), one-click migration from Claude Code/Codex, MCP support built-in, next-task prediction. Free Gemini 3 Flash access for first week. | ⭐ High |
+| **Google Colab MCP Server** | Official MCP server for Colab — execute code on cloud GPUs from any MCP client | Released March 19, 2026. Any MCP-compatible agent (Claude Code, Gemini CLI) can provision Colab runtimes, execute Python, get results back. Huge for GPU workloads without local hardware. | ⭐ High |
+
+#### MCP Ecosystem Updates (v1.27)
+- **MCP TypeScript SDK v1.27.1** (Feb 2026): Auth conformance fixes, streaming for elicitation/sampling, command injection vuln fix, transport error swallowing patched
+- **MCP Python SDK v1.26** (Jan 2026): HTTP 404 for unknown sessions (was 400), SEP-1577 sampling support
+- **SEP-1730**: New governance model for v2 branch — breaking changes will be announced/sequenced
+- **Docker MCP Catalog** (mcp.docker.com): Containerized MCP servers with built-in isolation — official Docker initiative
+- **MCP now at Linux Foundation's Agentic AI Foundation** — cemented as universal standard
+
+#### Self-Hosted Tools
+| Tool | What | Notes |
+|------|------|-------|
+| **LibreOffice Online** (restarted) | Self-hosted web office suite — TDF Board revoked 2022 freeze, repo reopening for contributions | Feb 2026 restart. Watch for Docker image. Could replace Google Docs for self-hosters. |
+| **Docker Hardened Images** | 1,000+ hardened container images now free and open source | Security improvement for existing Docker stack |
+| **Homepage** (gethomepage) | YAML-driven homelab dashboard | Still popular in 2026 homelab community, worth considering |
+
+#### ClawHub Skills Worth Investigating
+| Skill | Score | Notes |
+|-------|-------|-------|
+| **mcp-hass** | 3.638 | Home Assistant via MCP — could integrate smart home |
+| **atlassian-mcp** | 3.579 | Jira/Confluence MCP integration |
+| **clickup-mcp** | 3.567 | ClickUp project management MCP |
+| **finance-radar** | 3.462 | Financial monitoring skill |
+| **beancount-skill** | 2.044 | Personal finance with Beancount |
+| **docker-diag** | 3.488 | Docker diagnostics skill |
+| **system-resource-monitor** | 3.569 | System monitoring skill |
+
+#### CLI Tools Still Not Installed (Carried Forward)
+btop, lazydocker, atuin, dust, procs, bandwhich, age, glow — all recommended in previous scans, none installed yet.
+
+### Action Items
+1. **Try Junie CLI** — `brew install junie` or npm install, compare with Claude Code for coding tasks
+2. **Set up Google Colab MCP Server** — would give agents access to cloud GPU compute
+3. **Check Docker MCP Catalog** at mcp.docker.com for containerized MCP servers
+4. **Install the carry-forward CLI tools** — especially btop, lazydocker, atuin
+5. **Watch LibreOffice Online** repo for Docker image availability
+6. **Evaluate clawhub skills**: mcp-hass, docker-diag, finance-radar
+
+---
+
 ## 2026-03-23 — Nightly Scan #9
 
 ### Summary

@@ -30,3 +30,7 @@
 
 **OpenClaw Docs** (https://docs.openclaw.ai) — Navigation menu item renamed from "Tools" to "Tools & Plugins".
 
+
+## 2026-03-24 02:42 UTC
+
+**ClawHub** — Minor copy tweak: the call-to-action button text changed from "Publish a skill" to "Publish Skill" (trivial wording change, no functional update).

@@ -43,7 +43,10 @@ MiniMax M2.5's "$1/hour" pricing and the proliferation of Apache 2.0 MoE models 
 ### 5. Formal Verification Emerging
 Leanstral signals a new category: AI agents that prove their code is correct, not just generate it. This could reshape how we think about code quality for agentic systems.
 
-### 6. Community Distillation
+### 6. Inference Optimization Breakthroughs
+Delta-KV compression (video codec concepts applied to KV cache) achieves near-lossless 4-bit KV quantization — potentially transformative for long-context inference on consumer hardware. RYS II shows that simple layer duplication can improve model quality with zero training.
+
+### 7. Community Distillation
 Jackrong's Claude Opus reasoning distillations into Qwen3.5 models are extremely popular (141k+ downloads). Knowledge distillation from frontier closed models into smaller open models is a major community trend.
 
 ---
@@ -80,6 +83,7 @@ Jackrong's Claude Opus reasoning distillations into Qwen3.5 models are extremely
 
 | Date | Notable Events |
 |------|---------------|
+| 2026-03-24 | Kimi K2.5 recognized as best OS model by Cursor; Delta-KV compression for llama.cpp; RYS II research (layer duplication); Sam Altman exits Helion board, OpenAI eyeing fusion energy; Zuckerberg building AI CEO agent |
 | 2026-03-23 | Weekly scan: Mistral Small 4, Leanstral, Nemotron Cascade 2, Nemotron 3 Super, MiniMax M2.5, Rakuten AI 3.0 |
 | 2026-03-17 | Mistral Small 4 + Leanstral + Forge launched |
 | 2026-03-11 | NVIDIA Nemotron 3 Super released |
