@@ -1,5 +1,140 @@
 # Tools & Skills Research Log
 
+## 2026-03-25 — Nightly Scan #11
+
+### Summary
+Gemini web_search quota exhausted (429); SearXNG via exec+curl worked well. 12+ searches completed. Focused on: CLI tools for AI agents, MCP ecosystem growth, Homebrew 5.1.0 release, self-hosted Docker tools, multi-agent orchestration, and ClawHub skill discovery.
+
+### Key Findings
+
+#### 🍺 Homebrew 5.1.0 Released (March 10, 2026)
+Major release with notable new capabilities:
+- **`brew bundle` now manages Rust Cargo packages, uv tools, and Flatpak** — unified package management
+- **`brew version-install`** — create, extract, and install older formula versions in one step (no more tap gymnastics)
+- **Parallel download fetching** for bundle installs — faster setup
+- **`ffmpeg-full` and `imagemagick-full` formulae** — maximal feature builds now official
+- **`brew services` nice priorities** — set service priority levels
+- **Ruby 4.0** under the hood (Portable Ruby 4.0.1)
+- **Action needed:** Check if our Homebrew is updated to 5.1.0. `ffmpeg-full` might give us more codecs than current ffmpeg install.
+
+#### 🤖 AI Coding CLI Landscape (Feb-March 2026)
+Comprehensive comparison from awesomeagents.ai:
+
+| Tool | Open Source | Price | Context | MCP Support | Notable |
+|------|-----------|-------|---------|-------------|---------|
+| **Claude Code** | No | $20/mo+ | 200K (1M API) | ✅ | Auto git commits, screenshot input |
+| **Gemini CLI** | Yes | **Free** | **1M tokens** | ✅ | 60 req/min, 1000/day free — best value |
+| **Codex CLI** (OpenAI) | Yes | $20/mo+ | 200K | ✅ | Cheapest per-token ($1.50/M input) |
+| **Aider** | Yes (Apache) | Free (BYOK) | Varies | ❌ | 100+ models, auto-fix tests, voice input |
+| **OpenCode** | Yes | Free (BYOK) | Varies | ✅ | GitHub Copilot auth, 75+ providers |
+| **Amp** (Sourcegraph) | No | Free ~$10/day | Varies | ✅ | Ad-supported free tier |
+
+**Key insight:** Gemini CLI's free tier (1M context, 1000 req/day) is by far the best value. OpenCode's Copilot integration is new.
+
+#### 🔧 CLI Tools for AI Agents (from batsov.com deep-dive)
+Tools ranked specifically by value to AI coding assistants — **none installed on our system:**
+
+| Tool | Category | Why for AI | Priority |
+|------|----------|-----------|----------|
+| **ast-grep** | Code search | #1 pick — structural code search/refactor via AST, 20+ languages | ⭐ Critical |
+| **difftastic** | Diff | AST-aware diffs — ignores formatting noise in AI-generated changes | ⭐ High |
+| **shellcheck** | Linting | Catches dangerous shell bugs in AI-generated commands | ⭐ High |
+| **sd** | Text replace | Modern sed with PCRE regex — fewer escaping errors | Medium |
+| **scc** | Code stats | Instant codebase overview (languages, LOC, complexity) | Medium |
+| **yq** | YAML/JSON | jq for YAML — preserves comments, essential for config editing | Medium |
+| **hyperfine** | Benchmarking | Statistical command benchmarking with markdown export | Low |
+| **watchexec** | File watch | Execute commands on file change — feedback loops | Low |
+| **zoxide** | Navigation | Smart cd that remembers frequent directories | Medium |
+
+**⚠️ 11 scans in, still not installed. The single highest-impact action remains:**
+```bash
+brew install ast-grep difftastic shellcheck sd scc yq hyperfine watchexec zoxide
+```
+
+#### 🐳 New Self-Hosted Docker Tools
+
+| Tool | What | Why Notable |
+|------|------|-----------|
+| **Monocker** | Lightweight Docker container state monitor → notifications (Telegram/Slack/ntfy) | Zero-config, just mount docker.sock. Instant alerts when containers crash. Perfect for our Docker stack. |
+| **Kopia** | Modern backup tool with client-side encryption, dedup, compression, web UI | Alternative to restic (already installed). Supports S3, SFTP, Google Drive. Has web UI which restic lacks. |
+| **BookStack** | Self-hosted wiki/docs with WYSIWYG + Markdown | Structured knowledge base (Shelves > Books > Chapters > Pages). Better than scattered markdown files for documentation. |
+
+#### 🔗 MCP Ecosystem Updates
+
+| Finding | Details |
+|---------|---------|
+| **Docker MCP Catalog** (mcp.docker.com) | Official Docker initiative — containerized MCP servers with built-in isolation. Browse/deploy MCP servers as Docker containers. |
+| **MCP Tool Search (Claude Code)** | New lazy-loading feature reduces context usage by 95% when running many MCP servers. Game-changer for tool bloat. |
+| **Claude Squad** | Terminal app managing multiple Claude Code agents in separate workspaces — multi-agent TUI |
+| **Claude Flow** | Autonomous orchestration layer for code writing, editing, testing, optimization |
+| **Swarm SDK** | Launch Claude Code sessions connected to swarms of specialized agents |
+| **CC Usage / ccflare** | Claude Code usage dashboards — track token consumption and costs |
+
+#### 🧩 Multi-Agent Orchestration Trend (March 2026)
+Growing category of tools for running multiple AI agents:
+- **Claude Squad** (smtg-ai) — TUI for multiple Claude Code instances
+- **Claude Flow** (ruvnet) — orchestration framework, recently renamed to "ruflo"
+- **Swarm SDK** (parruda) — agent swarm coordination
+- **OpenCode** — gaining traction as open-source Claude Code alternative
+
+#### 📦 ClawHub Skills Scan
+Searched: productivity, monitor, automation, finance, docker, security, backup, calendar, homelab
+
+| Skill | Score | Notes |
+|-------|-------|-------|
+| `system-resource-monitor` | 3.572 | System monitoring — consistent top scorer |
+| `security-monitor` | 3.562 | Security monitoring |
+| `openclaw-backup` | 3.703 | OpenClaw workspace backup — highest score in backup category |
+| `calendar` | 3.748 | Calendar integration (we have gog already) |
+| `automation-workflows` | 3.772 | Highest score in automation category |
+| `homelab-cluster` | 3.456 | Homelab management |
+| `finance-radar` | 3.468 | Finance monitoring |
+| `docker-essentials` | 3.724 | Already installed |
+
+**No new verified/high-trust skills discovered.** ClawHub ecosystem quality remains variable.
+
+### Carry-Forward Status (11 Scans)
+
+**🔴 Never Actioned (flagged 6+ scans):**
+- CLI tools batch install (ast-grep, difftastic, shellcheck, fzf, yq, atuin, etc.)
+- Uptime Kuma deployment
+- lazydocker install
+- btop install
+
+**🟡 Flagged 3-5 scans:**
+- Xero MCP fix/OAuth migration
+- n8n-mcp + context7-mcp install
+- Firefly III evaluation
+- finance-radar ClawHub skill
+
+**🟢 New This Scan:**
+- Homebrew 5.1.0 upgrade check
+- Monocker for Docker monitoring
+- Gemini CLI as free coding agent
+- Multi-agent orchestration tools (Claude Squad/Flow)
+
+### Recommendations (Ranked by Impact)
+
+1. **🔧 INSTALL THE CLI TOOLS** — 11 scans, still not done. `brew install ast-grep difftastic shellcheck sd scc yq zoxide fzf atuin btop lazydocker`. This is a 2-minute command with massive daily value.
+2. **🍺 Update Homebrew to 5.1.0** — `brew update && brew upgrade`. New `version-install` and `ffmpeg-full` are worth it.
+3. **🐳 Deploy Monocker** — simplest possible Docker monitoring. One container, mounts docker.sock, sends Telegram alerts on container state changes. 5-minute setup.
+4. **🤖 Try Gemini CLI** — free 1M context, 1000 req/day. Zero cost second-opinion coding agent. `npm install -g @google/gemini-cli`
+5. **📊 Deploy Uptime Kuma** — 11th scan recommending this. Just do it.
+6. **🔗 Install n8n-mcp + context7-mcp** — `brew install n8n-mcp context7-mcp`. Direct value since we run N8N.
+7. **💰 Fix Xero MCP** — OAuth scope migration deadline is September 2026. Don't leave it to last minute.
+
+### Notes
+- Gemini search quota exhausted again (429) — 11/11 scans hitting this. SearXNG curl fallback is reliable though.
+- Homebrew 5.1.0 is a significant release — `brew bundle` managing Cargo + uv + Flatpak is powerful for reproducible setups.
+- Multi-agent orchestration is the hot trend in March 2026 (Claude Squad, Flow, Swarm SDK) — monitor but don't invest yet, too early.
+- MCP Tool Search lazy-loading could resolve our concern about running too many MCP servers — worth investigating for mcporter.
+- Next scan focus: GPU server monitoring tools (nvtop, nvidia-smi MCP), N8N community nodes update, Paperless-NGX updates.
+
+### Alert Assessment
+**No game-changing alert warranted.** Homebrew 5.1.0 is notable but not urgent. Multi-agent tools are interesting but immature. The broken record remains: install the CLI tools.
+
+---
+
 ## 2026-03-24 — Nightly Scan #10
 
 ### Summary

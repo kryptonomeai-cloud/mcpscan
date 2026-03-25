@@ -593,3 +593,53 @@ Practical list of diagram anti-patterns. Useful reference.
 - HN job posts, "You are not your job" opinion piece, NixOS love letter, PC Gamer RSS irony post, knowledge-offline project (no substance visible), systems reading group retrospective (Microsoft internal interest only), "Collaboration Is Bullshit" op-ed.
 
 ---
+
+---
+
+## 2026-03-24 — Daily Digest (07:15 UTC)
+
+47 new articles scanned.
+
+### 🤖 AI / ML
+
+- **GPT-5.4 Pro solves frontier math open problem** (HN / Epoch AI) — Major milestone: Epoch confirms GPT-5.4 Pro solved a Ramsey hypergraph open problem, a frontier math challenge. Significant for AI capability tracking. 🚨
+- **iPhone 17 Pro runs 400B LLM** (HN) — Demo showing Apple's latest running a 400B parameter model on-device. Impressive hardware signal for edge AI.
+- **Streaming experts** (Simon Willison) — Explores how to stream structured outputs from LLM "expert" sub-agents in real time.
+- **Experimenting with Starlette 1.0 with Claude skills** (Simon Willison) — Simon building web apps using Claude tool/skill primitives; useful pattern for OpenClaw skill devs.
+- **Starlette 1.0 skill** (Simon Willison) — Claude skill for scaffolding Starlette 1.0 projects.
+- **OpenAI: Creating with Sora Safely** (OpenAI) — Policy/safety content around Sora video generation. No major capability news.
+- **"How I'm Productive with Claude Code"** (HN) — Practical tips post; worth a read if using Claude Code heavily.
+- **Claude Code Cheat Sheet** (HN) — Community-made reference card for Claude Code CLI.
+- **Cq – Stack Overflow for AI coding agents** (Mozilla AI / HN) — Mozilla building a knowledge base specifically for AI agents to query when stuck on coding problems. Interesting direction.
+- **Autoresearch on an old research idea** (HN) — Using AI to automatically review and expand on prior research; lightweight case study.
+
+### 🔒 Security
+
+- **Trivy hack spreads Infostealer via Docker, triggers Worm + Kubernetes Wiper** (The Hacker News + HN) — 🚨 CRITICAL: The Trivy vulnerability scanner supply chain attack is serious — malicious GitHub Actions tags are deploying infostealers, with worm propagation and a Kubernetes wiper payload. If you use Trivy in CI/CD, audit your pipeline immediately.
+- **CanisterWorm Wiper Attack Targeting Iran** (Krebs on Security) — Nation-state-level wiper malware campaign; geopolitically notable but limited direct impact unless operating in that region.
+- **North Korean Hackers Abuse VS Code Auto-Run Tasks → StoatWaffle Malware** (The Hacker News) — 🚨 NOTABLE: DPRK actors using VS Code workspace task auto-run to deploy malware. Risk if opening untrusted repos in VS Code.
+- **8 Attack Vectors Inside AWS Bedrock** (The Hacker News) — Researchers found 8 attack paths in Bedrock; useful read for anyone using AWS AI services.
+- **Weekly Recap: CI/CD Backdoor, FBI Buys Location Data, WhatsApp Ditches Numbers** (The Hacker News) — Good weekly roundup; CI/CD backdoor and FBI data purchase items are the standouts.
+- **Microsoft warns IRS phishing hits 29,000 users, deploys RMM malware** (The Hacker News) — Large-scale tax-season phishing campaign with remote management malware. Seasonal risk.
+- **Resolv hack: One compromised key printed $23M** (HN) — DeFi post-mortem on a key compromise leading to $23M theft; interesting security/crypto case study.
+- **FCC updates covered list to include foreign-made consumer routers** (HN) — Regulatory move to restrict certain foreign routers (security risk designation); relevant for home lab / networking folks.
+
+### 🐾 OpenClaw
+
+- **v2026.3.23-2, v2026.3.23, v2026.3.23-beta.1** (OpenClaw GitHub) — Multiple OpenClaw releases yesterday and today. 🚨 Should check changelogs and update.
+- **v2026.3.22, v2026.3.22-beta.1** (OpenClaw GitHub) — Prior day's releases also new in feed. Active release cadence — running current version?
+
+### 🛠 General Tech
+
+- **LocalStack archived GitHub repo, now requires account** (HN) — Notable shift: LocalStack (popular AWS local dev tool) is gating access behind an account. Community unhappy; worth watching for OSS alternatives.
+- **TechEmpower Framework Benchmarks sunsetting** (HN) — Long-running web framework benchmarks project is being archived. Loss of a useful community resource.
+- **lnav — Log File Viewer for the Terminal** (HN) — Polished terminal log viewer; useful tool if dealing with large log files.
+- **Starlette 1.0** (Simon Willison) — Async Python web framework hits 1.0; Simon's been experimenting with it alongside Claude.
+- **llm 0.29** (Simon Willison) — New release of Simon's LLM CLI tool.
+- **datasette 1.0a26** (Simon Willison) — Alpha release of Datasette 1.0.
+- **SQLite Tags Benchmark** (Simon Willison) — Compares 5 tagging strategies in SQLite; useful for any project doing tagging.
+- **Microsoft blocks NVMe registry hack** (HN) — Windows 11 patched out the trick that unlocked native NVMe performance.
+
+### ⏭ Skipped (fluff/off-topic)
+- Ubisoft retrospective, Windows 3.1 backgrounds archive, IRIX 3dfx driver port, retro terminal Winamp clone, intercom HomeKit mod, AI mechanic shop receptionist, NASA satellite rescue, Rust coherence post, PCGamer audit, DNS lookup tool, Merge State Visualizer, JS Sandboxing Research (Simon notes), David Abram quote, Neurotica quote.
+

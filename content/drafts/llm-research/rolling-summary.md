@@ -1,6 +1,6 @@
 # LLM Landscape — Rolling Summary
 
-_Last updated: 2026-03-23_
+_Last updated: 2026-03-25_
 
 ---
 
@@ -47,7 +47,10 @@ Leanstral signals a new category: AI agents that prove their code is correct, no
 Delta-KV compression (video codec concepts applied to KV cache) achieves near-lossless 4-bit KV quantization — potentially transformative for long-context inference on consumer hardware. RYS II shows that simple layer duplication can improve model quality with zero training.
 
 ### 7. Community Distillation
-Jackrong's Claude Opus reasoning distillations into Qwen3.5 models are extremely popular (141k+ downloads). Knowledge distillation from frontier closed models into smaller open models is a major community trend.
+Jackrong's Claude Opus reasoning distillations into Qwen3.5 models are extremely popular (164k+ downloads for 27B, plus 43.9k for 9B v2). Knowledge distillation from frontier closed models into smaller open models is a major community trend. v2 versions now available with improved stability.
+
+### 8. OpenAI Contraction / Refocusing
+Sora shutdown signals OpenAI narrowing scope ahead of IPO. "No side quests" — focusing on core business/productivity. Video generation proven unsustainable as standalone product even with $1B Disney backing.
 
 ---
 
@@ -83,6 +86,7 @@ Jackrong's Claude Opus reasoning distillations into Qwen3.5 models are extremely
 
 | Date | Notable Events |
 |------|---------------|
+| 2026-03-25 | **OpenAI kills Sora** (video gen app discontinued, Disney $1B deal collapses); OpenAI "Spud" model rumoured; Jensen Huang declares AGI on Lex Fridman (mentions OpenClaw); Nemotron-Cascade-2-30B-A3B updated; Qwen3.5 Claude distillation v2 models released; ServiceNow EVA voice agent eval framework; WordPress.com enables MCP for AI agents |
 | 2026-03-24 | Kimi K2.5 recognized as best OS model by Cursor; Delta-KV compression for llama.cpp; RYS II research (layer duplication); Sam Altman exits Helion board, OpenAI eyeing fusion energy; Zuckerberg building AI CEO agent |
 | 2026-03-23 | Weekly scan: Mistral Small 4, Leanstral, Nemotron Cascade 2, Nemotron 3 Super, MiniMax M2.5, Rakuten AI 3.0 |
 | 2026-03-17 | Mistral Small 4 + Leanstral + Forge launched |

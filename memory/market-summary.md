@@ -157,3 +157,32 @@ European indices broadly down 1.5–2%, driven by geopolitical risk and tariff u
 **Upcoming this week:** March 27 shutdown deadline, PCE inflation data.
 
 _Data: MarketWatch (live). Finnhub script missing (skill not installed). Set up FINNHUB_API_KEY for stock-level data._
+
+---
+## 📈 Market Summary — Tuesday, 24 March 2026 (07:30 UTC)
+
+### 🪙 Crypto (financial-summary.sh)
+- BTC: $70,920 ▲4.4%
+- ETH: $2,161 ▲6.1%
+- SOL: $91.15 ▲6.8%
+- SYS: $0.0115 ▲7.9%
+
+### 📊 US Indices (prior close)
+- S&P 500: 6,581 ▲1.15% (+74.5)
+- NASDAQ: 21,946 ▲1.38% (+299)
+- DJIA: 46,208 ▲1.38% (+631)
+- 10Y Treasury: 4.384% (+3.3bps)
+
+### 🌍 Europe
+- FTSE 100: 9,894 ▼0.24%
+- DAX: ▲3.12% (strong)
+- STOXX 600: 576.78 ▲0.61%
+
+### 💡 Notable
+- All major crypto assets up 4–8% — broad risk-on rally
+- US markets closed strongly (NASDAQ +1.4%)
+- DAX outperforming with +3.1%
+- No individual AI/tech stock data available (market pre-open 07:30 London)
+- BTC holding near $71k; SOL/ETH continuing momentum from prior session
+
+_Note: US markets pre-open at time of run. Individual stock moves unavailable._

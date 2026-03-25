@@ -322,3 +322,32 @@ System healthy. On latest version. No action needed. Config clean with zero erro
 
 ### Actions Required
 - None. System healthy, version current.
+
+## 2026-03-24 07:45 UTC
+
+### Version
+- Installed: 2026.3.13
+- Latest: 2026.3.23-2 (**UPDATE AVAILABLE**)
+
+### Release Notes (2026.3.23)
+**Changes:**
+- ModelStudio/Qwen: added standard DashScope endpoints for China + global Qwen API keys
+- UI: consolidated button primitives, Knot theme black-and-red palette (WCAG 2.1 AA), accessibility improvements
+- CSP/Control UI: SHA-256 hashes for inline scripts in index.html (security hardening)
+
+**Fixes:**
+- Plugins: bundled plugin runtimes (WhatsApp, Matrix, etc.) missing from npm package — now shipped again
+- CLI/channel auth: hardened channel IDs against prototype-chain + control-character abuse (SECURITY FIX)
+- Auth/OpenAI tokens: live gateway auth writes no longer revert freshly saved credentials to stale in-memory values
+
+### Config Health
+- Doctor: clean (0 errors, 10 skills loaded, 31 disabled)
+- Telegram: ok | Slack: ok
+- Note: "openclaw doctor --fix" available if needed
+
+### ClawHub New Skills (top results)
+- recipe-copy-sheet-for-new-month (3.130), new-house (3.107), cctv-news-fetcher (2.361), news (2.317)
+- Nothing security-relevant or game-changing in new listings
+
+### Action
+- Notify user: new version with security fix in channel auth hardening

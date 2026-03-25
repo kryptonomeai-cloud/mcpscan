@@ -247,3 +247,16 @@
 - Docker containers (8): freqtrade, termix, crowdsec, shell-executor, searxng, beszel, vaultwarden, n8n-n8n-1 — all up ✓
 - Listening ports: none flagged ✓
 - User processes: all known/expected ✓
+
+## 2026-03-24 09:00 UTC — Morning Audit
+
+**Result:** ✅ Clean with one minor note
+
+**LaunchAgents (user/system):** All match baseline — no changes.
+**LaunchDaemons:** All match baseline — no changes.
+**Docker containers:** All 8 containers present and accounted for (crowdsec, freqtrade, termix, shell-executor, searxng, beszel, vaultwarden, n8n-n8n-1).
+**Listening ports:** No new ports flagged.
+**User processes:** All core processes match known list.
+
+**Minor observation:** `ShipIt` (Squirrel.framework auto-updater) was running under Claude.app — this is Claude's built-in update mechanism and is a sub-process of the known `Claude` entry. Not suspicious; may indicate an update was in progress.
+

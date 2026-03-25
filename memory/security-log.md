@@ -283,3 +283,36 @@
 - [ ] Investigate nas-zimaos offline status if persists >2 weeks
 - [ ] Check caddy-bouncer on 172.23.0.1 — 11 day stale pull
 - [ ] Fix trivy Docker credential helper for container scanning
+
+## 2026-03-24 05:00 UTC — Daily Security Sweep
+
+### CrowdSec
+- ✅ All machines online (nas-zimaos heartbeat stale 230h+ — ongoing)
+- ✅ All bouncers valid
+- ✅ No active alerts or decisions
+- ✅ CAPI connected
+
+### Firewall
+- ✅ macOS firewall enabled
+- ✅ GPU server UFW active, rules tight (LAN/Tailscale only)
+- ✅ GPU fail2ban: 0 banned, 1 total failed SSH attempt
+
+### Ports (Mac mini containers)
+- freqtrade: 127.0.0.1:8081 (local only) ✅
+- termix: 127.0.0.1:8880 (local only) ✅
+- crowdsec: 0.0.0.0:8080 ⚠️ (exposed, expected for LAPI)
+- shell-executor: 0.0.0.0:9756 ⚠️ (exposed)
+- searxng: 0.0.0.0:8888 ⚠️ (exposed)
+- beszel: 0.0.0.0:8090 ⚠️ (exposed)
+- vaultwarden: 0.0.0.0:8222 ⚠️ (exposed)
+- n8n: 0.0.0.0:5678 ⚠️ (exposed)
+- Host: SSH(22), SMB(445), Kerberos(88) listening
+
+### CVE Check
+- Web search quota exceeded; unable to check this run
+
+### Container Scan
+- Trivy DB download failed (credential issue); scan skipped
+
+### Summary
+No critical issues. NAS heartbeat stale (known). Several containers bound to 0.0.0.0 — acceptable on LAN but worth reviewing if network changes.
